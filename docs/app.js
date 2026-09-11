@@ -395,9 +395,14 @@ function matchCatalogLine(ltoks) {
   }
   return best;
 }
-function matchRuleLine(line) {
+function matchRuleLine(line, ltoks) {
   for (const rule of CATALOG.rules) {
     if (rule.tokens.some(t => line.includes(t))) return rule;
+    // התאמה מטושטשת לשגיאות OCR: טוקן באורך 4+ עם התאמת רישית או מרחק עריכה 1
+    for (const t of rule.tokens) {
+      if (t.length < 4) continue;
+      if (ltoks.some(l => l.length >= 4 && (l.startsWith(t) || (t.length >= 4 && l.startsWith(t.slice(0, 4))) || lev(l, t) <= 1))) return rule;
+    }
   }
   return null;
 }
@@ -409,7 +414,9 @@ function matchBarcode(line) {
       const bc = it.barcode || '';
       if (!bc) continue;
       if (bc === run || (run.length >= 8 && bc.endsWith(run))) return it;
+      if (run.length >= 11 && bc.startsWith(run)) return it;
       if (bc.length === run.length && bc.length >= 12 && lev(bc, run) <= 1) return it;
+      if (run.length >= 9 && bc.length > run.length && lev(run, bc.slice(-run.length)) <= 1) return it;
     }
   }
   return null;
@@ -439,7 +446,7 @@ function analyzeReceipt(text) {
       if (rp && !seen[item.id].receiptPrice) seen[item.id].receiptPrice = rp;
       continue;
     }
-    const rule = matchRuleLine(line);
+    const rule = matchRuleLine(line, ltoks);
     if (rule) {
       const key = 'rule:' + rule.label;
       if (!seen[key]) seen[key] = { kind:'rule', rule, examples:[], count:0 };
