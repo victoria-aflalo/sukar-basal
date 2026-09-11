@@ -355,7 +355,7 @@ async function runScan(file) {
 
 /* ============ התאמת שורות קבלה (לוגיקת כמה-התייקרה, מורחבת) ============ */
 const RSTOP = new Set(['גרם','מ״ל','מל','ליטר','ק״ג','יח','יח׳','יחידות']);
-const RECEIPT_NOISE = ['קופה','סניף','אשרא','סהכ','סה"כ','תשלום','תודה','מזומן','עודף','מעמ','מע״מ','תאריך','שולם','חייב','זכאי','עסקה','כרטיס','שקל','הנחה','מחיר','סכום','יתרה'];
+const RECEIPT_NOISE = ['קופה','סניף','אשרא','סהכ','סה"כ','תשלום','תודה','מזומן','עודף','מעמ','מע״מ','תאריך','שולם','חייב','זכאי','עסקה','כרטיס','שקל','הנחה','מחיר','סכום','יתרה','נקניה','קניה','סכה'];
 function lev(a, b) {
   const m = a.length, n = b.length;
   if (Math.abs(m - n) > 1) return 2;
@@ -397,7 +397,7 @@ function matchCatalogLine(ltoks) {
 }
 function matchRuleLine(line, ltoks) {
   for (const rule of CATALOG.rules) {
-    if (rule.tokens.some(t => line.includes(t))) return rule;
+    if (rule.tokens.some(t => t.length > 3 ? line.includes(t) : ltoks.includes(t))) return rule;
     // התאמה מטושטשת לשגיאות OCR: טוקן באורך 4+ עם התאמת רישית או מרחק עריכה 1
     for (const t of rule.tokens) {
       if (t.length < 4) continue;
