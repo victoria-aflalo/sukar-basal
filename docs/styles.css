@@ -157,3 +157,5 @@ button { cursor:pointer; }
 .meal-macros .macro { background:var(--soft-head); border-radius:10px; font-size:14px; font-weight:700; color:var(--ink2); padding:4px 10px; }
 .meal-macros .macro.target { background:var(--soft-green); color:var(--green); }
 .meal-macros .macro.target.ok { background:#DFF0E4; }
+.chip.total-chip { background:#0D6E63; color:#fff; }
+.chip.total-chip small { color:rgba(255,255,255,.85); }
