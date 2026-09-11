@@ -5,17 +5,19 @@ let CATALOG = null, PRICES = {};
 const fmt = n => '₪' + n.toLocaleString('he-IL', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const $ = id => document.getElementById(id);
 
-let MEALS = null;
+let MEALS = null, NUTMODEL = null;
 async function boot() {
-  const [cat, pr, ml] = await Promise.all([
+  const [cat, pr, ml, nm] = await Promise.all([
     fetch('data/catalog.json').then(r => r.json()),
     fetch('data/prices.json').then(r => r.json()),
     fetch('data/meals.json').then(r => r.json()),
+    fetch('data/nutrition-model.json').then(r => r.json()),
   ]);
+  NUTMODEL = nm;
   CATALOG = cat;
   pr.items.forEach(it => { PRICES[it.id] = it.prices; });
   MEALS = ml;
-  wireHome(); wireResults(); renderBaskets(); wireDrawer(); renderMeals();
+  wireHome(); wireResults(); renderBaskets(); wireDrawer(); renderProfile(); renderMeals();
   if (location.hash === '#baskets') show('view-baskets');
   else if (location.hash === '#meals') show('view-meals');
 }
@@ -63,6 +65,93 @@ function wireDrawer() {
     };
   });
   $('btnHomeMeals').onclick = () => { history.replaceState(null, '', location.pathname); show('view-home'); };
+}
+
+/* ============ מודל תזונתי + פרופיל ============ */
+let PROFILE = null;
+try { PROFILE = JSON.parse(localStorage.getItem('sukar_profile') || 'null'); } catch {}
+
+function profileKey() {
+  const older = PROFILE.age === '65plus';
+  const active = PROFILE.training === 'yes';
+  return (older ? 'older' : 'adult') + '_' + (active ? 'active' : 'sedentary');
+}
+
+function computeTargets() {
+  if (!PROFILE || !PROFILE.weight) return null;
+  const w = PROFILE.weight;
+  const older = PROFILE.age === '65plus';
+  const range = NUTMODEL.protein.daily_g_per_kg[profileKey()];
+  const meal = NUTMODEL.protein.per_meal_g[older ? 'older' : 'adult'];
+  return {
+    proteinDaily: [Math.round(range[0] * w), Math.round(range[1] * w)],
+    proteinMeal: meal,
+    carbsMeal: [NUTMODEL.carbs.per_meal_exchanges[0] * NUTMODEL.carbs.exchange_g, NUTMODEL.carbs.per_meal_exchanges[1] * NUTMODEL.carbs.exchange_g],
+    fiber: NUTMODEL.fiber.daily_target_g,
+    older,
+  };
+}
+
+function renderProfile() {
+  const box = $('profileBox');
+  if (!box) return;
+  const chip = (field, val, label) => `<button type="button" class="p-chip ${PROFILE && PROFILE[field] === val ? 'on' : ''}" data-field="${field}" data-val="${val}">${label}</button>`;
+  if (!PROFILE) {
+    box.innerHTML = `<div class="profile-card">
+      <h2>התאמה אישית של היעדים</h2>
+      <p class="p-sub">הזינו שלושה פרטים והיעדים התזונתיים יחושבו בשבילכם לפי הנחיות ADA ומשרד הבריאות. הנתונים נשמרים רק בטלפון שלכם.</p>
+      <div class="p-field"><label class="p-label">משקל</label>
+        <div class="p-weight"><input id="pw" type="number" inputmode="numeric" min="40" max="200" placeholder="70"><span>ק"ג</span></div></div>
+      <div class="p-field"><label class="p-label">גיל</label>
+        <div class="p-chips">${chip('age','under65','מתחת ל-65')}${chip('age','65plus','65 ומעלה')}</div></div>
+      <div class="p-field"><label class="p-label">פעילות גופנית קבועה (3+ בשבוע)</label>
+        <div class="p-chips">${chip('training','no','לא מתאמן/ת')}${chip('training','yes','מתאמן/ת')}</div></div>
+      <button class="p-save" id="pSave">חשבו את היעדים שלי</button>
+      ${sourcesHtml()}
+    </div>`;
+  } else {
+    const t = computeTargets();
+    box.innerHTML = `<div class="profile-card">
+      <h2>היעדים היומיים שלכם</h2>
+      <p class="p-sub">לפי משקל ${PROFILE.weight} ק"ג, ${PROFILE.age === '65plus' ? 'גיל 65+' : 'מתחת ל-65'}, ${PROFILE.training === 'yes' ? 'עם פעילות גופנית קבועה' : 'ללא פעילות קבועה'}.</p>
+      <div class="p-targets">
+        <div class="p-target"><span class="t-dot"></span><span>חלבון ליום: <b>${t.proteinDaily[0]}-${t.proteinDaily[1]} גרם</b></span></div>
+        <div class="p-target"><span class="t-dot"></span><span>חלבון לארוחה: <b>${t.proteinMeal[0]}-${t.proteinMeal[1]} גרם</b>${t.older ? ' (סף אנאבולי לגיל 65+)' : ''}</span></div>
+        <div class="p-target"><span class="t-dot"></span><span>פחמימות לארוחה: <b>${t.carbsMeal[0]}-${t.carbsMeal[1]} גרם</b>, עדיף מלאות ועתירות סיבים</span></div>
+        <div class="p-target"><span class="t-dot"></span><span>סיבים ליום: <b>${t.fiber[0]}-${t.fiber[1]} גרם</b></span></div>
+        <div class="p-target"><span class="t-dot"></span><span>שומן: עדיף בלתי רווי - שמן זית, טחינה, אבוקדו</span></div>
+      </div>
+      <p class="p-ckd">${NUTMODEL.protein.ckd_note}</p>
+      <button class="p-edit" id="pEdit">עריכת הפרטים</button>
+      ${sourcesHtml()}
+    </div>`;
+  }
+  box.querySelectorAll('.p-chip').forEach(b => b.onclick = () => {
+    box.querySelectorAll(`.p-chip[data-field="${b.dataset.field}"]`).forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+  });
+  const save = $('pSave');
+  if (save) save.onclick = () => {
+    const w = parseInt(($('pw') || {}).value || '0', 10);
+    const age = (box.querySelector('.p-chip.on[data-field="age"]') || {}).dataset;
+    const tr = (box.querySelector('.p-chip.on[data-field="training"]') || {}).dataset;
+    if (!(w >= 40 && w <= 200)) { $('pw').focus(); $('pw').style.borderColor = 'var(--red)'; return; }
+    if (!age || !tr) { return; }
+    PROFILE = { weight: w, age: age.val, training: tr.val };
+    localStorage.setItem('sukar_profile', JSON.stringify(PROFILE));
+    renderProfile();
+  };
+  const edit = $('pEdit');
+  if (edit) edit.onclick = () => { const keep = PROFILE; PROFILE = null; renderProfile();
+    $('pw').value = keep.weight;
+    box.querySelectorAll(`.p-chip[data-field="age"][data-val="${keep.age}"], .p-chip[data-field="training"][data-val="${keep.training}"]`).forEach(x => x.classList.add('on'));
+  };
+}
+
+function sourcesHtml() {
+  const items = (NUTMODEL ? NUTMODEL.sources : []).map(s => `<li><b>${s.name}</b><br>${s.supports}<br><a href="${s.url}" target="_blank" rel="noopener">${s.url}</a></li>`).join('');
+  return `<details class="p-sources"><summary>מקורות ההנחיות (ADA, משרד הבריאות, WHO)</summary><ul>${items}</ul>
+    <p style="margin-top:8px">היעדים הם הכוונה כללית מהספרות המקצועית, לא תחליף לתפריט אישי מדיאטנית.</p></details>`;
 }
 
 /* ============ ארוחות מומלצות ============ */
