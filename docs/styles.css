@@ -152,3 +152,4 @@ button { cursor:pointer; }
 .p-sources summary { font-weight:700; color:var(--primary); min-height:44px; display:flex; align-items:center; }
 .p-sources li { margin-bottom:8px; line-height:1.45; }
 .p-sources a { color:var(--primary); word-break:break-all; }
+.mi-qty { display:block; font-size:13.5px; color:var(--ink3); font-weight:500; }
