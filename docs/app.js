@@ -5,15 +5,19 @@ let CATALOG = null, PRICES = {};
 const fmt = n => '₪' + n.toLocaleString('he-IL', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const $ = id => document.getElementById(id);
 
+let MEALS = null;
 async function boot() {
-  const [cat, pr] = await Promise.all([
+  const [cat, pr, ml] = await Promise.all([
     fetch('data/catalog.json').then(r => r.json()),
     fetch('data/prices.json').then(r => r.json()),
+    fetch('data/meals.json').then(r => r.json()),
   ]);
   CATALOG = cat;
   pr.items.forEach(it => { PRICES[it.id] = it.prices; });
-  wireHome(); wireResults(); renderBaskets();
+  MEALS = ml;
+  wireHome(); wireResults(); renderBaskets(); wireDrawer(); renderMeals();
   if (location.hash === '#baskets') show('view-baskets');
+  else if (location.hash === '#meals') show('view-meals');
 }
 document.addEventListener('DOMContentLoaded', boot);
 
@@ -39,8 +43,68 @@ function wireHome() {
   };
   window.addEventListener('hashchange', () => {
     if (location.hash === '#baskets') show('view-baskets');
+    else if (location.hash === '#meals') show('view-meals');
     else if (!location.hash) show('view-home');
   });
+}
+
+/* ============ תפריט צד ============ */
+function wireDrawer() {
+  const open = () => { $('drawer').hidden = false; $('drawerOverlay').hidden = false; };
+  const close = () => { $('drawer').hidden = true; $('drawerOverlay').hidden = true; };
+  $('btnMenu').onclick = open;
+  $('drawerOverlay').onclick = close;
+  document.querySelectorAll('#drawer .drawer-link').forEach(a => {
+    a.onclick = e => {
+      e.preventDefault(); close();
+      const nav = a.dataset.nav;
+      if (nav === 'home') { history.replaceState(null, '', location.pathname); show('view-home'); }
+      else { location.hash = nav === 'meals' ? 'meals' : 'baskets'; show(nav === 'meals' ? 'view-meals' : 'view-baskets'); }
+    };
+  });
+  $('btnHomeMeals').onclick = () => { history.replaceState(null, '', location.pathname); show('view-home'); };
+}
+
+/* ============ ארוחות מומלצות ============ */
+const CAT_BY_ID = {};
+function itemMinPrice(id) {
+  const pr = PRICES[id];
+  return pr ? Math.min(...Object.values(pr)) : null;
+}
+function renderMeals() {
+  if (!MEALS) return;
+  CATALOG.items.forEach(it => { CAT_BY_ID[it.id] = it; });
+  const slotIcon = {
+    breakfast: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" fill="#B45309"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1" stroke="#B45309" stroke-width="1.8" stroke-linecap="round"/></svg>',
+    lunch: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="13" r="7" fill="#0D6E63"/><circle cx="12" cy="13" r="4.5" fill="#FAF7F2"/><circle cx="12" cy="13" r="2" fill="#0D6E63"/></svg>',
+    dinner: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4 7 7 0 0 0 20 14.5z" fill="#0D6E63"/></svg>',
+    snack: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" fill="#1E7B34"/><path d="M8.5 12h7M12 8.5v7" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>',
+  };
+  const html = MEALS.slots.map(slot => {
+    const opts = MEALS.options.filter(o => o.slot === slot.key);
+    if (!opts.length) return '';
+    return `<div class="meal-slot">${slotIcon[slot.key] || ''} ${slot.title}</div>` + opts.map(o => {
+      const rows = o.items.map(id => {
+        const it = CAT_BY_ID[id];
+        if (!it) return '';
+        const p = itemMinPrice(id);
+        return `<div class="meal-item">
+          ${it.img ? `<img class="mi-img" src="${it.img}" alt="" loading="lazy" onerror="this.remove()">` : ''}
+          <span class="mi-name">${it.name_he}</span>
+          <span class="mi-price">${p != null ? fmt(p) : 'מחיר חסר'}</span>
+        </div>`;
+      }).join('');
+      const priced = o.items.map(itemMinPrice).filter(v => v != null);
+      const total = priced.length === o.items.length && priced.length ? priced.reduce((a, b) => a + b, 0) : null;
+      return `<div class="meal-card">
+        <div class="meal-head"><span class="meal-name">${o.name}</span>${total != null ? `<span class="meal-total">${fmt(total)}</span>` : ''}</div>
+        <div class="meal-note">${o.note}</div>
+        <div class="meal-items">${rows}</div>
+        <span class="meal-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#1E7B34"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>כל הרכיבים ירוקים</span>
+      </div>`;
+    }).join('');
+  }).join('');
+  $('mealsList').innerHTML = html;
 }
 
 /* ============ OCR (Tesseract.js v5 + pdf.js, מהצנרת של כמה-התייקרה) ============ */
