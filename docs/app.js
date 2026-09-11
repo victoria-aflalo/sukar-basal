@@ -5,15 +5,16 @@ let CATALOG = null, PRICES = {};
 const fmt = n => '₪' + n.toLocaleString('he-IL', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const $ = id => document.getElementById(id);
 
-let MEALS = null, NUTMODEL = null;
+let MEALS = null, NUTMODEL = null, NUTFACTS = null;
 async function boot() {
-  const [cat, pr, ml, nm] = await Promise.all([
+  const [cat, pr, ml, nm, nf] = await Promise.all([
     fetch('data/catalog.json').then(r => r.json()),
     fetch('data/prices.json').then(r => r.json()),
     fetch('data/meals.json').then(r => r.json()),
     fetch('data/nutrition-model.json').then(r => r.json()),
+    fetch('data/nutrition-facts.json').then(r => r.json()),
   ]);
-  NUTMODEL = nm;
+  NUTMODEL = nm; NUTFACTS = nf.facts;
   CATALOG = cat;
   pr.items.forEach(it => { PRICES[it.id] = it.prices; });
   MEALS = ml;
@@ -155,6 +156,31 @@ function sourcesHtml() {
 }
 
 /* ============ ארוחות מומלצות ============ */
+function mealMacros(items) {
+  let p = 0, c = 0, f = 0;
+  items.forEach(ent => {
+    const nf = NUTFACTS && NUTFACTS[ent.id];
+    const g = ent.serving_g || 0;
+    if (!nf || !g) return;
+    p += nf.p * g / 100; c += nf.c * g / 100; f += nf.f * g / 100;
+  });
+  return { p: Math.round(p), c: Math.round(c), f: Math.round(f) };
+}
+function macrosHtml(items, slot) {
+  if (!NUTFACTS) return '';
+  const m = mealMacros(items);
+  let target = '';
+  try {
+    const t = slot === 'snack' ? null : computeTargets();
+    if (t) {
+      const ok = m.p >= t.proteinMeal[0];
+      target = `<span class="macro target ${ok ? 'ok' : ''}">חלבון: ${m.p} גרם מתוך יעד ${t.proteinMeal[0]}-${t.proteinMeal[1]}</span>`;
+    }
+  } catch {}
+  return `<div class="meal-macros">
+    <span class="macro">חלבון ${m.p} גרם</span><span class="macro">פחמימה ${m.c} גרם</span><span class="macro">שומן ${m.f} גרם</span>${target}
+  </div>`;
+}
 const CAT_BY_ID = {};
 function itemMinPrice(id) {
   const pr = PRICES[id];
@@ -191,6 +217,7 @@ function renderMeals() {
         <div class="meal-head"><span class="meal-name">${o.name}</span>${total != null ? `<span class="meal-total">${fmt(total)}</span>` : ''}</div>
         <div class="meal-note">${o.note}</div>
         <div class="meal-items">${rows}</div>
+        ${macrosHtml(o.items, o.slot)}
         <span class="meal-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#1E7B34"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>כל הרכיבים ירוקים</span>
         ${hasEst ? '<div class="meal-note" style="margin:6px 0 0">≈ כמות מוערכת - גודל האריזה לא פורסם</div>' : ''}
       </div>`;
