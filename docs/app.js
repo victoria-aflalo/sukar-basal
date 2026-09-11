@@ -210,11 +210,13 @@ function renderResults(result) {
       const it = x.item;
       const price = PRICES[it.id] ? fmt(Math.min(...Object.values(PRICES[it.id]))) : null;
       const swaps = (it.swaps || []).map(s => `
-        <div class="swap-body"><b>${s.name}</b>
-        <div class="where">איפה קונים: ${s.where}</div></div>`).join('');
+        <div class="swap-body">${s.img ? `<img class="pimg swap-img" src="${s.img}" alt="" loading="lazy" onerror="this.remove()">` : ''}
+        <div class="swap-txt"><b>${s.name}</b>
+        <div class="where">איפה קונים: ${s.where}</div></div></div>`).join('');
       return `<div class="item">
         <div class="item-head"><div class="badge ${it.rating}">${RATING_ICON[it.rating]}</div>
-          <div class="name">${it.name_he}${price ? ` <span class="est">${price}</span>` : ''}</div></div>
+          <div class="name">${it.name_he}${price ? ` <span class="est">${price}</span>` : ''}</div>
+          ${it.img ? `<img class="pimg" src="${it.img}" alt="" loading="lazy" onerror="this.remove()">` : ''}</div>
         ${it.why ? `<div class="why">${it.why}</div>` : ''}
         ${swaps ? `<div class="swap"><div class="swap-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 8h13l-3-3M20 16H7l3 3" stroke="#1E7B34" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>החליפו בקנייה הבאה:</div>${swaps}</div>` : ''}
       </div>`;
