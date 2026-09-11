@@ -337,6 +337,7 @@ async function runScan(file) {
     await loadTesseract();
     setScan('קוראים את הקבלה... כמה שניות והתוצאה אצלכם');
     const { data } = await window.Tesseract.recognize(source, 'heb+eng');
+    window.__lastOcrText = data.text || '';
     const result = analyzeReceipt(data.text || '');
     if (!result.rated.length) {
       setScan('לא זיהינו מוצרי מזון בקבלה. נסו תמונה חדה וישרה יותר.', false);
@@ -420,8 +421,6 @@ function linePrice(line) {
 function receiptTotal(text) {
   const m = text.match(/סה.{0,3}כ[^\d]{0,10}([\d,]{2,7}\.\d{2})/);
   if (m) return parseFloat(m[1].replace(',', ''));
-  const tail = text.slice(-600).match(/\d{2,4}\.\d{2}/g);
-  if (tail && tail.length) { const big = tail.map(parseFloat).filter(v => v > 20); if (big.length) return Math.max(...big); }
   return null;
 }
 function analyzeReceipt(text) {
