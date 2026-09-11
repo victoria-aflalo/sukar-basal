@@ -1,0 +1,99 @@
+/* סוכר בסל - שפת עיצוב לקהל 50-75: גופן גדול, ניגודיות גבוהה, פעולה אחת ברורה */
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --bg:#FAF7F2; --ink:#1A1A1A; --ink2:#444; --ink3:#777;
+  --primary:#0D6E63; --green:#1E7B34; --amber:#B45309; --red:#C62828;
+  --card:#fff; --line:#E5E0D8; --soft-green:#EDF6F0; --soft-head:#F2EDE4;
+}
+body { font-family:'Heebo', Arial, sans-serif; background:var(--bg); color:var(--ink); font-size:18px; line-height:1.5; }
+.view { display:none; min-height:100dvh; }
+.view.active { display:block; }
+.wrap { max-width:520px; margin:0 auto; padding:28px 22px 24px; display:flex; flex-direction:column; min-height:100dvh; }
+.logo { font-size:30px; font-weight:800; color:var(--primary); display:flex; align-items:center; gap:10px; }
+.tagline { font-size:19px; color:var(--ink2); margin-top:8px; line-height:1.5; }
+.hero { flex:1; display:flex; flex-direction:column; justify-content:center; gap:16px; padding:22px 0; }
+button { cursor:pointer; }
+.cta-main { background:var(--primary); color:#fff; border:none; border-radius:16px; min-height:76px; font-size:24px; font-weight:800; font-family:inherit; display:flex; align-items:center; justify-content:center; gap:12px; width:100%; }
+.cta-sub { background:#fff; color:var(--primary); border:2.5px solid var(--primary); border-radius:16px; min-height:64px; font-size:20px; font-weight:700; font-family:inherit; width:100%; }
+.steps { background:var(--card); border:1.5px solid var(--line); border-radius:16px; padding:18px 18px 6px; margin-top:6px; }
+.step { display:flex; align-items:center; gap:14px; margin-bottom:16px; }
+.num { flex:none; width:40px; height:40px; border-radius:50%; background:var(--primary); color:#fff; font-size:20px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.step p { font-size:18px; font-weight:500; line-height:1.4; }
+.basket-link { margin-top:14px; text-align:center; }
+.basket-link a { color:var(--primary); font-size:19px; font-weight:700; text-decoration:underline; text-underline-offset:4px; }
+.privacy { text-align:center; font-size:15px; color:var(--ink2); margin-top:6px; }
+.disclaimer { margin-top:auto; padding-top:20px; font-size:14px; color:var(--ink3); text-align:center; line-height:1.5; }
+.credit { text-align:center; font-size:14px; color:var(--ink3); padding:14px 0 90px; }
+
+/* topbar */
+.topbar { background:var(--primary); color:#fff; padding:16px 20px; font-size:22px; font-weight:800; display:flex; align-items:center; gap:10px; position:sticky; top:0; z-index:5; }
+
+/* scan */
+.scan-box { max-width:520px; margin:60px auto; padding:0 22px; text-align:center; }
+.spinner { width:56px; height:56px; border:6px solid var(--line); border-top-color:var(--primary); border-radius:50%; margin:0 auto 18px; animation:spin 1s linear infinite; }
+.spinner.hidden { display:none; }
+@keyframes spin { to { transform:rotate(360deg); } }
+.scan-status { font-size:20px; font-weight:700; color:var(--ink2); line-height:1.6; }
+
+/* results */
+.summary { display:flex; gap:8px; padding:14px 16px 4px; max-width:520px; margin:0 auto; }
+.chip { flex:1; border-radius:12px; padding:10px 4px; text-align:center; font-weight:800; font-size:17px; color:#fff; }
+.chip small { display:block; font-size:14px; font-weight:500; margin-top:2px; }
+.chip.g { background:var(--green); } .chip.y { background:var(--amber); } .chip.r { background:var(--red); }
+.list { padding:10px 14px 0; max-width:520px; margin:0 auto; }
+.list-pad { height:150px; }
+.item { background:var(--card); border:1.5px solid var(--line); border-radius:14px; padding:14px; margin-bottom:10px; }
+.item-head { display:flex; align-items:center; gap:10px; }
+.badge { flex:none; width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; color:#fff; font-weight:800; }
+.badge.g { background:var(--green); } .badge.y { background:var(--amber); } .badge.r { background:var(--red); } .badge.n { background:var(--ink3); }
+.name { font-size:19px; font-weight:700; flex:1; }
+.why { font-size:16px; color:var(--ink2); line-height:1.5; margin-top:6px; padding-right:44px; }
+.est { display:inline-block; font-size:13px; color:var(--ink3); border:1px solid var(--line); border-radius:8px; padding:1px 8px; margin-right:8px; }
+.swap { background:var(--soft-green); border:1.5px solid var(--green); border-radius:12px; margin-top:10px; padding:12px; }
+.swap-title { font-size:17px; font-weight:800; color:var(--green); display:flex; align-items:center; gap:7px; }
+.swap-body { font-size:16px; line-height:1.55; margin-top:6px; }
+.swap-body b { font-weight:800; }
+.where { font-size:15px; color:var(--ink2); margin-top:2px; }
+.unmatched { background:var(--card); border:1.5px dashed var(--line); border-radius:14px; padding:14px; margin-bottom:10px; font-size:16px; color:var(--ink2); }
+.unmatched summary { font-weight:700; cursor:pointer; font-size:17px; }
+
+/* quotas */
+.quotas { max-width:520px; margin:6px auto 0; padding:0 14px; }
+.quotas h2 { font-size:20px; font-weight:800; margin:10px 0; }
+.quota { background:var(--card); border:1.5px solid var(--line); border-radius:14px; padding:12px 14px; margin-bottom:10px; }
+.quota .q-title { font-size:17px; font-weight:800; }
+.quota .q-val { font-size:17px; color:var(--primary); font-weight:700; margin-top:2px; }
+.quota .q-src { font-size:13px; color:var(--ink3); margin-top:2px; }
+.quotas .q-note { font-size:14px; color:var(--ink3); margin-top:4px; }
+
+/* sticky */
+.sticky { position:fixed; bottom:0; right:0; left:0; max-width:520px; margin:0 auto; background:var(--bg); padding:12px 14px; border-top:1.5px solid var(--line); z-index:10; }
+.share { background:var(--green); color:#fff; border:none; border-radius:14px; min-height:60px; width:100%; font-size:20px; font-weight:800; font-family:inherit; display:flex; align-items:center; justify-content:center; gap:10px; }
+.ghost { background:none; border:none; color:var(--primary); font-size:17px; font-weight:700; font-family:inherit; width:100%; min-height:48px; margin-top:4px; text-decoration:underline; text-underline-offset:3px; }
+.mini-disc { text-align:center; font-size:13px; color:var(--ink3); margin-top:6px; }
+
+/* baskets */
+.baskets-intro { max-width:520px; margin:0 auto; padding:14px 16px 0; font-size:17px; color:var(--ink2); line-height:1.55; }
+#basketsList { padding:10px 14px 0; max-width:520px; margin:0 auto; }
+.basket { background:var(--card); border:1.5px solid var(--line); border-radius:14px; margin-bottom:12px; overflow:hidden; }
+.basket-head { width:100%; background:none; border:none; font-family:inherit; display:flex; align-items:center; gap:12px; padding:16px 14px; text-align:right; min-height:64px; }
+.basket-head .b-title { flex:1; }
+.basket-head .b-title b { font-size:19px; font-weight:800; display:block; }
+.basket-head .b-title span { font-size:15px; color:var(--ink2); }
+.basket-head .chev { font-size:22px; color:var(--ink3); transition:transform .15s; }
+.basket.open .chev { transform:rotate(180deg); }
+.basket-body { display:none; padding:0 14px 14px; }
+.basket.open .basket-body { display:block; }
+.b-table { border:1.5px solid var(--line); border-radius:12px; overflow:hidden; margin-top:6px; }
+.b-row { display:flex; justify-content:space-between; gap:8px; padding:10px 12px; font-size:16px; border-bottom:1px solid #EFEAE2; }
+.b-row:last-child { border-bottom:none; }
+.b-row .p { font-weight:700; white-space:nowrap; }
+.b-row.head { background:var(--soft-head); font-weight:800; font-size:15px; color:var(--primary); }
+.b-row.free .p { font-weight:400; color:var(--ink3); font-size:14px; }
+.b-row.total { background:var(--soft-green); font-weight:800; font-size:17px; }
+.b-chains { margin-top:10px; border:1.5px solid var(--line); border-radius:12px; padding:10px 12px; }
+.b-chains h3 { font-size:16px; font-weight:800; margin-bottom:6px; }
+.b-chain-row { display:flex; justify-content:space-between; font-size:16px; padding:4px 0; }
+.b-chain-row.best { color:var(--green); font-weight:800; }
+.b-share { margin-top:10px; width:100%; background:var(--primary); color:#fff; border:none; border-radius:12px; min-height:52px; font-size:18px; font-weight:800; font-family:inherit; }
+.b-note { font-size:13px; color:var(--ink3); margin-top:8px; }
