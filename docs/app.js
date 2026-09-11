@@ -469,6 +469,10 @@ function renderResults(result) {
   lastResult = result;
   const counts = { g:0, y:0, r:0 };
   result.rated.forEach(x => { const rr = x.kind === 'catalog' ? x.item.rating : x.rule.rating; if (counts[rr] !== undefined) counts[rr]++; });
+  const warn = $('scanQuality');
+  if (warn) warn.innerHTML = result.unmatched.length > result.rated.length
+    ? '<div class="quality-note">זיהינו רק חלק מהשורות בקבלה הזו (התמונה דהויה או מקומטת). לתוצאה מלאה: צלמו שוב באור טוב, בלי קפלים, ישר מעל הקבלה.</div>'
+    : '';
   $('summaryChips').innerHTML =
     `<div class="chip g">${counts.g}<small>ירוק</small></div><div class="chip y">${counts.y}<small>צהוב</small></div><div class="chip r">${counts.r}<small>אדום</small></div>` +
     (result.total ? `<div class="chip total-chip"><small>סה״כ שזוהה בקבלה</small>₪${result.total.toFixed(2)}</div>` : '');
