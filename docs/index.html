@@ -9,8 +9,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+</head><body>
+
+<!-- ===== תפריט צד ===== -->
+<button id="btnMenu" class="menu-fab" aria-label="פתיחת תפריט">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#0D6E63" stroke-width="2.4" stroke-linecap="round"/></svg>
+</button>
+<div id="drawerOverlay" class="drawer-overlay" hidden></div>
+<nav id="drawer" class="drawer" aria-label="תפריט" hidden>
+  <div class="drawer-title">סוכר בסל</div>
+  <a href="#" class="drawer-link" data-nav="home">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="6" width="19" height="14" rx="3" fill="#0D6E63"/><circle cx="12" cy="13" r="4.2" fill="#fff"/><circle cx="12" cy="13" r="2.4" fill="#0D6E63"/></svg>
+    <span>סריקת קבלה<small>המסך הראשי</small></span>
+  </a>
+  <a href="#meals" class="drawer-link" data-nav="meals">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 10h16v2a8 8 0 0 1-16 0v-2z" fill="#0D6E63"/><path d="M9 10V7.5M12 10V6.5M15 10V7.5" stroke="#0D6E63" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <span>ארוחות מומלצות<small>בוקר, צהריים, ערב ונשנושים</small></span>
+  </a>
+  <a href="#baskets" class="drawer-link" data-nav="baskets">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 9h16l-1.5 10.5a2 2 0 0 1-2 1.5h-9a2 2 0 0 1-2-1.5L4 9z" fill="#0D6E63"/><path d="M8 9c0-3.5 1.8-6 4-6s4 2.5 4 6" stroke="#0D6E63" stroke-width="1.8" fill="none"/></svg>
+    <span>סלים לדוגמה<small>סלים מאוזנים מוכנים</small></span>
+  </a>
+</nav>
 
 <!-- ===== מסך בית ===== -->
 <section id="view-home" class="view active">
@@ -81,6 +101,21 @@
   <div class="list-pad"></div>
   <div class="sticky">
     <button class="ghost" id="btnHome">חזרה למסך הראשי</button>
+    <div class="mini-disc">הכוונה כללית - לא ייעוץ רפואי</div>
+  </div>
+</section>
+
+<!-- ===== מסך ארוחות מומלצות ===== -->
+<section id="view-meals" class="view">
+  <div class="topbar">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 10h16v2a8 8 0 0 1-16 0v-2z" fill="#fff"/><path d="M9 10V7.5M12 10V6.5M15 10V7.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+    ארוחות מומלצות
+  </div>
+  <p class="baskets-intro">ארוחות מאוזנות לסוכרתיים, מורכבות רק ממוצרים בדירוג ירוק בקטלוג שלנו - חלבון, סיבים ומדד גליקמי נמוך. המחירים אמיתיים ומתעדכנים מדי יום.</p>
+  <div id="mealsList"></div>
+  <div class="list-pad"></div>
+  <div class="sticky">
+    <button class="ghost" id="btnHomeMeals">חזרה למסך הראשי</button>
     <div class="mini-disc">הכוונה כללית - לא ייעוץ רפואי</div>
   </div>
 </section>
