@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>סוכר בסל - צלמו קבלה, דעו מה אדום</title>
+<meta name="description" content="מצלמים קבלה מהסופר וכל מוצר מקבל דירוג ירוק/צהוב/אדום לסוכרתיים, עם חלופות, מחירים ומקומות קנייה. הכוונה כללית - לא ייעוץ רפואי.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== מסך בית ===== -->
+<section id="view-home" class="view active">
+  <div class="wrap">
+    <div class="logo">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M4 9h16l-1.5 10.5a2 2 0 0 1-2 1.5h-9a2 2 0 0 1-2-1.5L4 9z" fill="#0D6E63"/><path d="M8 9c0-3.5 1.8-6 4-6s4 2.5 4 6" stroke="#0D6E63" stroke-width="1.8" fill="none"/><path d="M9.5 13.5c.8 1 1.7 1.5 2.5 1.5s1.7-.5 2.5-1.5" stroke="#FAF7F2" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      סוכר בסל
+    </div>
+    <p class="tagline">צילמתם קבלה? תוך דקה תדעו מה בסל מעלה סוכר - ובמה כדאי להחליף.</p>
+    <div class="hero">
+      <button id="btnCamera" class="cta-main">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="6" width="19" height="14" rx="3" fill="#fff"/><circle cx="12" cy="13" r="4.2" fill="#0D6E63"/><circle cx="12" cy="13" r="2.4" fill="#fff"/><rect x="8" y="3.5" width="8" height="3.4" rx="1.2" fill="#fff"/></svg>
+        צלמו קבלה או בחרו תמונה
+      </button>
+      <input type="file" id="fileImage" accept="image/*" hidden>
+      <button id="btnPdf" class="cta-sub">העלאת קבלה כקובץ PDF</button>
+      <input type="file" id="filePdf" accept="application/pdf" hidden>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><p>מצלמים את הקבלה מהסופר (או בוחרים תמונה קיימת מהגלריה)</p></div>
+        <div class="step"><div class="num">2</div><p>כל מוצר מקבל צבע: ירוק, צהוב או אדום</p></div>
+        <div class="step"><div class="num">3</div><p>לכל מוצר אדום - חלופה בריאה, המחיר ואיפה קונים</p></div>
+      </div>
+      <div class="basket-link"><a href="#baskets">אין קבלה? נסו סל לדוגמה</a></div>
+      <div class="basket-link"><a href="#" id="btnSample">או הפעילו את הקבלה לדוגמה שלנו</a></div>
+    </div>
+    <p class="privacy">הסריקה מתבצעת כולה בטלפון שלכם. התמונה לא נשלחת לשום שרת.</p>
+    <p class="disclaimer">השירות נותן הכוונה כללית בלבד ואינו תחליף לייעוץ רפואי.<br>בשאלות על התפריט שלכם - התייעצו עם הרופא או הדיאטנית.</p>
+  </div>
+</section>
+
+<!-- ===== מסך סריקה ===== -->
+<section id="view-scan" class="view">
+  <div class="topbar">סוכר בסל</div>
+  <div class="scan-box">
+    <div class="spinner" id="spinner"></div>
+    <p id="scanStatus" class="scan-status">מתכוננים...</p>
+  </div>
+</section>
+
+<!-- ===== מסך תוצאות ===== -->
+<section id="view-results" class="view">
+  <div class="topbar">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="5" y="2.5" width="14" height="19" rx="2" fill="#fff"/><line x1="8.5" y1="7.5" x2="15.5" y2="7.5" stroke="#0D6E63" stroke-width="1.6" stroke-linecap="round"/><line x1="8.5" y1="11" x2="15.5" y2="11" stroke="#0D6E63" stroke-width="1.6" stroke-linecap="round"/><line x1="8.5" y1="14.5" x2="13" y2="14.5" stroke="#0D6E63" stroke-width="1.6" stroke-linecap="round"/></svg>
+    הסל שלכם בדקה
+  </div>
+  <div class="summary" id="summaryChips"></div>
+  <div class="list" id="resultsList"></div>
+  <div class="quotas" id="quotas"></div>
+  <div class="list-pad"></div>
+  <div class="sticky">
+    <button class="share" id="btnShare">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.9-1.3A9.5 9.5 0 1 0 12 2.5z" fill="#fff"/><path d="M8.8 7.8c.3 0 .5.1.7.5l.9 2c.1.3.1.6-.1.8l-.6.7c-.1.2-.2.4 0 .6.5.9 1.7 2 2.7 2.5.2.1.4.1.6-.1l.7-.7c.2-.2.5-.2.8-.1l2 1c.4.2.5.4.5.6 0 1.2-1 2.1-2 2.1-3.6 0-8.2-4.4-8.2-8 0-1 .9-2 2-1.9z" fill="#1E7B34"/></svg>
+      שלחו את ההחלפות לוואטסאפ
+    </button>
+    <button class="ghost" id="btnAgain">סרקו קבלה נוספת</button>
+    <div class="mini-disc">הכוונה כללית - לא ייעוץ רפואי</div>
+  </div>
+</section>
+
+<!-- ===== מסך סלים לדוגמה ===== -->
+<section id="view-baskets" class="view">
+  <div class="topbar">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 9h16l-1.5 10.5a2 2 0 0 1-2 1.5h-9a2 2 0 0 1-2-1.5L4 9z" fill="#fff"/><path d="M8 9c0-3.5 1.8-6 4-6s4 2.5 4 6" stroke="#fff" stroke-width="1.8" fill="none"/></svg>
+    סלים לדוגמה
+  </div>
+  <p class="baskets-intro">סלים מוכנים ומאוזנים לסוכרתיים - עם רשימת מצרכים, מחיר אמיתי לכל רכיב מתומחר, ומחיר למנה.</p>
+  <div id="basketsList"></div>
+  <div class="list-pad"></div>
+  <div class="sticky">
+    <button class="ghost" id="btnHome">חזרה למסך הראשי</button>
+    <div class="mini-disc">הכוונה כללית - לא ייעוץ רפואי</div>
+  </div>
+</section>
+
+<footer class="credit">נבנה על ידי ויקטוריה אפללו</footer>
+<script src="app.js"></script>
+</body>
+</html>
