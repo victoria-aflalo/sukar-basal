@@ -173,23 +173,26 @@ function renderMeals() {
     const opts = MEALS.options.filter(o => o.slot === slot.key);
     if (!opts.length) return '';
     return `<div class="meal-slot">${slotIcon[slot.key] || ''} ${slot.title}</div>` + opts.map(o => {
-      const rows = o.items.map(id => {
-        const it = CAT_BY_ID[id];
+      const rows = o.items.map(ent => {
+        const it = CAT_BY_ID[ent.id];
         if (!it) return '';
-        const p = itemMinPrice(id);
+        const p = itemMinPrice(ent.id);
+        const eff = p != null ? p * (ent.share || 1) : null;
         return `<div class="meal-item">
           ${it.img ? `<img class="mi-img" src="${it.img}" alt="" loading="lazy" onerror="this.remove()">` : ''}
-          <span class="mi-name">${it.name_he}</span>
-          <span class="mi-price">${p != null ? fmt(p) : 'מחיר חסר'}</span>
+          <span class="mi-name">${it.name_he}<small class="mi-qty">${ent.qty || ''}</small></span>
+          <span class="mi-price">${eff != null ? (ent.est ? '≈' : '') + fmt(eff) : 'מחיר חסר'}</span>
         </div>`;
       }).join('');
-      const priced = o.items.map(itemMinPrice).filter(v => v != null);
+      const priced = o.items.map(ent => { const v = itemMinPrice(ent.id); return v != null ? v * (ent.share || 1) : null; }).filter(v => v != null);
       const total = priced.length === o.items.length && priced.length ? priced.reduce((a, b) => a + b, 0) : null;
+      const hasEst = o.items.some(ent => ent.est);
       return `<div class="meal-card">
         <div class="meal-head"><span class="meal-name">${o.name}</span>${total != null ? `<span class="meal-total">${fmt(total)}</span>` : ''}</div>
         <div class="meal-note">${o.note}</div>
         <div class="meal-items">${rows}</div>
         <span class="meal-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#1E7B34"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>כל הרכיבים ירוקים</span>
+        ${hasEst ? '<div class="meal-note" style="margin:6px 0 0">≈ כמות מוערכת - גודל האריזה לא פורסם</div>' : ''}
       </div>`;
     }).join('');
   }).join('');
