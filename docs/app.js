@@ -254,6 +254,63 @@ function loadPdfJs() {
   return pdfLoading;
 }
 
+
+/* חידוד תמונת קבלה לפני OCR: הגדלה, גווני אפור, מתיחת ניגודיות, חידוד */
+function preprocessReceipt(source) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => {
+      try {
+        const scale = Math.max(1, Math.min(3, 2000 / img.width));
+        const w = Math.round(img.width * scale), h = Math.round(img.height * scale);
+        const cv = document.createElement('canvas'); cv.width = w; cv.height = h;
+        const cx = cv.getContext('2d');
+        cx.imageSmoothingEnabled = true; cx.imageSmoothingQuality = 'high';
+        cx.drawImage(img, 0, 0, w, h);
+        const d = cx.getImageData(0, 0, w, h), px = d.data;
+        const n = w * h;
+        const g = new Float32Array(n);
+        let mn = 255, mx = 0;
+        for (let i = 0, j = 0; j < n; i += 4, j++) {
+          const v = 0.299 * px[i] + 0.587 * px[i + 1] + 0.114 * px[i + 2];
+          g[j] = v; if (v < mn) mn = v; if (v > mx) mx = v;
+        }
+        const rng = Math.max(20, mx - mn);
+        for (let j = 0; j < n; j++) g[j] = Math.min(255, Math.max(0, (g[j] - mn) * 255 / rng));
+        // box blur radius 2 (two passes) for unsharp
+        const tmp = new Float32Array(n), blur = new Float32Array(n);
+        for (let y = 0; y < h; y++) {
+          let acc = 0;
+          for (let x = -2; x <= 2; x++) acc += g[y * w + Math.min(w - 1, Math.max(0, x))];
+          for (let x = 0; x < w; x++) {
+            tmp[y * w + x] = acc / 5;
+            const xa = Math.min(w - 1, x + 3), xs = Math.max(0, x - 2);
+            acc += g[y * w + xa] - g[y * w + xs];
+          }
+        }
+        for (let x = 0; x < w; x++) {
+          let acc = 0;
+          for (let y = -2; y <= 2; y++) acc += tmp[Math.min(h - 1, Math.max(0, y)) * w + x];
+          for (let y = 0; y < h; y++) {
+            blur[y * w + x] = acc / 5;
+            const ya = Math.min(h - 1, y + 3), ys = Math.max(0, y - 2);
+            acc += tmp[ya * w + x] - tmp[ys * w + x];
+          }
+        }
+        for (let i = 0, j = 0; j < n; i += 4, j++) {
+          let v = g[j] * 1.7 - blur[j] * 0.7;
+          v = v < 0 ? 0 : v > 255 ? 255 : v;
+          px[i] = px[i + 1] = px[i + 2] = v; px[i + 3] = 255;
+        }
+        cx.putImageData(d, 0, 0);
+        resolve(cv.toDataURL('image/png'));
+      } catch (e) { resolve(source); }
+    };
+    img.onerror = () => resolve(source);
+    img.src = (source instanceof Blob) ? URL.createObjectURL(source) : source;
+  });
+}
+
 function setScan(msg, showSpinner = true) {
   $('scanStatus').textContent = msg;
   $('spinner').classList.toggle('hidden', !showSpinner);
@@ -274,6 +331,8 @@ async function runScan(file) {
       await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
       source = canvas.toDataURL('image/png');
     }
+    setScan('מחדדים את התמונה...');
+    source = await preprocessReceipt(source);
     setScan('טוענים את מנוע הקריאה (בפעם הראשונה לוקח כמה שניות)...');
     await loadTesseract();
     setScan('קוראים את הקבלה... כמה שניות והתוצאה אצלכם');
@@ -342,17 +401,43 @@ function matchRuleLine(line) {
   return null;
 }
 
+function matchBarcode(line) {
+  const runs = line.match(/\d{7,14}/g) || [];
+  for (const run of runs) {
+    for (const it of CATALOG.items) {
+      const bc = it.barcode || '';
+      if (!bc) continue;
+      if (bc === run || (run.length >= 8 && bc.endsWith(run))) return it;
+      if (bc.length === run.length && bc.length >= 12 && lev(bc, run) <= 1) return it;
+    }
+  }
+  return null;
+}
+function linePrice(line) {
+  const nums = (line.match(/\d{1,4}\.\d{2}/g) || []).map(parseFloat).filter(v => v > 0.05 && v < 2000);
+  return nums.length ? Math.max(...nums) : null;
+}
+function receiptTotal(text) {
+  const m = text.match(/סה.{0,3}כ[^\d]{0,10}([\d,]{2,7}\.\d{2})/);
+  if (m) return parseFloat(m[1].replace(',', ''));
+  const tail = text.slice(-600).match(/\d{2,4}\.\d{2}/g);
+  if (tail && tail.length) { const big = tail.map(parseFloat).filter(v => v > 20); if (big.length) return Math.max(...big); }
+  return null;
+}
 function analyzeReceipt(text) {
   buildTokens();
+  const total = receiptTotal(text);
   const lines = text.split('\n').map(rnorm).filter(l => l.replace(/[0-9 ]/g, '').length >= 3);
   const seen = {}; const unmatched = [];
   for (const line of lines) {
     if (RECEIPT_NOISE.some(w => line.includes(w))) continue;
     const ltoks = line.split(' ').filter(w => w.length >= 2);
-    const item = matchCatalogLine(ltoks);
+    const item = matchCatalogLine(ltoks) || matchBarcode(line);
     if (item) {
       if (!seen[item.id]) seen[item.id] = { kind:'catalog', item, count:0 };
       seen[item.id].count++;
+      const rp = linePrice(line);
+      if (rp && !seen[item.id].receiptPrice) seen[item.id].receiptPrice = rp;
       continue;
     }
     const rule = matchRuleLine(line);
@@ -366,7 +451,7 @@ function analyzeReceipt(text) {
     unmatched.push(line);
   }
   const rated = Object.values(seen);
-  return { rated, unmatched };
+  return { rated, unmatched, total };
 }
 
 /* ============ תוצאות ============ */
@@ -379,7 +464,8 @@ function renderResults(result) {
   const counts = { g:0, y:0, r:0 };
   result.rated.forEach(x => { const rr = x.kind === 'catalog' ? x.item.rating : x.rule.rating; if (counts[rr] !== undefined) counts[rr]++; });
   $('summaryChips').innerHTML =
-    `<div class="chip g">${counts.g}<small>ירוק</small></div><div class="chip y">${counts.y}<small>צהוב</small></div><div class="chip r">${counts.r}<small>אדום</small></div>`;
+    `<div class="chip g">${counts.g}<small>ירוק</small></div><div class="chip y">${counts.y}<small>צהוב</small></div><div class="chip r">${counts.r}<small>אדום</small></div>` +
+    (result.total ? `<div class="chip total-chip"><small>סה״כ שזוהה בקבלה</small>₪${result.total.toFixed(2)}</div>` : '');
 
   const order = { r:0, y:1, g:2, n:3 };
   const sorted = [...result.rated].sort((a, b) => {
@@ -398,7 +484,7 @@ function renderResults(result) {
         <div class="where">איפה קונים: ${s.where}</div></div></div>`).join('');
       return `<div class="item">
         <div class="item-head"><div class="badge ${it.rating}">${RATING_ICON[it.rating]}</div>
-          <div class="name">${it.name_he}${price ? ` <span class="est">${price}</span>` : ''}</div>
+          <div class="name">${it.name_he}${price ? ` <span class="est">${price}</span>` : ''}${x.receiptPrice ? ` <span class="est">· בקבלה: ₪${x.receiptPrice.toFixed(2)}</span>` : ''}</div>
           ${it.img ? `<img class="pimg" src="${it.img}" alt="" loading="lazy" onerror="this.remove()">` : ''}</div>
         ${it.why ? `<div class="why">${it.why}</div>` : ''}
         ${swaps ? `<div class="swap"><div class="swap-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 8h13l-3-3M20 16H7l3 3" stroke="#1E7B34" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>החליפו בקנייה הבאה:</div>${swaps}</div>` : ''}
