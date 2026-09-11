@@ -97,3 +97,9 @@ button { cursor:pointer; }
 .b-chain-row.best { color:var(--green); font-weight:800; }
 .b-share { margin-top:10px; width:100%; background:var(--primary); color:#fff; border:none; border-radius:12px; min-height:52px; font-size:18px; font-weight:800; font-family:inherit; }
 .b-note { font-size:13px; color:var(--ink3); margin-top:8px; }
+
+/* תמונות מוצרים */
+.pimg { width:54px; height:54px; object-fit:contain; border-radius:10px; background:#fff; border:1px solid var(--line); flex-shrink:0; }
+.swap-body { display:flex; align-items:center; gap:10px; }
+.swap-body .swap-img { width:48px; height:48px; }
+.swap-body .swap-txt { flex:1; }
