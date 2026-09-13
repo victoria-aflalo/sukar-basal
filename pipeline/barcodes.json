@@ -2994,5 +2994,133 @@
  {
   "id": "muesli_7fruit",
   "barcode": "3270190111108"
+ },
+ {
+  "id": "bamba_strawberry",
+  "barcode": "7290000066295"
+ },
+ {
+  "id": "bamba_halva",
+  "barcode": "7290000072067"
+ },
+ {
+  "id": "bamba_bday",
+  "barcode": "7290000068770"
+ },
+ {
+  "id": "bisli_party_mix",
+  "barcode": "7290111568206"
+ },
+ {
+  "id": "bamba_bisli_mix",
+  "barcode": "7290111564956"
+ },
+ {
+  "id": "doritos_sour",
+  "barcode": "7290100850916"
+ },
+ {
+  "id": "doritos_grill",
+  "barcode": "7290100850923"
+ },
+ {
+  "id": "doritos_plain",
+  "barcode": "7290100850930"
+ },
+ {
+  "id": "pringles_orig",
+  "barcode": "38000138416"
+ },
+ {
+  "id": "pringles_sourcream",
+  "barcode": "38000138430"
+ },
+ {
+  "id": "pringles_bbq",
+  "barcode": "38000232152"
+ },
+ {
+  "id": "nachos_salt",
+  "barcode": "5202175001515"
+ },
+ {
+  "id": "nachos_chili",
+  "barcode": "5202175001539"
+ },
+ {
+  "id": "pop_caramel",
+  "barcode": "4014400925319"
+ },
+ {
+  "id": "pop_plain",
+  "barcode": "7290000420325"
+ },
+ {
+  "id": "pop_butter",
+  "barcode": "7290000420332"
+ },
+ {
+  "id": "onion_rings",
+  "barcode": "7290118423669"
+ },
+ {
+  "id": "nut_walnuts",
+  "barcode": "7290014094895"
+ },
+ {
+  "id": "nut_cashew_natural",
+  "barcode": "7290000078601"
+ },
+ {
+  "id": "nut_cashew_roasted",
+  "barcode": "7290000976433"
+ },
+ {
+  "id": "nut_cashew_unsalted",
+  "barcode": "3245412901454"
+ },
+ {
+  "id": "nut_almonds",
+  "barcode": "7290000977676"
+ },
+ {
+  "id": "seed_sunflower",
+  "barcode": "7290015652254"
+ },
+ {
+  "id": "seed_pumpkin",
+  "barcode": "7296073706007"
+ },
+ {
+  "id": "nut_peanuts",
+  "barcode": "7290000977478"
+ },
+ {
+  "id": "nut_pistachio",
+  "barcode": "7290000077024"
+ },
+ {
+  "id": "mix_nuts_cranberry",
+  "barcode": "7290113192171"
+ },
+ {
+  "id": "bar_coconut",
+  "barcode": "3560071095659"
+ },
+ {
+  "id": "bar_hazelnut",
+  "barcode": "3560070820221"
+ },
+ {
+  "id": "fitness_bar_classic",
+  "barcode": "5900020039590"
+ },
+ {
+  "id": "fitness_bar_choc",
+  "barcode": "5900020015174"
+ },
+ {
+  "id": "cheerios_bar_honey",
+  "barcode": "5900020031877"
  }
 ]

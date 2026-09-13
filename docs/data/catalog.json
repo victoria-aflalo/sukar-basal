@@ -783,15 +783,30 @@
    "name_he": "במבה 80 גרם",
    "barcode": "7290000066318",
    "rating": "y",
-   "why": "חטיף מעובד - פחמימה מהירה ומלח. מנה קטנה, לא שקית.",
-   "swaps": [],
-   "gi": 60,
+   "why": "חצי בוטנים - יותר חלבון ושומן טוב משאר החטיפים המלוחים, אבל עדיין תירס מעובד. מנה קטנה.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 65,
    "gi_band": "בינוני",
    "tokens": [
-    "במבה",
     "80",
-    "גרם",
-    "אסם"
+    "במבה",
+    "גרם"
    ],
    "img": "https://img.rami-levy.co.il/product/7290000066318/medium.jpg",
    "portion_g": 80.0,
@@ -802,22 +817,30 @@
    "name_he": "ביסלי בצל 70 גרם",
    "barcode": "7290115201741",
    "rating": "r",
-   "why": "חטיף מטוגן: קמח לבן + שמן + מלח. שלוש פגיעות בפריט אחד.",
+   "why": "חטיף מלוח מטוגן - תירס/קמח מעובד, הרבה שומן ונתרן, והסוכר עולה מהר.",
    "swaps": [
     {
-     "name": "חומוס עם מקלות מלפפון",
+     "name": "אגוזי מלך קלופים",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/7290106576513/medium.jpg",
-     "match": "חומוס 400 גרם",
-     "ref": "hummus"
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
     }
    ],
    "gi": 70,
-   "gi_band": "גבוה",
+   "gi_band": "גבוהה",
    "tokens": [
+    "70",
     "ביסלי",
     "בצל",
-    "70",
     "גרם"
    ],
    "img": "https://img.rami-levy.co.il/product/7290115201741/medium.jpg",
@@ -1239,40 +1262,73 @@
   },
   {
    "id": "16000548404",
-   "name_he": "חטיף 1/5 שבולת שועל",
+   "name_he": "חטיף 1/5 שיבולת שועל",
    "barcode": "16000548404",
    "rating": "r",
-   "why": "קמח לבן + שמן + מלח - שלוש פגיעות בפריט אחד.",
+   "why": "חטיף דגנים ממותק - סוכר גבוה. קינוח קטן, לא ארוחת בוקר.",
    "swaps": [
     {
-     "name": "חומוס עם מקלות מלפפון",
+     "name": "אגוזי מלך קלופים",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/7290106576513/medium.jpg",
-     "match": "חומוס 400 גרם",
-     "ref": "hummus"
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted",
+     "img": "https://images.openfoodfacts.org/images/products/324/541/290/1454/front_fr.114.400.jpg"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
     }
    ],
-   "tokens": [],
-   "rule_label": "חטיף מלוח / מטוגן",
-   "confidence": "rule",
-   "img": "https://img.rami-levy.co.il/product/16000548404/medium.jpg"
+   "gi": 65,
+   "gi_band": "בינוני",
+   "tokens": [
+    "1/5",
+    "חטיף",
+    "שועל",
+    "שיבולת"
+   ],
+   "portion_g": 35.0,
+   "portion_label": "אריזה של 35 גרם"
   },
   {
    "id": "16000548503",
    "name_he": "חטיף 1/5 מייפל וסוכר",
    "barcode": "16000548503",
    "rating": "r",
-   "why": "סוכר - העלייה הכי מהירה שיש. המטרה: כמעט אפס.",
+   "why": "חטיף דגנים ממותק - סוכר גבוה. קינוח קטן, לא ארוחת בוקר. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
    "swaps": [
     {
-     "name": "ממתיק אריתריטול/סטיביה",
-     "where": "חנויות טבע כמו ניצת הדובדבן - כדאי לבדוק בסניף"
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted",
+     "img": "https://images.openfoodfacts.org/images/products/324/541/290/1454/front_fr.114.400.jpg"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
     }
    ],
-   "tokens": [],
-   "rule_label": "סוכר",
-   "confidence": "rule",
-   "img": "https://img.rami-levy.co.il/product/16000548503/medium.jpg"
+   "gi": 65,
+   "gi_band": "בינוני",
+   "tokens": [
+    "1/5",
+    "וסוכר",
+    "חטיף",
+    "מייפל"
+   ],
+   "portion_g": 35.0,
+   "portion_label": "אריזה של 35 גרם"
   },
   {
    "id": "18000701223",
@@ -2401,19 +2457,32 @@
    "name_he": "ביסלי פלאפל 70 גרם",
    "barcode": "7290000066134",
    "rating": "r",
-   "why": "קמח לבן + שמן + מלח - שלוש פגיעות בפריט אחד.",
+   "why": "חטיף מלוח מטוגן - תירס/קמח מעובד, הרבה שומן ונתרן, והסוכר עולה מהר.",
    "swaps": [
     {
-     "name": "חומוס עם מקלות מלפפון",
+     "name": "אגוזי מלך קלופים",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/7290106576513/medium.jpg",
-     "match": "חומוס 400 גרם",
-     "ref": "hummus"
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
     }
    ],
-   "tokens": [],
-   "rule_label": "חטיף מלוח / מטוגן",
-   "confidence": "rule",
+   "gi": 70,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "70",
+    "ביסלי",
+    "גרם",
+    "פלאפל"
+   ],
    "img": "https://img.rami-levy.co.il/product/7290000066134/medium.jpg",
    "portion_g": 70.0,
    "portion_label": "אריזה של 70 גרם"
@@ -2423,19 +2492,32 @@
    "name_he": "ביסלי גריל 70 גרם",
    "barcode": "7290000066141",
    "rating": "r",
-   "why": "קמח לבן + שמן + מלח - שלוש פגיעות בפריט אחד.",
+   "why": "חטיף מלוח מטוגן - תירס/קמח מעובד, הרבה שומן ונתרן, והסוכר עולה מהר.",
    "swaps": [
     {
-     "name": "חומוס עם מקלות מלפפון",
+     "name": "אגוזי מלך קלופים",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/7290106576513/medium.jpg",
-     "match": "חומוס 400 גרם",
-     "ref": "hummus"
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
     }
    ],
-   "tokens": [],
-   "rule_label": "חטיף מלוח / מטוגן",
-   "confidence": "rule",
+   "gi": 70,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "70",
+    "ביסלי",
+    "גריל",
+    "גרם"
+   ],
    "img": "https://img.rami-levy.co.il/product/7290000066141/medium.jpg",
    "portion_g": 70.0,
    "portion_label": "אריזה של 70 גרם"
@@ -2445,19 +2527,32 @@
    "name_he": "ביסלי פיצה 70 גרם",
    "barcode": "7290000066172",
    "rating": "r",
-   "why": "קמח לבן + שמן + מלח - שלוש פגיעות בפריט אחד.",
+   "why": "חטיף מלוח מטוגן - תירס/קמח מעובד, הרבה שומן ונתרן, והסוכר עולה מהר. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
    "swaps": [
     {
-     "name": "חומוס עם מקלות מלפפון",
+     "name": "אגוזי מלך קלופים",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/7290106576513/medium.jpg",
-     "match": "חומוס 400 גרם",
-     "ref": "hummus"
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
     }
    ],
-   "tokens": [],
-   "rule_label": "חטיף מלוח / מטוגן",
-   "confidence": "rule",
+   "gi": 70,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "70",
+    "ביסלי",
+    "גרם",
+    "פיצה"
+   ],
    "img": "https://img.rami-levy.co.il/product/7290000066172/medium.jpg",
    "portion_g": 70.0,
    "portion_label": "אריזה של 70 גרם"
@@ -2467,19 +2562,32 @@
    "name_he": "ביסלי פלאפל 200 גרם",
    "barcode": "7290000066189",
    "rating": "r",
-   "why": "קמח לבן + שמן + מלח - שלוש פגיעות בפריט אחד.",
+   "why": "חטיף מלוח מטוגן - תירס/קמח מעובד, הרבה שומן ונתרן, והסוכר עולה מהר. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
    "swaps": [
     {
-     "name": "חומוס עם מקלות מלפפון",
+     "name": "אגוזי מלך קלופים",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/7290106576513/medium.jpg",
-     "match": "חומוס 400 גרם",
-     "ref": "hummus"
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
     }
    ],
-   "tokens": [],
-   "rule_label": "חטיף מלוח / מטוגן",
-   "confidence": "rule",
+   "gi": 70,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "200",
+    "ביסלי",
+    "גרם",
+    "פלאפל"
+   ],
    "img": "https://img.rami-levy.co.il/product/7290000066189/medium.jpg",
    "portion_g": 200.0,
    "portion_label": "אריזה של 200 גרם"
@@ -2489,19 +2597,32 @@
    "name_he": "ביסלי גריל 200 גרם",
    "barcode": "7290000066196",
    "rating": "r",
-   "why": "קמח לבן + שמן + מלח - שלוש פגיעות בפריט אחד.",
+   "why": "חטיף מלוח מטוגן - תירס/קמח מעובד, הרבה שומן ונתרן, והסוכר עולה מהר.",
    "swaps": [
     {
-     "name": "חומוס עם מקלות מלפפון",
+     "name": "אגוזי מלך קלופים",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/7290106576513/medium.jpg",
-     "match": "חומוס 400 גרם",
-     "ref": "hummus"
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
     }
    ],
-   "tokens": [],
-   "rule_label": "חטיף מלוח / מטוגן",
-   "confidence": "rule",
+   "gi": 70,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "200",
+    "ביסלי",
+    "גריל",
+    "גרם"
+   ],
    "img": "https://img.rami-levy.co.il/product/7290000066196/medium.jpg",
    "portion_g": 200.0,
    "portion_label": "אריזה של 200 גרם"
@@ -2511,19 +2632,32 @@
    "name_he": "ביסלי פיצה 200 גרם",
    "barcode": "7290000066226",
    "rating": "r",
-   "why": "קמח לבן + שמן + מלח - שלוש פגיעות בפריט אחד.",
+   "why": "חטיף מלוח מטוגן - תירס/קמח מעובד, הרבה שומן ונתרן, והסוכר עולה מהר.",
    "swaps": [
     {
-     "name": "חומוס עם מקלות מלפפון",
+     "name": "אגוזי מלך קלופים",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/7290106576513/medium.jpg",
-     "match": "חומוס 400 גרם",
-     "ref": "hummus"
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
     }
    ],
-   "tokens": [],
-   "rule_label": "חטיף מלוח / מטוגן",
-   "confidence": "rule",
+   "gi": 70,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "200",
+    "ביסלי",
+    "גרם",
+    "פיצה"
+   ],
    "img": "https://img.rami-levy.co.il/product/7290000066226/medium.jpg",
    "portion_g": 200.0,
    "portion_label": "אריזה של 200 גרם"
@@ -2554,23 +2688,38 @@
   },
   {
    "id": "7290000066431",
-   "name_he": "פופקו חטיף פופקורן ב",
+   "name_he": "פופקו חטיף פופקורן בקרמל",
    "barcode": "7290000066431",
    "rating": "r",
-   "why": "קמח לבן + שמן + מלח - שלוש פגיעות בפריט אחד.",
+   "why": "חטיף מתוק - סוכר גבוה ותירס מעובד. מזניק סוכר מהר.",
    "swaps": [
     {
-     "name": "חומוס עם מקלות מלפפון",
+     "name": "אגוזי מלך קלופים",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/7290106576513/medium.jpg",
-     "match": "חומוס 400 גרם",
-     "ref": "hummus"
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
     }
    ],
-   "tokens": [],
-   "rule_label": "חטיף מלוח / מטוגן",
-   "confidence": "rule",
-   "img": "https://img.rami-levy.co.il/product/7290000066431/medium.jpg"
+   "gi": 72,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "בקרמל",
+    "חטיף",
+    "פופקו",
+    "פופקורן"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000066431/medium.jpg",
+   "portion_g": 100.0,
+   "portion_label": "אריזה של 100 גרם"
   },
   {
    "id": "7290000067599",
@@ -2800,11 +2949,17 @@
    "name_he": "לחמית אגוזים 160 גרם",
    "barcode": "7290000074481",
    "rating": "g",
-   "why": "שומן טוב וסיבים - חטיף מצוין במנה קטנה.",
+   "why": "לחמיית אגוזים - דגן עם אגוזים וסיבים, עדיפה על חטיף. במידה.",
    "swaps": [],
-   "tokens": [],
-   "rule_label": "אגוזים",
-   "confidence": "rule",
+   "gi": 45,
+   "gi_band": "נמוך",
+   "tokens": [
+    "160",
+    "אגוזים",
+    "גרם",
+    "לחמית"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000074481/medium.jpg",
    "portion_g": 160.0,
    "portion_label": "אריזה של 160 גרם"
   },
@@ -7142,22 +7297,39 @@
   },
   {
    "id": "7290010117864",
-   "name_he": "דוריטוס חריף אש 70 ג",
+   "name_he": "דוריטוס חריף אש 70 גרם",
    "barcode": "7290010117864",
    "rating": "r",
-   "why": "קמח לבן + שמן + מלח - שלוש פגיעות בפריט אחד.",
+   "why": "חטיף מלוח מטוגן - תירס/קמח מעובד, הרבה שומן ונתרן, והסוכר עולה מהר. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
    "swaps": [
     {
-     "name": "חומוס עם מקלות מלפפון",
+     "name": "אגוזי מלך קלופים",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/7290106576513/medium.jpg",
-     "match": "חומוס 400 גרם",
-     "ref": "hummus"
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
     }
    ],
-   "tokens": [],
-   "rule_label": "חטיף מלוח / מטוגן",
-   "confidence": "rule"
+   "gi": 72,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "70",
+    "אש",
+    "גרם",
+    "דוריטוס",
+    "חריף"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290010117864/medium.jpg",
+   "portion_g": 70.0,
+   "portion_label": "אריזה של 70 גרם"
   },
   {
    "id": "7290010154012",
@@ -12579,6 +12751,1001 @@
    "img": "https://images.openfoodfacts.org/images/products/327/019/011/1108/front_en.111.400.jpg",
    "portion_g": 500.0,
    "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "bamba_strawberry",
+   "name_he": "במבה מתוקה בטעם תות 30 גרם",
+   "barcode": "7290000066295",
+   "rating": "r",
+   "why": "חטיף מתוק - סוכר גבוה ותירס מעובד. מזניק סוכר מהר.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 70,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "30",
+    "בטעם",
+    "במבה",
+    "גרם",
+    "מתוקה",
+    "תות"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000066295/medium.jpg",
+   "portion_g": 30.0,
+   "portion_label": "אריזה של 30 גרם"
+  },
+  {
+   "id": "bamba_halva",
+   "name_he": "במבה במילוי קרם חלבה 60 גרם",
+   "barcode": "7290000072067",
+   "rating": "r",
+   "why": "חטיף מתוק - סוכר גבוה ותירס מעובד. מזניק סוכר מהר.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 70,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "60",
+    "במבה",
+    "במילוי",
+    "גרם",
+    "חלבה",
+    "קרם"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000072067/medium.jpg",
+   "portion_g": 60.0,
+   "portion_label": "אריזה של 60 גרם"
+  },
+  {
+   "id": "bamba_bday",
+   "name_he": "במבה יום הולדת 80 גרם",
+   "barcode": "7290000068770",
+   "rating": "r",
+   "why": "חטיף מתוק - סוכר גבוה ותירס מעובד. מזניק סוכר מהר.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 70,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "80",
+    "במבה",
+    "גרם",
+    "הולדת",
+    "יום"
+   ],
+   "portion_g": 80.0,
+   "portion_label": "אריזה של 80 גרם"
+  },
+  {
+   "id": "bisli_party_mix",
+   "name_he": "ביסלי פארטי מיקס 150 גרם",
+   "barcode": "7290111568206",
+   "rating": "r",
+   "why": "חטיף מלוח מטוגן - תירס/קמח מעובד, הרבה שומן ונתרן, והסוכר עולה מהר.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 70,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "150",
+    "ביסלי",
+    "גרם",
+    "מיקס",
+    "פארטי"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290111568206/medium.jpg",
+   "portion_g": 150.0,
+   "portion_label": "אריזה של 150 גרם"
+  },
+  {
+   "id": "bamba_bisli_mix",
+   "name_he": "במבה ביסלי גריל מיקס 200 גרם",
+   "barcode": "7290111564956",
+   "rating": "r",
+   "why": "חטיף מלוח מטוגן - תירס/קמח מעובד, הרבה שומן ונתרן, והסוכר עולה מהר. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 70,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "200",
+    "ביסלי",
+    "במבה",
+    "גריל",
+    "גרם",
+    "מיקס"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290111564956/medium.jpg",
+   "portion_g": 200.0,
+   "portion_label": "אריזה של 200 גרם"
+  },
+  {
+   "id": "doritos_sour",
+   "name_he": "דוריטוס חמוץ חריף 70 גרם",
+   "barcode": "7290100850916",
+   "rating": "r",
+   "why": "חטיף מלוח מטוגן - תירס/קמח מעובד, הרבה שומן ונתרן, והסוכר עולה מהר.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 72,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "70",
+    "גרם",
+    "דוריטוס",
+    "חמוץ",
+    "חריף"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290100850916/medium.jpg",
+   "portion_g": 70.0,
+   "portion_label": "אריזה של 70 גרם"
+  },
+  {
+   "id": "doritos_grill",
+   "name_he": "דוריטוס גריל 70 גרם",
+   "barcode": "7290100850923",
+   "rating": "r",
+   "why": "חטיף מלוח מטוגן - תירס/קמח מעובד, הרבה שומן ונתרן, והסוכר עולה מהר.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 72,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "70",
+    "גריל",
+    "גרם",
+    "דוריטוס"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290100850923/medium.jpg",
+   "portion_g": 70.0,
+   "portion_label": "אריזה של 70 גרם"
+  },
+  {
+   "id": "doritos_plain",
+   "name_he": "דוריטוס טבעי 70 גרם",
+   "barcode": "7290100850930",
+   "rating": "r",
+   "why": "חטיף מלוח מטוגן - תירס/קמח מעובד, הרבה שומן ונתרן, והסוכר עולה מהר. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 72,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "70",
+    "גרם",
+    "דוריטוס",
+    "טבעי"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290100850930/medium.jpg",
+   "portion_g": 70.0,
+   "portion_label": "אריזה של 70 גרם"
+  },
+  {
+   "id": "pringles_orig",
+   "name_he": "פרינגלס אוריג'ינל 149 גרם",
+   "barcode": "38000138416",
+   "rating": "r",
+   "why": "חטיף מלוח מטוגן - תירס/קמח מעובד, הרבה שומן ונתרן, והסוכר עולה מהר.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 70,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "149",
+    "אוריג'ינל",
+    "גרם",
+    "פרינגלס"
+   ],
+   "img": "https://img.rami-levy.co.il/product/38000138416/medium.jpg",
+   "portion_g": 149.0,
+   "portion_label": "אריזה של 149 גרם"
+  },
+  {
+   "id": "pringles_sourcream",
+   "name_he": "פרינגלס שמנת בצל 158 גרם",
+   "barcode": "38000138430",
+   "rating": "r",
+   "why": "חטיף מלוח מטוגן - תירס/קמח מעובד, הרבה שומן ונתרן, והסוכר עולה מהר.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 70,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "158",
+    "בצל",
+    "גרם",
+    "פרינגלס",
+    "שמנת"
+   ],
+   "img": "https://img.rami-levy.co.il/product/38000138430/medium.jpg",
+   "portion_g": 158.0,
+   "portion_label": "אריזה של 158 גרם"
+  },
+  {
+   "id": "pringles_bbq",
+   "name_he": "פרינגלס ברביקיו 158 גרם",
+   "barcode": "38000232152",
+   "rating": "r",
+   "why": "חטיף מלוח מטוגן - תירס/קמח מעובד, הרבה שומן ונתרן, והסוכר עולה מהר.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 70,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "158",
+    "ברביקיו",
+    "גרם",
+    "פרינגלס"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/003/800/023/2152/front_fr.3.400.jpg",
+   "portion_g": 158.0,
+   "portion_label": "אריזה של 158 גרם"
+  },
+  {
+   "id": "nachos_salt",
+   "name_he": "נאצוס בטעם מלוח 225 גרם",
+   "barcode": "5202175001515",
+   "rating": "r",
+   "why": "חטיף מלוח מטוגן - תירס/קמח מעובד, הרבה שומן ונתרן, והסוכר עולה מהר.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 72,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "225",
+    "בטעם",
+    "גרם",
+    "מלוח",
+    "נאצוס"
+   ],
+   "img": "https://img.rami-levy.co.il/product/5202175001515/medium.jpg",
+   "portion_g": 225.0,
+   "portion_label": "אריזה של 225 גרם"
+  },
+  {
+   "id": "nachos_chili",
+   "name_he": "נאצוס בטעם צ'ילי 225 גרם",
+   "barcode": "5202175001539",
+   "rating": "r",
+   "why": "חטיף מלוח מטוגן - תירס/קמח מעובד, הרבה שומן ונתרן, והסוכר עולה מהר. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 72,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "225",
+    "בטעם",
+    "גרם",
+    "נאצוס",
+    "צ'ילי"
+   ],
+   "img": "https://img.rami-levy.co.il/product/5202175001539/medium.jpg",
+   "portion_g": 225.0,
+   "portion_label": "אריזה של 225 גרם"
+  },
+  {
+   "id": "pop_caramel",
+   "name_he": "פופקורן בציפוי קרמל 140 גרם",
+   "barcode": "4014400925319",
+   "rating": "r",
+   "why": "חטיף מתוק - סוכר גבוה ותירס מעובד. מזניק סוכר מהר.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 72,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "140",
+    "בציפוי",
+    "גרם",
+    "פופקורן",
+    "קרמל"
+   ],
+   "img": "https://img.rami-levy.co.il/product/4014400925319/medium.jpg",
+   "portion_g": 140.0,
+   "portion_label": "אריזה של 140 גרם"
+  },
+  {
+   "id": "pop_plain",
+   "name_he": "פופסטאר פופקורן טבעי 90 גרם",
+   "barcode": "7290000420325",
+   "rating": "y",
+   "why": "פופקורן - יש סיבים אבל המדד הגליקמי גבוה יחסית. מנה קטנה, ולא גרסאות קרמל.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 65,
+   "gi_band": "בינוני",
+   "tokens": [
+    "90",
+    "גרם",
+    "טבעי",
+    "פופסטאר",
+    "פופקורן"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/729/000/042/0325/front_en.3.400.jpg",
+   "portion_g": 90.0,
+   "portion_label": "אריזה של 90 גרם"
+  },
+  {
+   "id": "pop_butter",
+   "name_he": "פופסטאר פופקורן חמאה 90 גרם",
+   "barcode": "7290000420332",
+   "rating": "y",
+   "why": "פופקורן - יש סיבים אבל המדד הגליקמי גבוה יחסית. מנה קטנה, ולא גרסאות קרמל. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 65,
+   "gi_band": "בינוני",
+   "tokens": [
+    "90",
+    "גרם",
+    "חמאה",
+    "פופסטאר",
+    "פופקורן"
+   ],
+   "portion_g": 90.0,
+   "portion_label": "אריזה של 90 גרם"
+  },
+  {
+   "id": "onion_rings",
+   "name_he": "אפרופו טיובס טבעות בצל 50 גרם",
+   "barcode": "7290118423669",
+   "rating": "r",
+   "why": "חטיף מלוח מטוגן - תירס/קמח מעובד, הרבה שומן ונתרן, והסוכר עולה מהר.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 70,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "50",
+    "אפרופו",
+    "בצל",
+    "גרם",
+    "טבעות",
+    "טיובס"
+   ],
+   "portion_g": 50.0,
+   "portion_label": "אריזה של 50 גרם"
+  },
+  {
+   "id": "nut_walnuts",
+   "name_he": "אגוזי מלך קלופים 150 גרם",
+   "barcode": "7290014094895",
+   "rating": "g",
+   "why": "אגוזים וגרעינים טבעיים - שומן טוב, חלבון וסיבים, כמעט לא מזיזים את הסוכר. מנה של כף קטנה, לא שקית.",
+   "swaps": [],
+   "gi": 15,
+   "gi_band": "נמוך",
+   "tokens": [
+    "150",
+    "אגוזי",
+    "גרם",
+    "מלך",
+    "קלופים"
+   ],
+   "portion_g": 150.0,
+   "portion_label": "אריזה של 150 גרם"
+  },
+  {
+   "id": "nut_cashew_natural",
+   "name_he": "קשיו טבעי 200 גרם",
+   "barcode": "7290000078601",
+   "rating": "g",
+   "why": "אגוזים וגרעינים טבעיים - שומן טוב, חלבון וסיבים, כמעט לא מזיזים את הסוכר. מנה של כף קטנה, לא שקית. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [],
+   "gi": 22,
+   "gi_band": "נמוך",
+   "tokens": [
+    "200",
+    "גרם",
+    "טבעי",
+    "קשיו"
+   ],
+   "portion_g": 200.0,
+   "portion_label": "אריזה של 200 גרם"
+  },
+  {
+   "id": "nut_cashew_roasted",
+   "name_he": "קשיו ענק קלוי 200 גרם",
+   "barcode": "7290000976433",
+   "rating": "g",
+   "why": "אגוזים וגרעינים טבעיים - שומן טוב, חלבון וסיבים, כמעט לא מזיזים את הסוכר. מנה של כף קטנה, לא שקית. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [],
+   "gi": 22,
+   "gi_band": "נמוך",
+   "tokens": [
+    "200",
+    "גרם",
+    "ענק",
+    "קלוי",
+    "קשיו"
+   ],
+   "portion_g": 200.0,
+   "portion_label": "אריזה של 200 גרם"
+  },
+  {
+   "id": "nut_cashew_unsalted",
+   "name_he": "קשיו קלוי ללא מלח 125 גרם",
+   "barcode": "3245412901454",
+   "rating": "g",
+   "why": "אגוזים וגרעינים טבעיים - שומן טוב, חלבון וסיבים, כמעט לא מזיזים את הסוכר. מנה של כף קטנה, לא שקית.",
+   "swaps": [],
+   "gi": 22,
+   "gi_band": "נמוך",
+   "tokens": [
+    "125",
+    "גרם",
+    "ללא",
+    "מלח",
+    "קלוי",
+    "קשיו"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/324/541/290/1454/front_fr.114.400.jpg",
+   "portion_g": 125.0,
+   "portion_label": "אריזה של 125 גרם"
+  },
+  {
+   "id": "nut_almonds",
+   "name_he": "שקדים קלויים 200 גרם",
+   "barcode": "7290000977676",
+   "rating": "g",
+   "why": "אגוזים וגרעינים טבעיים - שומן טוב, חלבון וסיבים, כמעט לא מזיזים את הסוכר. מנה של כף קטנה, לא שקית. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [],
+   "gi": 15,
+   "gi_band": "נמוך",
+   "tokens": [
+    "200",
+    "גרם",
+    "קלויים",
+    "שקדים"
+   ],
+   "portion_g": 200.0,
+   "portion_label": "אריזה של 200 גרם"
+  },
+  {
+   "id": "seed_sunflower",
+   "name_he": "גרעיני חמניה קלויים 150 גרם",
+   "barcode": "7290015652254",
+   "rating": "g",
+   "why": "אגוזים וגרעינים טבעיים - שומן טוב, חלבון וסיבים, כמעט לא מזיזים את הסוכר. מנה של כף קטנה, לא שקית. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [],
+   "gi": 35,
+   "gi_band": "נמוך",
+   "tokens": [
+    "150",
+    "גרם",
+    "גרעיני",
+    "חמניה",
+    "קלויים"
+   ],
+   "portion_g": 150.0,
+   "portion_label": "אריזה של 150 גרם"
+  },
+  {
+   "id": "seed_pumpkin",
+   "name_he": "גרעיני דלעת קלויים 250 גרם",
+   "barcode": "7296073706007",
+   "rating": "g",
+   "why": "אגוזים וגרעינים טבעיים - שומן טוב, חלבון וסיבים, כמעט לא מזיזים את הסוכר. מנה של כף קטנה, לא שקית. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [],
+   "gi": 25,
+   "gi_band": "נמוך",
+   "tokens": [
+    "250",
+    "גרם",
+    "גרעיני",
+    "דלעת",
+    "קלויים"
+   ],
+   "portion_g": 250.0,
+   "portion_label": "אריזה של 250 גרם"
+  },
+  {
+   "id": "nut_peanuts",
+   "name_he": "בוטנים קלויים 200 גרם",
+   "barcode": "7290000977478",
+   "rating": "g",
+   "why": "אגוזים וגרעינים טבעיים - שומן טוב, חלבון וסיבים, כמעט לא מזיזים את הסוכר. מנה של כף קטנה, לא שקית. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [],
+   "gi": 14,
+   "gi_band": "נמוך",
+   "tokens": [
+    "200",
+    "בוטנים",
+    "גרם",
+    "קלויים"
+   ],
+   "portion_g": 200.0,
+   "portion_label": "אריזה של 200 גרם"
+  },
+  {
+   "id": "nut_pistachio",
+   "name_he": "פיסטוק ענק קלוי 200 גרם",
+   "barcode": "7290000077024",
+   "rating": "g",
+   "why": "אגוזים וגרעינים טבעיים - שומן טוב, חלבון וסיבים, כמעט לא מזיזים את הסוכר. מנה של כף קטנה, לא שקית. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [],
+   "gi": 28,
+   "gi_band": "נמוך",
+   "tokens": [
+    "200",
+    "גרם",
+    "ענק",
+    "פיסטוק",
+    "קלוי"
+   ],
+   "portion_g": 200.0,
+   "portion_label": "אריזה של 200 גרם"
+  },
+  {
+   "id": "mix_nuts_cranberry",
+   "name_he": "מיקס אגוזים וחמוציות 150 גרם",
+   "barcode": "7290113192171",
+   "rating": "y",
+   "why": "אגוזים עם חמוציות ממותקות - יותר סוכר ממה שנראה. מנה קטנה. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted",
+     "img": "https://images.openfoodfacts.org/images/products/324/541/290/1454/front_fr.114.400.jpg"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 40,
+   "gi_band": "נמוך",
+   "tokens": [
+    "150",
+    "אגוזים",
+    "גרם",
+    "וחמוציות",
+    "מיקס"
+   ],
+   "portion_g": 150.0,
+   "portion_label": "אריזה של 150 גרם"
+  },
+  {
+   "id": "bar_coconut",
+   "name_he": "חטיף דגנים קוקוס",
+   "barcode": "3560071095659",
+   "rating": "y",
+   "why": "חטיף דגנים - נשמע בריא אבל ממותק. מנה אחת, ולקרוא את התווית. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted",
+     "img": "https://images.openfoodfacts.org/images/products/324/541/290/1454/front_fr.114.400.jpg"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 60,
+   "gi_band": "בינוני",
+   "tokens": [
+    "דגנים",
+    "חטיף",
+    "קוקוס"
+   ],
+   "portion_g": 25.0,
+   "portion_label": "אריזה של 25 גרם"
+  },
+  {
+   "id": "bar_hazelnut",
+   "name_he": "חטיף דגנים אגוזי לוז",
+   "barcode": "3560070820221",
+   "rating": "y",
+   "why": "חטיף דגנים - נשמע בריא אבל ממותק. מנה אחת, ולקרוא את התווית.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted",
+     "img": "https://images.openfoodfacts.org/images/products/324/541/290/1454/front_fr.114.400.jpg"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 60,
+   "gi_band": "בינוני",
+   "tokens": [
+    "אגוזי",
+    "דגנים",
+    "חטיף",
+    "לוז"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/356/007/082/0221/front_fr.67.400.jpg",
+   "portion_g": 25.0,
+   "portion_label": "אריזה של 25 גרם"
+  },
+  {
+   "id": "fitness_bar_classic",
+   "name_he": "פיטנס חטיף דגנים קלאסי 6 יחידות",
+   "barcode": "5900020039590",
+   "rating": "y",
+   "why": "חטיף דגנים - נשמע בריא אבל ממותק. מנה אחת, ולקרוא את התווית. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted",
+     "img": "https://images.openfoodfacts.org/images/products/324/541/290/1454/front_fr.114.400.jpg"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 62,
+   "gi_band": "בינוני",
+   "tokens": [
+    "6",
+    "דגנים",
+    "חטיף",
+    "יחידות",
+    "פיטנס",
+    "קלאסי"
+   ],
+   "img": "https://img.rami-levy.co.il/product/5900020039590/medium.jpg",
+   "portion_g": 141.0,
+   "portion_label": "אריזה של 141 גרם"
+  },
+  {
+   "id": "fitness_bar_choc",
+   "name_he": "פיטנס חטיף דגנים שוקולד 6 יחידות",
+   "barcode": "5900020015174",
+   "rating": "r",
+   "why": "חטיף דגנים ממותק - סוכר גבוה. קינוח קטן, לא ארוחת בוקר. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted",
+     "img": "https://images.openfoodfacts.org/images/products/324/541/290/1454/front_fr.114.400.jpg"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 65,
+   "gi_band": "בינוני",
+   "tokens": [
+    "6",
+    "דגנים",
+    "חטיף",
+    "יחידות",
+    "פיטנס",
+    "שוקולד"
+   ],
+   "portion_g": 141.0,
+   "portion_label": "אריזה של 141 גרם"
+  },
+  {
+   "id": "cheerios_bar_honey",
+   "name_he": "צ'יריוס האני חטיף דגנים",
+   "barcode": "5900020031877",
+   "rating": "r",
+   "why": "חטיף דגנים ממותק - סוכר גבוה. קינוח קטן, לא ארוחת בוקר. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    },
+    {
+     "name": "קשיו קלוי ללא מלח",
+     "where": "בכל הרשתות",
+     "ref": "nut_cashew_unsalted",
+     "img": "https://images.openfoodfacts.org/images/products/324/541/290/1454/front_fr.114.400.jpg"
+    },
+    {
+     "name": "בוטנים קלויים",
+     "where": "בכל הרשתות",
+     "ref": "nut_peanuts"
+    }
+   ],
+   "gi": 68,
+   "gi_band": "בינוני",
+   "tokens": [
+    "דגנים",
+    "האני",
+    "חטיף",
+    "צ'יריוס"
+   ],
+   "portion_g": 22.0,
+   "portion_label": "אריזה של 22 גרם"
   }
  ],
  "rules": [
