@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=2">
 </head><body>
 
 <!-- ===== תפריט צד ===== -->
@@ -39,28 +39,51 @@
 <!-- ===== מסך בית ===== -->
 <section id="view-home" class="view active">
   <div class="wrap">
-    <div class="logo">
-      <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M4 9h16l-1.5 10.5a2 2 0 0 1-2 1.5h-9a2 2 0 0 1-2-1.5L4 9z" fill="#0D6E63"/><path d="M8 9c0-3.5 1.8-6 4-6s4 2.5 4 6" stroke="#0D6E63" stroke-width="1.8" fill="none"/><path d="M9.5 13.5c.8 1 1.7 1.5 2.5 1.5s1.7-.5 2.5-1.5" stroke="#FAF7F2" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
-      סוכר בסל
+    <div class="hero-b">
+      <div class="logo logo-b"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M4 9h16l-1.5 10.5a2 2 0 0 1-2 1.5h-9a2 2 0 0 1-2-1.5L4 9z" fill="#fff"/><path d="M8 9c0-3.5 1.8-6 4-6s4 2.5 4 6" stroke="#fff" stroke-width="1.8" fill="none"/><path d="M9.5 13.5c.8 1 1.7 1.5 2.5 1.5s1.7-.5 2.5-1.5" stroke="rgba(13,110,99,.6)" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> סוכר בסל</div>
+      <p class="tagline-b">צלמו קבלה או חפשו מוצר - ותוך דקה תדעו מה מעלה סוכר ובמה כדאי להחליף.</p>
+      <div class="search-b">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="#0D6E63" stroke-width="2.4"/><path d="M15.5 15.5 21 21" stroke="#0D6E63" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <input class="home-search-input" data-home-search type="search" inputmode="search" autocomplete="off" placeholder="חפשו מוצר - למשל: לחם, גבינה, קולה" aria-label="חיפוש מוצר">
+      </div>
+      <div class="chips chips-b">
+        <button class="chip-q" data-search-chip="לחם">לחם</button>
+        <button class="chip-q" data-search-chip="גבינה">גבינה</button>
+        <button class="chip-q" data-search-chip="יוגורט">יוגורט</button>
+        <button class="chip-q" data-search-chip="חטיף">חטיף</button>
+      </div>
     </div>
-    <p class="tagline">צילמתם קבלה? תוך דקה תדעו מה בסל מעלה סוכר - ובמה כדאי להחליף.</p>
-    <div class="hero">
-      <button id="btnCamera" class="cta-main">
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="6" width="19" height="14" rx="3" fill="#fff"/><circle cx="12" cy="13" r="4.2" fill="#0D6E63"/><circle cx="12" cy="13" r="2.4" fill="#fff"/><rect x="8" y="3.5" width="8" height="3.4" rx="1.2" fill="#fff"/></svg>
-        צלמו קבלה או בחרו תמונה
+
+    <div class="grid-c">
+      <button id="btnCamera" class="cell-c cell-green cell-wide">
+        <span class="cell-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="6" width="19" height="14" rx="3" fill="#fff"/><circle cx="12" cy="13" r="4.2" fill="#0D6E63"/><circle cx="12" cy="13" r="2.4" fill="#fff"/><rect x="8" y="3.5" width="8" height="3.4" rx="1.2" fill="#fff"/></svg></span>
+        <span class="cell-wide-txt"><b>סריקת קבלה</b><small>צלמו או בחרו תמונה - כל מוצר מקבל צבע וחלופה</small></span>
       </button>
       <input type="file" id="fileImage" accept="image/*" hidden>
-      <button id="btnPdf" class="cta-sub">העלאת קבלה כקובץ PDF</button>
-      <input type="file" id="filePdf" accept="application/pdf" hidden>
-      <div class="steps">
-        <div class="step"><div class="num">1</div><p>מצלמים את הקבלה מהסופר (או בוחרים תמונה קיימת מהגלריה)</p></div>
-        <div class="step"><div class="num">2</div><p>כל מוצר מקבל צבע: ירוק, צהוב או אדום</p></div>
-        <div class="step"><div class="num">3</div><p>לכל מוצר אדום - חלופה בריאה, המחיר ואיפה קונים</p></div>
-      </div>
-      <div class="basket-link"><a href="#baskets">אין קבלה? נסו סל לדוגמה</a></div>
-      <div class="basket-link"><a href="#" id="btnSample">או הפעילו את הקבלה לדוגמה שלנו</a></div>
-      <div class="basket-link"><a href="#search">או חפשו מוצר ספציפי מהרשימה המלאה - בלי קבלה</a></div>
+      <a href="#baskets" class="cell-c">
+        <span class="cell-ic cell-ic-soft"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 9h16l-1.5 10.5a2 2 0 0 1-2 1.5h-9a2 2 0 0 1-2-1.5L4 9z" fill="#0D6E63"/><path d="M8 9c0-3.5 1.8-6 4-6s4 2.5 4 6" stroke="#0D6E63" stroke-width="1.8" fill="none"/></svg></span>
+        <b>סלים לדוגמה</b>
+        <small>סלים מאוזנים מוכנים</small>
+      </a>
+      <a href="#meals" class="cell-c">
+        <span class="cell-ic cell-ic-soft"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 10h16v2a8 8 0 0 1-16 0v-2z" fill="#0D6E63"/><path d="M9 10V7.5M12 10V6.5M15 10V7.5" stroke="#0D6E63" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <b>ארוחות מומלצות</b>
+        <small>בוקר, צהריים וערב</small>
+      </a>
     </div>
+
+    <details class="how-c">
+      <summary>איך זה עובד? <span class="how-chev">‹</span></summary>
+      <div class="how-body">
+        <div class="st-row"><span class="st-num">1</span><p>מצלמים את הקבלה מהסופר (או בוחרים תמונה מהגלריה)</p></div>
+        <div class="st-row"><span class="st-num">2</span><p>כל מוצר מקבל צבע: ירוק, צהוב או אדום</p></div>
+        <div class="st-row"><span class="st-num">3</span><p>לכל מוצר אדום - חלופה בריאה, המחיר ואיפה קונים</p></div>
+        <button id="btnPdf" class="pdf-link">אפשר גם להעלות קבלה כקובץ PDF</button>
+        <input type="file" id="filePdf" accept="application/pdf" hidden>
+      </div>
+    </details>
+
+    <div class="basket-link"><a href="#" id="btnSample">אין קבלה? הפעילו את הקבלה לדוגמה שלנו</a></div>
     <p class="privacy">הסריקה מתבצעת כולה בטלפון שלכם. התמונה לא נשלחת לשום שרת.</p>
     <p class="disclaimer">השירות נותן הכוונה כללית בלבד ואינו תחליף לייעוץ רפואי.<br>בשאלות על התפריט שלכם - התייעצו עם הרופא או הדיאטנית.</p>
   </div>
@@ -147,6 +170,6 @@
 </section>
 
 <footer class="credit">נבנה על ידי ויקטוריה אפללו</footer>
-<script src="app.js?v=9"></script>
+<script src="app.js?v=10"></script>
 </body>
 </html>
