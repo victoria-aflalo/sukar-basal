@@ -850,25 +850,35 @@
   },
   {
    "id": "cornflakes",
-   "name_he": "קורנפלקס 850 גרם",
+   "name_he": "קורנפלקס אלופים תלמה 850 גרם",
    "barcode": "7290112494351",
    "rating": "r",
-   "why": "קורנפלקס מעלה סוכר מהר יותר מסוכר עצמו (מדד גליקמי 81).",
+   "why": "פתיתי תירס מעובדים - מדד גליקמי מהגבוהים שיש (סביב 80) וגם סוכר. ארוחת בוקר שמזניקה את הסוכר.",
    "swaps": [
     {
-     "name": "שיבולת שועל אמיתית (לא דגני בוקר)",
+     "name": "דגני בוקר פייבר 1",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/5411188124689/medium.jpg",
-     "match": "אלפרו משקה שיבולת שו"
+     "ref": "cereal_fiber1"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
     }
    ],
    "gi": 81,
-   "gi_band": "גבוה",
+   "gi_band": "גבוהה",
    "tokens": [
-    "קורנפלקס",
+    "850",
     "אלופים",
-    "בדץ",
-    "850ג"
+    "גרם",
+    "קורנפלקס",
+    "תלמה"
    ],
    "img": "https://img.rami-levy.co.il/product/7290112494351/medium.jpg",
    "portion_g": 850.0,
@@ -1340,22 +1350,40 @@
   },
   {
    "id": "3387390525960",
-   "name_he": "קראנץ' דגני בוקר בטע",
+   "name_he": "קראנץ' דגני בוקר תלמה 500 גרם",
    "barcode": "3387390525960",
    "rating": "r",
-   "why": "רוב דגני הבוקר מלאים סוכר ומעלים סוכר מהר.",
+   "why": "דגני בוקר ממותקים - הרבה סוכר ודגן מעובד. עדיף שיבולת שועל או דגנים עתירי סיבים.",
    "swaps": [
     {
-     "name": "שיבולת שועל אמיתית",
+     "name": "דגני בוקר פייבר 1",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/5411188124689/medium.jpg",
-     "match": "אלפרו משקה שיבולת שו"
+     "ref": "cereal_fiber1"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
     }
    ],
-   "tokens": [],
-   "rule_label": "דגני בוקר",
-   "confidence": "rule",
-   "img": "https://img.rami-levy.co.il/product/3387390525960/medium.jpg"
+   "gi": 77,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "500",
+    "בוקר",
+    "גרם",
+    "דגני",
+    "קראנץ'",
+    "תלמה"
+   ],
+   "img": "https://img.rami-levy.co.il/product/3387390525960/medium.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
   },
   {
    "id": "3574660089547",
@@ -4683,21 +4711,41 @@
   },
   {
    "id": "7290001343845",
-   "name_he": "גרנולה פירות 850 ג ש",
+   "name_he": "גרנולה פירות שוגה 850 גרם",
    "barcode": "7290001343845",
-   "rating": "r",
-   "why": "רוב דגני הבוקר מלאים סוכר ומעלים סוכר מהר.",
+   "rating": "y",
+   "why": "אגוזים ושיבולת שועל אבל ממותקת - צפופה בקלוריות. כף-שתיים כתוספת, לא קערה מלאה.",
    "swaps": [
     {
-     "name": "שיבולת שועל אמיתית",
+     "name": "דגני בוקר פייבר 1",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/5411188124689/medium.jpg",
-     "match": "אלפרו משקה שיבולת שו"
+     "ref": "cereal_fiber1",
+     "img": "https://images.openfoodfacts.org/images/products/001/600/018/5517/front_en.3.400.jpg"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava",
+     "img": "https://img.rami-levy.co.il/product/7290014095960/medium.jpg"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
     }
    ],
-   "tokens": [],
-   "rule_label": "דגני בוקר",
-   "confidence": "rule"
+   "gi": 62,
+   "gi_band": "בינוני",
+   "tokens": [
+    "850",
+    "גרם",
+    "גרנולה",
+    "פירות",
+    "שוגה"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290001343845/medium.jpg",
+   "portion_g": 850.0,
+   "portion_label": "אריזה של 850 גרם"
   },
   {
    "id": "7290001485019",
@@ -7970,57 +8018,121 @@
   },
   {
    "id": "7290014471412",
-   "name_he": "מוזלי בוטנים אגוזים",
+   "name_he": "מוזלי בוטנים אגוזים ושקדים שוגה 850 גרם",
    "barcode": "7290014471412",
-   "rating": "r",
-   "why": "רוב דגני הבוקר מלאים סוכר ומעלים סוכר מהר.",
+   "rating": "y",
+   "why": "פירות יבשים ודגנים - סיבים טובים אבל צפוף בסוכר וקלוריות. מנה קטנה.",
    "swaps": [
     {
-     "name": "שיבולת שועל אמיתית",
+     "name": "דגני בוקר פייבר 1",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/5411188124689/medium.jpg",
-     "match": "אלפרו משקה שיבולת שו"
+     "ref": "cereal_fiber1",
+     "img": "https://images.openfoodfacts.org/images/products/001/600/018/5517/front_en.3.400.jpg"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava",
+     "img": "https://img.rami-levy.co.il/product/7290014095960/medium.jpg"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
     }
    ],
-   "tokens": [],
-   "rule_label": "דגני בוקר",
-   "confidence": "rule"
+   "gi": 60,
+   "gi_band": "בינוני",
+   "tokens": [
+    "850",
+    "אגוזים",
+    "בוטנים",
+    "גרם",
+    "ושקדים",
+    "מוזלי",
+    "שוגה"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290014471412/medium.jpg",
+   "portion_g": 850.0,
+   "portion_label": "אריזה של 850 גרם"
   },
   {
    "id": "7290014471429",
-   "name_he": "מוזלי פירות 850גר שק",
+   "name_he": "מוזלי פירות יבשים שוגה 850 גרם",
    "barcode": "7290014471429",
-   "rating": "r",
-   "why": "רוב דגני הבוקר מלאים סוכר ומעלים סוכר מהר.",
+   "rating": "y",
+   "why": "פירות יבשים ודגנים - סיבים טובים אבל צפוף בסוכר וקלוריות. מנה קטנה.",
    "swaps": [
     {
-     "name": "שיבולת שועל אמיתית",
+     "name": "דגני בוקר פייבר 1",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/5411188124689/medium.jpg",
-     "match": "אלפרו משקה שיבולת שו"
+     "ref": "cereal_fiber1",
+     "img": "https://images.openfoodfacts.org/images/products/001/600/018/5517/front_en.3.400.jpg"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava",
+     "img": "https://img.rami-levy.co.il/product/7290014095960/medium.jpg"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
     }
    ],
-   "tokens": [],
-   "rule_label": "דגני בוקר",
-   "confidence": "rule"
+   "gi": 60,
+   "gi_band": "בינוני",
+   "tokens": [
+    "850",
+    "גרם",
+    "יבשים",
+    "מוזלי",
+    "פירות",
+    "שוגה"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290014471429/medium.jpg",
+   "portion_g": 850.0,
+   "portion_label": "אריזה של 850 גרם"
   },
   {
    "id": "7290014471443",
-   "name_he": "גרנולה עם צימוקים אג",
+   "name_he": "גרנולה צימוקים ואגוזים שוגה 850 גרם",
    "barcode": "7290014471443",
-   "rating": "r",
-   "why": "רוב דגני הבוקר מלאים סוכר ומעלים סוכר מהר.",
+   "rating": "y",
+   "why": "אגוזים ושיבולת שועל אבל ממותקת - צפופה בקלוריות. כף-שתיים כתוספת, לא קערה מלאה.",
    "swaps": [
     {
-     "name": "שיבולת שועל אמיתית",
+     "name": "דגני בוקר פייבר 1",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/5411188124689/medium.jpg",
-     "match": "אלפרו משקה שיבולת שו"
+     "ref": "cereal_fiber1",
+     "img": "https://images.openfoodfacts.org/images/products/001/600/018/5517/front_en.3.400.jpg"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava",
+     "img": "https://img.rami-levy.co.il/product/7290014095960/medium.jpg"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
     }
    ],
-   "tokens": [],
-   "rule_label": "דגני בוקר",
-   "confidence": "rule"
+   "gi": 62,
+   "gi_band": "בינוני",
+   "tokens": [
+    "850",
+    "גרם",
+    "גרנולה",
+    "ואגוזים",
+    "צימוקים",
+    "שוגה"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290014471443/medium.jpg",
+   "portion_g": 850.0,
+   "portion_label": "אריזה של 850 גרם"
   },
   {
    "id": "7290014472990",
@@ -11333,6 +11445,1140 @@
     "רוסטיק"
    ],
    "img": "https://img.rami-levy.co.il/product/7290001461457/medium.jpg"
+  },
+  {
+   "id": "corn_telma400",
+   "name_he": "קורנפלקס תלמה 400 גרם",
+   "barcode": "7290116535371",
+   "rating": "r",
+   "why": "פתיתי תירס מעובדים - מדד גליקמי מהגבוהים שיש (סביב 80) וגם סוכר. ארוחת בוקר שמזניקה את הסוכר.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 81,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "400",
+    "גרם",
+    "קורנפלקס",
+    "תלמה"
+   ],
+   "portion_g": 400.0,
+   "portion_label": "אריזה של 400 גרם"
+  },
+  {
+   "id": "corn_dvash",
+   "name_he": "קורנפלקס דבש תלמה 448 גרם",
+   "barcode": "7290112495228",
+   "rating": "r",
+   "why": "פתיתי תירס מעובדים - מדד גליקמי מהגבוהים שיש (סביב 80) וגם סוכר. ארוחת בוקר שמזניקה את הסוכר.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 81,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "448",
+    "גרם",
+    "דבש",
+    "קורנפלקס",
+    "תלמה"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290112495228/medium.jpg",
+   "portion_g": 448.0,
+   "portion_label": "אריזה של 448 גרם"
+  },
+  {
+   "id": "corn_lg",
+   "name_he": "קורנפלקס ללא גלוטן תלמה 500 גרם",
+   "barcode": "7290116533599",
+   "rating": "r",
+   "why": "פתיתי תירס מעובדים - מדד גליקמי מהגבוהים שיש (סביב 80) וגם סוכר. ארוחת בוקר שמזניקה את הסוכר.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 80,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "500",
+    "גלוטן",
+    "גרם",
+    "ללא",
+    "קורנפלקס",
+    "תלמה"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290116533599/medium.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "corn_harduf",
+   "name_he": "קורנפלקס אורגני הרדוף 375 גרם",
+   "barcode": "7290017325910",
+   "rating": "r",
+   "why": "פתיתי תירס מעובדים - מדד גליקמי מהגבוהים שיש (סביב 80) וגם סוכר. ארוחת בוקר שמזניקה את הסוכר.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 81,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "375",
+    "אורגני",
+    "גרם",
+    "הרדוף",
+    "קורנפלקס"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290017325910/medium.jpg",
+   "portion_g": 375.0,
+   "portion_label": "אריזה של 375 גרם"
+  },
+  {
+   "id": "corn_kelloggs",
+   "name_he": "קורנפלקס קלוגס 500 גרם",
+   "barcode": "5059319029924",
+   "rating": "r",
+   "why": "פתיתי תירס מעובדים - מדד גליקמי מהגבוהים שיש (סביב 80) וגם סוכר. ארוחת בוקר שמזניקה את הסוכר. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 81,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "500",
+    "גרם",
+    "קורנפלקס",
+    "קלוגס"
+   ],
+   "img": "https://img.rami-levy.co.il/product/5059319029924/medium.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "corn_carrefour",
+   "name_he": "קורנפלקס קרפור 500 גרם",
+   "barcode": "3560071016074",
+   "rating": "r",
+   "why": "פתיתי תירס מעובדים - מדד גליקמי מהגבוהים שיש (סביב 80) וגם סוכר. ארוחת בוקר שמזניקה את הסוכר.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 80,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "500",
+    "גרם",
+    "קורנפלקס",
+    "קרפור"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/356/007/101/6074/front_fr.48.400.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "corn_fitness",
+   "name_he": "קורנפלקס פיטנס 500 גרם",
+   "barcode": "5900020041142",
+   "rating": "r",
+   "why": "פתיתי תירס מעובדים - מדד גליקמי מהגבוהים שיש (סביב 80) וגם סוכר. ארוחת בוקר שמזניקה את הסוכר.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 80,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "500",
+    "גרם",
+    "פיטנס",
+    "קורנפלקס"
+   ],
+   "img": "https://img.rami-levy.co.il/product/5900020041142/medium.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "corn_ramilevi",
+   "name_he": "קורנפלקס רמי לוי 750 גרם",
+   "barcode": "7290016733532",
+   "rating": "r",
+   "why": "פתיתי תירס מעובדים - מדד גליקמי מהגבוהים שיש (סביב 80) וגם סוכר. ארוחת בוקר שמזניקה את הסוכר.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 80,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "750",
+    "גרם",
+    "לוי",
+    "קורנפלקס",
+    "רמי"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290016733532/medium.jpg",
+   "portion_g": 750.0,
+   "portion_label": "אריזה של 750 גרם"
+  },
+  {
+   "id": "corn_shakedya",
+   "name_he": "קורנפלקס שקדיה 700 גרם",
+   "barcode": "7290015652612",
+   "rating": "r",
+   "why": "פתיתי תירס מעובדים - מדד גליקמי מהגבוהים שיש (סביב 80) וגם סוכר. ארוחת בוקר שמזניקה את הסוכר. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 80,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "700",
+    "גרם",
+    "קורנפלקס",
+    "שקדיה"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290015652612/medium.jpg",
+   "portion_g": 700.0,
+   "portion_label": "אריזה של 700 גרם"
+  },
+  {
+   "id": "cereal_nesquik",
+   "name_he": "דגני בוקר נסקוויק 500 גרם",
+   "barcode": "5900020012814",
+   "rating": "r",
+   "why": "דגני בוקר ממותקים - הרבה סוכר ודגן מעובד. עדיף שיבולת שועל או דגנים עתירי סיבים. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 77,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "500",
+    "בוקר",
+    "גרם",
+    "דגני",
+    "נסקוויק"
+   ],
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "cereal_lion",
+   "name_he": "דגני בוקר ליון 400 גרם",
+   "barcode": "5900020036407",
+   "rating": "r",
+   "why": "דגני בוקר ממותקים - הרבה סוכר ודגן מעובד. עדיף שיבולת שועל או דגנים עתירי סיבים.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 77,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "400",
+    "בוקר",
+    "גרם",
+    "דגני",
+    "ליון"
+   ],
+   "img": "https://img.rami-levy.co.il/product/5900020036407/medium.jpg",
+   "portion_g": 400.0,
+   "portion_label": "אריזה של 400 גרם"
+  },
+  {
+   "id": "cereal_ciniminis",
+   "name_he": "דגני בוקר סיני מיניס 500 גרם",
+   "barcode": "5900020049865",
+   "rating": "r",
+   "why": "דגני בוקר ממותקים - הרבה סוכר ודגן מעובד. עדיף שיבולת שועל או דגנים עתירי סיבים.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 74,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "500",
+    "בוקר",
+    "גרם",
+    "דגני",
+    "מיניס",
+    "סיני"
+   ],
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "cereal_fitness_fruit",
+   "name_he": "דגני בוקר פיטנס פירות 375 גרם",
+   "barcode": "3387390320244",
+   "rating": "y",
+   "why": "דגן מלא אבל עם סוכר - טוב מקורנפלקס, פחות טוב משיבולת שועל. במידה. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 70,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "375",
+    "בוקר",
+    "גרם",
+    "דגני",
+    "פיטנס",
+    "פירות"
+   ],
+   "img": "https://img.rami-levy.co.il/product/3387390320244/medium.jpg",
+   "portion_g": 375.0,
+   "portion_label": "אריזה של 375 גרם"
+  },
+  {
+   "id": "cereal_cheerios",
+   "name_he": "צ'יריוס שיבולת שועל 500 גרם",
+   "barcode": "5900020046833",
+   "rating": "y",
+   "why": "שיבולת שועל אבל מעובדת ומתוקה קלות, מדד גליקמי גבוה יחסית. מנה קטנה, במידה.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 74,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "500",
+    "גרם",
+    "צ'יריוס",
+    "שועל",
+    "שיבולת"
+   ],
+   "img": "https://img.rami-levy.co.il/product/5900020046833/medium.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "cereal_weetabix",
+   "name_he": "דגני בוקר ויטביקס 430 גרם",
+   "barcode": "5010029000061",
+   "rating": "y",
+   "why": "חיטה מלאה כמעט בלי סוכר, אבל מדד גליקמי בינוני. מנה קטנה ולשלב חלבון.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 69,
+   "gi_band": "בינוני",
+   "tokens": [
+    "430",
+    "בוקר",
+    "גרם",
+    "דגני",
+    "ויטביקס"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/501/002/900/0061/front_en.77.400.jpg",
+   "portion_g": 430.0,
+   "portion_label": "אריזה של 430 גרם"
+  },
+  {
+   "id": "cereal_fiber1",
+   "name_he": "דגני בוקר פייבר 1 450 גרם",
+   "barcode": "16000185517",
+   "rating": "g",
+   "why": "עתיר סיבים (סובין) וכמעט בלי סוכר - הבחירה הטובה בדגני הבוקר המוכנים.",
+   "swaps": [],
+   "gi": 49,
+   "gi_band": "נמוך",
+   "tokens": [
+    "1",
+    "450",
+    "בוקר",
+    "גרם",
+    "דגני",
+    "פייבר"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/001/600/018/5517/front_en.3.400.jpg",
+   "portion_g": 450.0,
+   "portion_label": "אריזה של 450 גרם"
+  },
+  {
+   "id": "oat_quaker500",
+   "name_he": "קוואקר שיבולת שועל 500 גרם",
+   "barcode": "5000108478119",
+   "rating": "g",
+   "why": "שיבולת שועל מלאה - סיבים מסיסים (בטא-גלוקן) שמאטים את עליית הסוכר ומורידים כולסטרול. הבחירה הטובה בבוקר.",
+   "swaps": [],
+   "gi": 58,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "גרם",
+    "קוואקר",
+    "שועל",
+    "שיבולת"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/500/010/847/8119/front_en.71.400.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "oat_quaker_daka",
+   "name_he": "קוואקר שיבולת שועל דקה 500 גרם",
+   "barcode": "7290014095861",
+   "rating": "g",
+   "why": "שיבולת שועל דקה - עדיין בחירה טובה, אבל עולה קצת יותר מהר מהעבה.",
+   "swaps": [],
+   "gi": 66,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "גרם",
+    "דקה",
+    "קוואקר",
+    "שועל",
+    "שיבולת"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290014095861/medium.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "oat_quaker_ava",
+   "name_he": "קוואקר שיבולת שועל עבה 400 גרם",
+   "barcode": "7290014095960",
+   "rating": "g",
+   "why": "שיבולת שועל מלאה - סיבים מסיסים (בטא-גלוקן) שמאטים את עליית הסוכר ומורידים כולסטרול. הבחירה הטובה בבוקר.",
+   "swaps": [],
+   "gi": 55,
+   "gi_band": "בינוני",
+   "tokens": [
+    "400",
+    "גרם",
+    "עבה",
+    "קוואקר",
+    "שועל",
+    "שיבולת"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290014095960/medium.jpg",
+   "portion_g": 400.0,
+   "portion_label": "אריזה של 400 גרם"
+  },
+  {
+   "id": "oat_telma_ava",
+   "name_he": "תלמה שיבולת שועל עבה 500 גרם",
+   "barcode": "7290119670819",
+   "rating": "g",
+   "why": "שיבולת שועל מלאה - סיבים מסיסים (בטא-גלוקן) שמאטים את עליית הסוכר ומורידים כולסטרול. הבחירה הטובה בבוקר. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [],
+   "gi": 55,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "גרם",
+    "עבה",
+    "שועל",
+    "שיבולת",
+    "תלמה"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290119670819/medium.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "oat_telma_daka",
+   "name_he": "תלמה שיבולת שועל דקה 500 גרם",
+   "barcode": "7290119670826",
+   "rating": "g",
+   "why": "שיבולת שועל דקה - עדיין בחירה טובה, אבל עולה קצת יותר מהר מהעבה. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [],
+   "gi": 66,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "גרם",
+    "דקה",
+    "שועל",
+    "שיבולת",
+    "תלמה"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290119670826/medium.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "oat_rami",
+   "name_he": "שיבולת שועל מלאה עבה רמי לוי 500 גרם",
+   "barcode": "7290017068985",
+   "rating": "g",
+   "why": "שיבולת שועל מלאה - סיבים מסיסים (בטא-גלוקן) שמאטים את עליית הסוכר ומורידים כולסטרול. הבחירה הטובה בבוקר.",
+   "swaps": [],
+   "gi": 55,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "גרם",
+    "לוי",
+    "מלאה",
+    "עבה",
+    "רמי",
+    "שועל",
+    "שיבולת"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/729/001/706/8985/front_en.3.400.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "oat_carrefour",
+   "name_he": "שיבולת שועל קרפור 500 גרם",
+   "barcode": "3560070614202",
+   "rating": "g",
+   "why": "שיבולת שועל מלאה - סיבים מסיסים (בטא-גלוקן) שמאטים את עליית הסוכר ומורידים כולסטרול. הבחירה הטובה בבוקר.",
+   "swaps": [],
+   "gi": 55,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "גרם",
+    "קרפור",
+    "שועל",
+    "שיבולת"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/356/007/061/4202/front_en.112.400.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "oat_organic",
+   "name_he": "שיבולת שועל מלאה אורגנית 500 גרם",
+   "barcode": "7296073224556",
+   "rating": "g",
+   "why": "שיבולת שועל מלאה - סיבים מסיסים (בטא-גלוקן) שמאטים את עליית הסוכר ומורידים כולסטרול. הבחירה הטובה בבוקר. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [],
+   "gi": 55,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "אורגנית",
+    "גרם",
+    "מלאה",
+    "שועל",
+    "שיבולת"
+   ],
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "oat_steelcut",
+   "name_he": "גרעיני שיבולת שועל אורגניים 500 גרם",
+   "barcode": "7290013994417",
+   "rating": "g",
+   "why": "גרעיני שיבולת שועל שלמים - העיבוד המינימלי, העלייה האיטית ביותר. בחירה מעולה. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [],
+   "gi": 52,
+   "gi_band": "נמוך",
+   "tokens": [
+    "500",
+    "אורגניים",
+    "גרם",
+    "גרעיני",
+    "שועל",
+    "שיבולת"
+   ],
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "oat_bran",
+   "name_he": "סובין שיבולת שועל 500 גרם",
+   "barcode": "7290011426293",
+   "rating": "g",
+   "why": "סובין שיבולת שועל - מרוכז בסיבים מסיסים. כף-שתיים לתוך יוגורט עושות עבודה. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [],
+   "gi": 55,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "גרם",
+    "סובין",
+    "שועל",
+    "שיבולת"
+   ],
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "oat_tami",
+   "name_he": "תמי שיבולת שועל דקה 500 גרם",
+   "barcode": "7290017907093",
+   "rating": "g",
+   "why": "שיבולת שועל דקה - עדיין בחירה טובה, אבל עולה קצת יותר מהר מהעבה. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [],
+   "gi": 66,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "גרם",
+    "דקה",
+    "שועל",
+    "שיבולת",
+    "תמי"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290017907093/medium.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "muesli_green",
+   "name_he": "מוזלי 30% פירות גרין 1 ק״ג",
+   "barcode": "7290011131395",
+   "rating": "y",
+   "why": "פירות יבשים ודגנים - סיבים טובים אבל צפוף בסוכר וקלוריות. מנה קטנה. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1",
+     "img": "https://images.openfoodfacts.org/images/products/001/600/018/5517/front_en.3.400.jpg"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava",
+     "img": "https://img.rami-levy.co.il/product/7290014095960/medium.jpg"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 60,
+   "gi_band": "בינוני",
+   "tokens": [
+    "1",
+    "30%",
+    "גרין",
+    "מוזלי",
+    "פירות",
+    "ק״ג"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290011131395/medium.jpg",
+   "portion_g": 1000.0,
+   "portion_label": "אריזה של 1000 גרם"
+  },
+  {
+   "id": "granola_btva",
+   "name_he": "חגיגת גרנולה פירות יבשים בריא מהטבע 500 גרם",
+   "barcode": "7290011668570",
+   "rating": "y",
+   "why": "אגוזים ושיבולת שועל אבל ממותקת - צפופה בקלוריות. כף-שתיים כתוספת, לא קערה מלאה.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1",
+     "img": "https://images.openfoodfacts.org/images/products/001/600/018/5517/front_en.3.400.jpg"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava",
+     "img": "https://img.rami-levy.co.il/product/7290014095960/medium.jpg"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 62,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "בריא",
+    "גרם",
+    "גרנולה",
+    "חגיגת",
+    "יבשים",
+    "מהטבע",
+    "פירות"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290011668570/medium.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "granola_kranci_choc",
+   "name_he": "גרנולה קראנצ'י שוקולד 450 גרם",
+   "barcode": "7290018677148",
+   "rating": "r",
+   "why": "גרנולה עם שוקולד - סוכר גבוה. קינוח, לא ארוחת בוקר.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1",
+     "img": "https://images.openfoodfacts.org/images/products/001/600/018/5517/front_en.3.400.jpg"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava",
+     "img": "https://img.rami-levy.co.il/product/7290014095960/medium.jpg"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 65,
+   "gi_band": "בינוני",
+   "tokens": [
+    "450",
+    "גרם",
+    "גרנולה",
+    "קראנצ'י",
+    "שוקולד"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290018677148/medium.jpg",
+   "portion_g": 450.0,
+   "portion_label": "אריזה של 450 גרם"
+  },
+  {
+   "id": "granola_true_noadd",
+   "name_he": "גרנולה תותים ללא תוספת סוכר טרו 300 גרם",
+   "barcode": "7290112199942",
+   "rating": "y",
+   "why": "ללא תוספת סוכר, אבל עדיין צפופה באנרגיה. מנה קטנה.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1",
+     "img": "https://images.openfoodfacts.org/images/products/001/600/018/5517/front_en.3.400.jpg"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava",
+     "img": "https://img.rami-levy.co.il/product/7290014095960/medium.jpg"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 58,
+   "gi_band": "בינוני",
+   "tokens": [
+    "300",
+    "גרם",
+    "גרנולה",
+    "טרו",
+    "ללא",
+    "סוכר",
+    "תוספת",
+    "תותים"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/729/011/219/9942/front_en.7.400.jpg",
+   "portion_g": 300.0,
+   "portion_label": "אריזה של 300 גרם"
+  },
+  {
+   "id": "granola_protein",
+   "name_he": "גרנולה פרוטאין ואגוזים תלמה 300 גרם",
+   "barcode": "7290112497994",
+   "rating": "y",
+   "why": "עשירה בחלבון ומעט סוכר יחסית, אבל צפופה בקלוריות. מנה קטנה.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1",
+     "img": "https://images.openfoodfacts.org/images/products/001/600/018/5517/front_en.3.400.jpg"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava",
+     "img": "https://img.rami-levy.co.il/product/7290014095960/medium.jpg"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 55,
+   "gi_band": "בינוני",
+   "tokens": [
+    "300",
+    "גרם",
+    "גרנולה",
+    "ואגוזים",
+    "פרוטאין",
+    "תלמה"
+   ],
+   "portion_g": 300.0,
+   "portion_label": "אריזה של 300 גרם"
+  },
+  {
+   "id": "granola_rami",
+   "name_he": "גרנולה אגוזים רמי לוי 500 גרם",
+   "barcode": "7290015835404",
+   "rating": "y",
+   "why": "אגוזים ושיבולת שועל אבל ממותקת - צפופה בקלוריות. כף-שתיים כתוספת, לא קערה מלאה. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1",
+     "img": "https://images.openfoodfacts.org/images/products/001/600/018/5517/front_en.3.400.jpg"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava",
+     "img": "https://img.rami-levy.co.il/product/7290014095960/medium.jpg"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 62,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "אגוזים",
+    "גרם",
+    "גרנולה",
+    "לוי",
+    "רמי"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290015835404/medium.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "muesli_rami",
+   "name_he": "מוזלי פירות רמי לוי 500 גרם",
+   "barcode": "7290015835428",
+   "rating": "y",
+   "why": "פירות יבשים ודגנים - סיבים טובים אבל צפוף בסוכר וקלוריות. מנה קטנה. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1",
+     "img": "https://images.openfoodfacts.org/images/products/001/600/018/5517/front_en.3.400.jpg"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava",
+     "img": "https://img.rami-levy.co.il/product/7290014095960/medium.jpg"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 60,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "גרם",
+    "לוי",
+    "מוזלי",
+    "פירות",
+    "רמי"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290015835428/medium.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "muesli_crispy_nuts",
+   "name_he": "מוזלי קריספי אגוזים 500 גרם",
+   "barcode": "5010026515919",
+   "rating": "y",
+   "why": "פירות יבשים ודגנים - סיבים טובים אבל צפוף בסוכר וקלוריות. מנה קטנה.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1",
+     "img": "https://images.openfoodfacts.org/images/products/001/600/018/5517/front_en.3.400.jpg"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava",
+     "img": "https://img.rami-levy.co.il/product/7290014095960/medium.jpg"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 60,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "אגוזים",
+    "גרם",
+    "מוזלי",
+    "קריספי"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/501/002/651/5919/front_en.25.400.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "muesli_7fruit",
+   "name_he": "מוזלי 7 פירות 500 גרם",
+   "barcode": "3270190111108",
+   "rating": "y",
+   "why": "פירות יבשים ודגנים - סיבים טובים אבל צפוף בסוכר וקלוריות. מנה קטנה.",
+   "swaps": [
+    {
+     "name": "דגני בוקר פייבר 1",
+     "where": "בכל הרשתות",
+     "ref": "cereal_fiber1",
+     "img": "https://images.openfoodfacts.org/images/products/001/600/018/5517/front_en.3.400.jpg"
+    },
+    {
+     "name": "קוואקר שיבולת שועל עבה",
+     "where": "בכל הרשתות",
+     "ref": "oat_quaker_ava",
+     "img": "https://img.rami-levy.co.il/product/7290014095960/medium.jpg"
+    },
+    {
+     "name": "סובין שיבולת שועל",
+     "where": "בכל הרשתות",
+     "ref": "oat_bran"
+    }
+   ],
+   "gi": 60,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "7",
+    "גרם",
+    "מוזלי",
+    "פירות"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/327/019/011/1108/front_en.111.400.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
   }
  ],
  "rules": [

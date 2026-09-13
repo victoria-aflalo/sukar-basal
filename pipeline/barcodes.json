@@ -2850,5 +2850,149 @@
  {
   "id": "baguette_rustik_male",
   "barcode": "7290001461457"
+ },
+ {
+  "id": "corn_telma400",
+  "barcode": "7290116535371"
+ },
+ {
+  "id": "corn_dvash",
+  "barcode": "7290112495228"
+ },
+ {
+  "id": "corn_lg",
+  "barcode": "7290116533599"
+ },
+ {
+  "id": "corn_harduf",
+  "barcode": "7290017325910"
+ },
+ {
+  "id": "corn_kelloggs",
+  "barcode": "5059319029924"
+ },
+ {
+  "id": "corn_carrefour",
+  "barcode": "3560071016074"
+ },
+ {
+  "id": "corn_fitness",
+  "barcode": "5900020041142"
+ },
+ {
+  "id": "corn_ramilevi",
+  "barcode": "7290016733532"
+ },
+ {
+  "id": "corn_shakedya",
+  "barcode": "7290015652612"
+ },
+ {
+  "id": "cereal_nesquik",
+  "barcode": "5900020012814"
+ },
+ {
+  "id": "cereal_lion",
+  "barcode": "5900020036407"
+ },
+ {
+  "id": "cereal_ciniminis",
+  "barcode": "5900020049865"
+ },
+ {
+  "id": "cereal_fitness_fruit",
+  "barcode": "3387390320244"
+ },
+ {
+  "id": "cereal_cheerios",
+  "barcode": "5900020046833"
+ },
+ {
+  "id": "cereal_weetabix",
+  "barcode": "5010029000061"
+ },
+ {
+  "id": "cereal_fiber1",
+  "barcode": "16000185517"
+ },
+ {
+  "id": "oat_quaker500",
+  "barcode": "5000108478119"
+ },
+ {
+  "id": "oat_quaker_daka",
+  "barcode": "7290014095861"
+ },
+ {
+  "id": "oat_quaker_ava",
+  "barcode": "7290014095960"
+ },
+ {
+  "id": "oat_telma_ava",
+  "barcode": "7290119670819"
+ },
+ {
+  "id": "oat_telma_daka",
+  "barcode": "7290119670826"
+ },
+ {
+  "id": "oat_rami",
+  "barcode": "7290017068985"
+ },
+ {
+  "id": "oat_carrefour",
+  "barcode": "3560070614202"
+ },
+ {
+  "id": "oat_organic",
+  "barcode": "7296073224556"
+ },
+ {
+  "id": "oat_steelcut",
+  "barcode": "7290013994417"
+ },
+ {
+  "id": "oat_bran",
+  "barcode": "7290011426293"
+ },
+ {
+  "id": "oat_tami",
+  "barcode": "7290017907093"
+ },
+ {
+  "id": "muesli_green",
+  "barcode": "7290011131395"
+ },
+ {
+  "id": "granola_btva",
+  "barcode": "7290011668570"
+ },
+ {
+  "id": "granola_kranci_choc",
+  "barcode": "7290018677148"
+ },
+ {
+  "id": "granola_true_noadd",
+  "barcode": "7290112199942"
+ },
+ {
+  "id": "granola_protein",
+  "barcode": "7290112497994"
+ },
+ {
+  "id": "granola_rami",
+  "barcode": "7290015835404"
+ },
+ {
+  "id": "muesli_rami",
+  "barcode": "7290015835428"
+ },
+ {
+  "id": "muesli_crispy_nuts",
+  "barcode": "5010026515919"
+ },
+ {
+  "id": "muesli_7fruit",
+  "barcode": "3270190111108"
  }
 ]
