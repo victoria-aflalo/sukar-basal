@@ -3122,5 +3122,133 @@
  {
   "id": "cheerios_bar_honey",
   "barcode": "5900020031877"
+ },
+ {
+  "id": "oreo_vanilla",
+  "barcode": "7622010001858"
+ },
+ {
+  "id": "oreo_double",
+  "barcode": "7622210137234"
+ },
+ {
+  "id": "oreo_golden",
+  "barcode": "7622210464729"
+ },
+ {
+  "id": "oreo_mini",
+  "barcode": "5000396020687"
+ },
+ {
+  "id": "cookie_man_stars_choc",
+  "barcode": "7290000311715"
+ },
+ {
+  "id": "cookie_man_stars_van",
+  "barcode": "7290000311722"
+ },
+ {
+  "id": "cookie_man_butter",
+  "barcode": "7290000311128"
+ },
+ {
+  "id": "cookie_zahava",
+  "barcode": "7290000313160"
+ },
+ {
+  "id": "merba_chocchip",
+  "barcode": "46214731552"
+ },
+ {
+  "id": "merba_brownie",
+  "barcode": "46214382259"
+ },
+ {
+  "id": "merba_strudel",
+  "barcode": "46214372250"
+ },
+ {
+  "id": "bisk_tirosh",
+  "barcode": "7290000034256"
+ },
+ {
+  "id": "petitbar_shoko",
+  "barcode": "7290000074153"
+ },
+ {
+  "id": "bisk_tea_carrefour",
+  "barcode": "3560070996131"
+ },
+ {
+  "id": "gan_chayot",
+  "barcode": "7290000313184"
+ },
+ {
+  "id": "wafer_man_choc",
+  "barcode": "7290000311203"
+ },
+ {
+  "id": "wafer_man_van",
+  "barcode": "7290000311234"
+ },
+ {
+  "id": "wafer_alma",
+  "barcode": "7290001419779"
+ },
+ {
+  "id": "knoppers_mini",
+  "barcode": "4014400930474"
+ },
+ {
+  "id": "wafer_rolls",
+  "barcode": "5200133120926"
+ },
+ {
+  "id": "wafer_alma_crunch",
+  "barcode": "7290017266725"
+ },
+ {
+  "id": "wafer_roshen",
+  "barcode": "4823077625626"
+ },
+ {
+  "id": "cracker_onion",
+  "barcode": "7290000061061"
+ },
+ {
+  "id": "cracker_lowsalt",
+  "barcode": "7290000079233"
+ },
+ {
+  "id": "cracker_carrefour",
+  "barcode": "3560070961092"
+ },
+ {
+  "id": "cracker_rye",
+  "barcode": "33617322616"
+ },
+ {
+  "id": "7290000591858",
+  "barcode": "7290000591858"
+ },
+ {
+  "id": "cookie_man_whole",
+  "barcode": "7290000311708"
+ },
+ {
+  "id": "cookie_man_whole2",
+  "barcode": "7290000311845"
+ },
+ {
+  "id": "cookie_man_noadd",
+  "barcode": "7290000311463"
+ },
+ {
+  "id": "cookie_man_granola_noadd",
+  "barcode": "7290000311883"
+ },
+ {
+  "id": "cookie_rifaat",
+  "barcode": "7290000524191"
  }
 ]

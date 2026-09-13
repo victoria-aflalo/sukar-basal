@@ -1232,23 +1232,37 @@
   },
   {
    "id": "8000500366073",
-   "name_he": "ביסקוויטים במילוי נו",
+   "name_he": "ביסקוויטים במילוי שוקולד",
    "barcode": "8000500366073",
    "rating": "r",
-   "why": "סוכר + קמח לבן - שילוב שמעלה סוכר חד.",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה.",
    "swaps": [
     {
-     "name": "פרי טרי או קופסת קוטג׳",
+     "name": "קרקר שיפון ואזה",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/7290011194246/medium.jpg",
-     "match": "קוטג׳ 5% 250 גרם",
-     "ref": "cottage"
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
     }
    ],
-   "tokens": [],
-   "rule_label": "ממתק / מאפה מתוק",
-   "confidence": "rule",
-   "img": "https://img.rami-levy.co.il/product/8000500366073/medium.jpg"
+   "gi": 68,
+   "gi_band": "בינוני",
+   "tokens": [
+    "ביסקוויטים",
+    "במילוי",
+    "שוקולד"
+   ],
+   "img": "https://img.rami-levy.co.il/product/8000500366073/medium.jpg",
+   "portion_g": 200.0,
+   "portion_label": "אריזה של 200 גרם"
   },
   {
    "id": "8403238",
@@ -2364,23 +2378,39 @@
   },
   {
    "id": "7290000061245",
-   "name_he": "עוגיות שוקוצ'יפס עם",
+   "name_he": "אסם עוגיות שוקוצ'יפס 300 גרם",
    "barcode": "7290000061245",
    "rating": "r",
-   "why": "סוכר + קמח לבן - שילוב שמעלה סוכר חד.",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה.",
    "swaps": [
     {
-     "name": "פרי טרי או קופסת קוטג׳",
+     "name": "קרקר שיפון ואזה",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/7290011194246/medium.jpg",
-     "match": "קוטג׳ 5% 250 גרם",
-     "ref": "cottage"
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
     }
    ],
-   "tokens": [],
-   "rule_label": "ממתק / מאפה מתוק",
-   "confidence": "rule",
-   "img": "https://img.rami-levy.co.il/product/7290000061245/medium.jpg"
+   "gi": 66,
+   "gi_band": "בינוני",
+   "tokens": [
+    "300",
+    "אסם",
+    "גרם",
+    "עוגיות",
+    "שוקוצ'יפס"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000061245/medium.jpg",
+   "portion_g": 300.0,
+   "portion_label": "אריזה של 300 גרם"
   },
   {
    "id": "7290000061764",
@@ -2893,54 +2923,125 @@
    "name_he": "ביסקוויט פתי בר אסם",
    "barcode": "7290000074184",
    "rating": "r",
-   "why": "סוכר + קמח לבן - שילוב שמעלה סוכר חד.",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה.",
    "swaps": [
     {
-     "name": "פרי טרי או קופסת קוטג׳",
+     "name": "קרקר שיפון ואזה",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/7290011194246/medium.jpg",
-     "match": "קוטג׳ 5% 250 גרם",
-     "ref": "cottage"
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
     }
    ],
-   "tokens": [],
-   "rule_label": "ממתק / מאפה מתוק",
-   "confidence": "rule"
+   "gi": 68,
+   "gi_band": "בינוני",
+   "tokens": [
+    "אסם",
+    "ביסקוויט",
+    "בר",
+    "פתי"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000074184/medium.jpg",
+   "portion_g": 200.0,
+   "portion_label": "אריזה של 200 גרם"
   },
   {
    "id": "7290000074245",
-   "name_he": "קרם קרקר 250 גרם",
+   "name_he": "אסם קרם קרקר 250 גרם",
    "barcode": "7290000074245",
    "rating": "y",
-   "why": "לא זוהה סוג המוצר בוודאות - כדאי לבדוק בתווית את הסוכר והנתרן.",
-   "swaps": [],
-   "tokens": [],
-   "confidence": "fallback",
+   "why": "קרקר מלוח - קמח לבן מעובד. במידה, ועדיף עם גבינה או חומוס.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 66,
+   "gi_band": "בינוני",
+   "tokens": [
+    "250",
+    "אסם",
+    "גרם",
+    "קרם",
+    "קרקר"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000074245/medium.jpg",
    "portion_g": 250.0,
    "portion_label": "אריזה של 250 גרם"
   },
   {
    "id": "7290000074252",
-   "name_he": "קרקר שומשום 250 גרם",
+   "name_he": "אסם קרקר שומשום 250 גרם",
    "barcode": "7290000074252",
    "rating": "g",
-   "why": "ירק - הבחירה הכי טובה לסוכרתיים.",
+   "why": "קרקר עם שומשום - יותר סיבים משאר הקרקרים. בסיס סביר, במידה.",
    "swaps": [],
-   "tokens": [],
-   "rule_label": "ירק / פרי טרי",
-   "confidence": "rule",
+   "gi": 60,
+   "gi_band": "בינוני",
+   "tokens": [
+    "250",
+    "אסם",
+    "גרם",
+    "קרקר",
+    "שומשום"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000074252/medium.jpg",
    "portion_g": 250.0,
    "portion_label": "אריזה של 250 גרם"
   },
   {
    "id": "7290000074375",
-   "name_he": "קרקר זהב 150 גרם",
+   "name_he": "אסם קרקר זהב 150 גרם",
    "barcode": "7290000074375",
    "rating": "y",
-   "why": "לא זוהה סוג המוצר בוודאות - כדאי לבדוק בתווית את הסוכר והנתרן.",
-   "swaps": [],
-   "tokens": [],
-   "confidence": "fallback",
+   "why": "קרקר מלוח - קמח לבן מעובד. במידה, ועדיף עם גבינה או חומוס. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 66,
+   "gi_band": "בינוני",
+   "tokens": [
+    "150",
+    "אסם",
+    "גרם",
+    "זהב",
+    "קרקר"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000074375/medium.jpg",
    "portion_g": 150.0,
    "portion_label": "אריזה של 150 גרם"
   },
@@ -2965,22 +3066,39 @@
   },
   {
    "id": "7290000075143",
-   "name_he": "עוגיות שוקוצ'יפס אסם",
+   "name_he": "אסם עוגיות שוקוצ'יפס 500 גרם",
    "barcode": "7290000075143",
    "rating": "r",
-   "why": "סוכר + קמח לבן - שילוב שמעלה סוכר חד.",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה.",
    "swaps": [
     {
-     "name": "פרי טרי או קופסת קוטג׳",
+     "name": "קרקר שיפון ואזה",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/7290011194246/medium.jpg",
-     "match": "קוטג׳ 5% 250 גרם",
-     "ref": "cottage"
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
     }
    ],
-   "tokens": [],
-   "rule_label": "ממתק / מאפה מתוק",
-   "confidence": "rule"
+   "gi": 66,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "אסם",
+    "גרם",
+    "עוגיות",
+    "שוקוצ'יפס"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000075143/medium.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
   },
   {
    "id": "7290000075204",
@@ -3032,13 +3150,37 @@
   },
   {
    "id": "7290000077017",
-   "name_he": "עוגיות קרמוגית במילו",
+   "name_he": "עוגיות קרמוגית במילוי",
    "barcode": "7290000077017",
    "rating": "y",
-   "why": "לא זוהה סוג המוצר בוודאות - כדאי לבדוק בתווית את הסוכר והנתרן.",
-   "swaps": [],
-   "tokens": [],
-   "confidence": "fallback"
+   "why": "עוגייה מתוקה - קמח וסוכר, אבל פחות מהממולאות. אחת-שתיים, לא יותר.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 64,
+   "gi_band": "בינוני",
+   "tokens": [
+    "במילוי",
+    "עוגיות",
+    "קרמוגית"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000077017/medium.jpg",
+   "portion_g": 200.0,
+   "portion_label": "אריזה של 200 גרם"
   },
   {
    "id": "7290000077253",
@@ -4856,13 +4998,36 @@
   },
   {
    "id": "7290001327791",
-   "name_he": "שטראוס קרמיסימו עוגי",
+   "name_he": "שטראוס קרמיסימו עוגיות",
    "barcode": "7290001327791",
    "rating": "y",
-   "why": "לא זוהה סוג המוצר בוודאות - כדאי לבדוק בתווית את הסוכר והנתרן.",
-   "swaps": [],
-   "tokens": [],
-   "confidence": "fallback"
+   "why": "עוגייה מתוקה - קמח וסוכר, אבל פחות מהממולאות. אחת-שתיים, לא יותר.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 62,
+   "gi_band": "בינוני",
+   "tokens": [
+    "עוגיות",
+    "קרמיסימו",
+    "שטראוס"
+   ],
+   "portion_g": 133.0,
+   "portion_label": "אריזה של 133 גרם"
   },
   {
    "id": "7290001343845",
@@ -13746,6 +13911,1168 @@
    ],
    "portion_g": 22.0,
    "portion_label": "אריזה של 22 גרם"
+  },
+  {
+   "id": "oreo_vanilla",
+   "name_he": "עוגיות אוראו קרם וניל 176 גרם",
+   "barcode": "7622010001858",
+   "rating": "r",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 68,
+   "gi_band": "בינוני",
+   "tokens": [
+    "176",
+    "אוראו",
+    "גרם",
+    "וניל",
+    "עוגיות",
+    "קרם"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7622010001858/medium.jpg",
+   "portion_g": 176.0,
+   "portion_label": "אריזה של 176 גרם"
+  },
+  {
+   "id": "oreo_double",
+   "name_he": "עוגיות אוראו דאבל קרם וניל 170 גרם",
+   "barcode": "7622210137234",
+   "rating": "r",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 68,
+   "gi_band": "בינוני",
+   "tokens": [
+    "170",
+    "אוראו",
+    "גרם",
+    "דאבל",
+    "וניל",
+    "עוגיות",
+    "קרם"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7622210137234/medium.jpg",
+   "portion_g": 170.0,
+   "portion_label": "אריזה של 170 גרם"
+  },
+  {
+   "id": "oreo_golden",
+   "name_he": "עוגיות אוראו גולדן 154 גרם",
+   "barcode": "7622210464729",
+   "rating": "r",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 70,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "154",
+    "אוראו",
+    "גולדן",
+    "גרם",
+    "עוגיות"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7622210464729/medium.jpg",
+   "portion_g": 154.0,
+   "portion_label": "אריזה של 154 גרם"
+  },
+  {
+   "id": "oreo_mini",
+   "name_he": "אוראו מיני בכוס 115 גרם",
+   "barcode": "5000396020687",
+   "rating": "r",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 68,
+   "gi_band": "בינוני",
+   "tokens": [
+    "115",
+    "אוראו",
+    "בכוס",
+    "גרם",
+    "מיני"
+   ],
+   "img": "https://img.rami-levy.co.il/product/5000396020687/medium.jpg",
+   "portion_g": 115.0,
+   "portion_label": "אריזה של 115 גרם"
+  },
+  {
+   "id": "cookie_man_stars_choc",
+   "name_he": "עוגיות מן כוכבים שוקולד 300 גרם",
+   "barcode": "7290000311715",
+   "rating": "r",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 66,
+   "gi_band": "בינוני",
+   "tokens": [
+    "300",
+    "גרם",
+    "כוכבים",
+    "מן",
+    "עוגיות",
+    "שוקולד"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000311715/medium.jpg",
+   "portion_g": 300.0,
+   "portion_label": "אריזה של 300 גרם"
+  },
+  {
+   "id": "cookie_man_stars_van",
+   "name_he": "עוגיות מן כוכבים וניל 300 גרם",
+   "barcode": "7290000311722",
+   "rating": "r",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 66,
+   "gi_band": "בינוני",
+   "tokens": [
+    "300",
+    "גרם",
+    "וניל",
+    "כוכבים",
+    "מן",
+    "עוגיות"
+   ],
+   "portion_g": 300.0,
+   "portion_label": "אריזה של 300 גרם"
+  },
+  {
+   "id": "cookie_man_butter",
+   "name_he": "עוגיות מן בטעם חמאה 250 גרם",
+   "barcode": "7290000311128",
+   "rating": "r",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 66,
+   "gi_band": "בינוני",
+   "tokens": [
+    "250",
+    "בטעם",
+    "גרם",
+    "חמאה",
+    "מן",
+    "עוגיות"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000311128/medium.jpg",
+   "portion_g": 250.0,
+   "portion_label": "אריזה של 250 גרם"
+  },
+  {
+   "id": "cookie_zahava",
+   "name_he": "עוגיות שוקולד זהבה 250 גרם",
+   "barcode": "7290000313160",
+   "rating": "r",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 66,
+   "gi_band": "בינוני",
+   "tokens": [
+    "250",
+    "גרם",
+    "זהבה",
+    "עוגיות",
+    "שוקולד"
+   ],
+   "portion_g": 250.0,
+   "portion_label": "אריזה של 250 גרם"
+  },
+  {
+   "id": "merba_chocchip",
+   "name_he": "מרבה עוגיות שוקולד צ'יפס 225 גרם",
+   "barcode": "46214731552",
+   "rating": "r",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 66,
+   "gi_band": "בינוני",
+   "tokens": [
+    "225",
+    "גרם",
+    "מרבה",
+    "עוגיות",
+    "צ'יפס",
+    "שוקולד"
+   ],
+   "img": "https://img.rami-levy.co.il/product/46214731552/medium.jpg",
+   "portion_g": 225.0,
+   "portion_label": "אריזה של 225 גרם"
+  },
+  {
+   "id": "merba_brownie",
+   "name_he": "מרבה עוגיות בראוניז 200 גרם",
+   "barcode": "46214382259",
+   "rating": "r",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 66,
+   "gi_band": "בינוני",
+   "tokens": [
+    "200",
+    "בראוניז",
+    "גרם",
+    "מרבה",
+    "עוגיות"
+   ],
+   "img": "https://img.rami-levy.co.il/product/46214382259/medium.jpg",
+   "portion_g": 200.0,
+   "portion_label": "אריזה של 200 גרם"
+  },
+  {
+   "id": "merba_strudel",
+   "name_he": "מרבה עוגיות שטרודל פירות 200 גרם",
+   "barcode": "46214372250",
+   "rating": "r",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 65,
+   "gi_band": "בינוני",
+   "tokens": [
+    "200",
+    "גרם",
+    "מרבה",
+    "עוגיות",
+    "פירות",
+    "שטרודל"
+   ],
+   "img": "https://img.rami-levy.co.il/product/46214372250/medium.jpg",
+   "portion_g": 200.0,
+   "portion_label": "אריזה של 200 גרם"
+  },
+  {
+   "id": "bisk_tirosh",
+   "name_he": "ביסקוויט תירוש הדר 175 גרם",
+   "barcode": "7290000034256",
+   "rating": "r",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 68,
+   "gi_band": "בינוני",
+   "tokens": [
+    "175",
+    "ביסקוויט",
+    "גרם",
+    "הדר",
+    "תירוש"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000034256/medium.jpg",
+   "portion_g": 175.0,
+   "portion_label": "אריזה של 175 גרם"
+  },
+  {
+   "id": "petitbar_shoko",
+   "name_he": "ביסקוויט פתי בר שוקו 200 גרם",
+   "barcode": "7290000074153",
+   "rating": "r",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 68,
+   "gi_band": "בינוני",
+   "tokens": [
+    "200",
+    "ביסקוויט",
+    "בר",
+    "גרם",
+    "פתי",
+    "שוקו"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000074153/medium.jpg",
+   "portion_g": 200.0,
+   "portion_label": "אריזה של 200 גרם"
+  },
+  {
+   "id": "bisk_tea_carrefour",
+   "name_he": "ביסקוויט לתה קרפור 335 גרם",
+   "barcode": "3560070996131",
+   "rating": "r",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 68,
+   "gi_band": "בינוני",
+   "tokens": [
+    "335",
+    "ביסקוויט",
+    "גרם",
+    "לתה",
+    "קרפור"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/356/007/099/6131/front_fr.34.400.jpg",
+   "portion_g": 335.0,
+   "portion_label": "אריזה של 335 גרם"
+  },
+  {
+   "id": "gan_chayot",
+   "name_he": "גן חיות עוגיות 250 גרם",
+   "barcode": "7290000313184",
+   "rating": "r",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 66,
+   "gi_band": "בינוני",
+   "tokens": [
+    "250",
+    "גן",
+    "גרם",
+    "חיות",
+    "עוגיות"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000313184/medium.jpg",
+   "portion_g": 250.0,
+   "portion_label": "אריזה של 250 גרם"
+  },
+  {
+   "id": "wafer_man_choc",
+   "name_he": "וופלים מן בטעם שוקולד 250 גרם",
+   "barcode": "7290000311203",
+   "rating": "r",
+   "why": "וופל - קמח לבן וקרם מתוק, מהמדדים הגליקמיים הגבוהים. נדיר ובמנה קטנה.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 75,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "250",
+    "בטעם",
+    "גרם",
+    "וופלים",
+    "מן",
+    "שוקולד"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000311203/medium.jpg",
+   "portion_g": 250.0,
+   "portion_label": "אריזה של 250 גרם"
+  },
+  {
+   "id": "wafer_man_van",
+   "name_he": "וופלים מן טעם וניל 250 גרם",
+   "barcode": "7290000311234",
+   "rating": "r",
+   "why": "וופל - קמח לבן וקרם מתוק, מהמדדים הגליקמיים הגבוהים. נדיר ובמנה קטנה. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 75,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "250",
+    "גרם",
+    "וופלים",
+    "וניל",
+    "טעם",
+    "מן"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000311234/medium.jpg",
+   "portion_g": 250.0,
+   "portion_label": "אריזה של 250 גרם"
+  },
+  {
+   "id": "wafer_alma",
+   "name_he": "וופל עלמה קלאסי 200 גרם",
+   "barcode": "7290001419779",
+   "rating": "r",
+   "why": "וופל - קמח לבן וקרם מתוק, מהמדדים הגליקמיים הגבוהים. נדיר ובמנה קטנה.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 75,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "200",
+    "גרם",
+    "וופל",
+    "עלמה",
+    "קלאסי"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/729/000/141/9779/front_fr.3.400.jpg",
+   "portion_g": 200.0,
+   "portion_label": "אריזה של 200 גרם"
+  },
+  {
+   "id": "knoppers_mini",
+   "name_he": "קנופרס וופל מיניס 200 גרם",
+   "barcode": "4014400930474",
+   "rating": "r",
+   "why": "וופל - קמח לבן וקרם מתוק, מהמדדים הגליקמיים הגבוהים. נדיר ובמנה קטנה.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 72,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "200",
+    "גרם",
+    "וופל",
+    "מיניס",
+    "קנופרס"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/401/440/093/0474/front_es.3.400.jpg",
+   "portion_g": 200.0,
+   "portion_label": "אריזה של 200 גרם"
+  },
+  {
+   "id": "wafer_rolls",
+   "name_he": "גליליות וופלים 375 גרם",
+   "barcode": "5200133120926",
+   "rating": "r",
+   "why": "וופל - קמח לבן וקרם מתוק, מהמדדים הגליקמיים הגבוהים. נדיר ובמנה קטנה. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 75,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "375",
+    "גליליות",
+    "גרם",
+    "וופלים"
+   ],
+   "img": "https://img.rami-levy.co.il/product/5200133120926/medium.jpg",
+   "portion_g": 375.0,
+   "portion_label": "אריזה של 375 גרם"
+  },
+  {
+   "id": "wafer_alma_crunch",
+   "name_he": "עלמה חטיף וופל קראנץ'",
+   "barcode": "7290017266725",
+   "rating": "r",
+   "why": "וופל - קמח לבן וקרם מתוק, מהמדדים הגליקמיים הגבוהים. נדיר ובמנה קטנה. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 75,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "וופל",
+    "חטיף",
+    "עלמה",
+    "קראנץ'"
+   ],
+   "portion_g": 40.0,
+   "portion_label": "אריזה של 40 גרם"
+  },
+  {
+   "id": "wafer_roshen",
+   "name_he": "וופל רושן בטעם אגוז 216 גרם",
+   "barcode": "4823077625626",
+   "rating": "r",
+   "why": "וופל - קמח לבן וקרם מתוק, מהמדדים הגליקמיים הגבוהים. נדיר ובמנה קטנה.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 75,
+   "gi_band": "גבוהה",
+   "tokens": [
+    "216",
+    "אגוז",
+    "בטעם",
+    "גרם",
+    "וופל",
+    "רושן"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/482/307/762/5626/front_en.48.400.jpg",
+   "portion_g": 216.0,
+   "portion_label": "אריזה של 216 גרם"
+  },
+  {
+   "id": "cracker_onion",
+   "name_he": "אסם קרקר בצל 250 גרם",
+   "barcode": "7290000061061",
+   "rating": "y",
+   "why": "קרקר מלוח - קמח לבן מעובד. במידה, ועדיף עם גבינה או חומוס.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 66,
+   "gi_band": "בינוני",
+   "tokens": [
+    "250",
+    "אסם",
+    "בצל",
+    "גרם",
+    "קרקר"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000061061/medium.jpg",
+   "portion_g": 250.0,
+   "portion_label": "אריזה של 250 גרם"
+  },
+  {
+   "id": "cracker_lowsalt",
+   "name_he": "אסם קרם קרקר דל נתרן 250 גרם",
+   "barcode": "7290000079233",
+   "rating": "y",
+   "why": "קרקר מלוח - קמח לבן מעובד. במידה, ועדיף עם גבינה או חומוס. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 66,
+   "gi_band": "בינוני",
+   "tokens": [
+    "250",
+    "אסם",
+    "גרם",
+    "דל",
+    "נתרן",
+    "קרם",
+    "קרקר"
+   ],
+   "portion_g": 250.0,
+   "portion_label": "אריזה של 250 גרם"
+  },
+  {
+   "id": "cracker_carrefour",
+   "name_he": "קרקרים מלוחים קרפור 3x100 גרם",
+   "barcode": "3560070961092",
+   "rating": "y",
+   "why": "קרקר מלוח - קמח לבן מעובד. במידה, ועדיף עם גבינה או חומוס.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 66,
+   "gi_band": "בינוני",
+   "tokens": [
+    "3x100",
+    "גרם",
+    "מלוחים",
+    "קרפור",
+    "קרקרים"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/356/007/096/1092/front_es.74.400.jpg",
+   "portion_g": 300.0,
+   "portion_label": "אריזה של 300 גרם"
+  },
+  {
+   "id": "cracker_rye",
+   "name_he": "קרקר שיפון ואזה 270 גרם",
+   "barcode": "33617322616",
+   "rating": "g",
+   "why": "קרקר שיפון מלא - הרבה סיבים ועלייה איטית. בסיס טוב לגבינה או חומוס.",
+   "swaps": [],
+   "gi": 64,
+   "gi_band": "בינוני",
+   "tokens": [
+    "270",
+    "גרם",
+    "ואזה",
+    "קרקר",
+    "שיפון"
+   ],
+   "img": "https://img.rami-levy.co.il/product/33617322616/medium.jpg",
+   "portion_g": 270.0,
+   "portion_label": "אריזה של 270 גרם"
+  },
+  {
+   "id": "7290000591858",
+   "name_he": "שוקוקרקר שוקולד מריר 128 גרם",
+   "barcode": "7290000591858",
+   "rating": "r",
+   "why": "קמח לבן וסוכר - מתוק ומהיר. עוגייה אחת ליד קפה, לא חבילה.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye",
+     "img": "https://img.rami-levy.co.il/product/33617322616/medium.jpg"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 66,
+   "gi_band": "בינוני",
+   "tokens": [
+    "128",
+    "גרם",
+    "מריר",
+    "שוקולד",
+    "שוקוקרקר"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/729/000/059/1858/front_fr.3.400.jpg",
+   "portion_g": 128.0,
+   "portion_label": "אריזה של 128 גרם"
+  },
+  {
+   "id": "cookie_man_whole",
+   "name_he": "עוגיות מן מחיטה מלאה 300 גרם",
+   "barcode": "7290000311708",
+   "rating": "y",
+   "why": "חיטה מלאה אבל עדיין עוגייה מתוקה. טיפה עדיף, מנה קטנה. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye",
+     "img": "https://img.rami-levy.co.il/product/33617322616/medium.jpg"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 62,
+   "gi_band": "בינוני",
+   "tokens": [
+    "300",
+    "גרם",
+    "מחיטה",
+    "מלאה",
+    "מן",
+    "עוגיות"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000311708/medium.jpg",
+   "portion_g": 300.0,
+   "portion_label": "אריזה של 300 גרם"
+  },
+  {
+   "id": "cookie_man_whole2",
+   "name_he": "עוגיות מן חיטה מלאה 250 גרם",
+   "barcode": "7290000311845",
+   "rating": "y",
+   "why": "חיטה מלאה אבל עדיין עוגייה מתוקה. טיפה עדיף, מנה קטנה.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye",
+     "img": "https://img.rami-levy.co.il/product/33617322616/medium.jpg"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole",
+     "img": "https://img.rami-levy.co.il/product/7290000311708/medium.jpg"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 62,
+   "gi_band": "בינוני",
+   "tokens": [
+    "250",
+    "גרם",
+    "חיטה",
+    "מלאה",
+    "מן",
+    "עוגיות"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000311845/medium.jpg",
+   "portion_g": 250.0,
+   "portion_label": "אריזה של 250 גרם"
+  },
+  {
+   "id": "cookie_man_noadd",
+   "name_he": "עוגיות מן חמאה ללא תוספת סוכר 200 גרם",
+   "barcode": "7290000311463",
+   "rating": "y",
+   "why": "ללא תוספת סוכר, אבל עדיין קמח ומתקתקים. מנה קטנה.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye",
+     "img": "https://img.rami-levy.co.il/product/33617322616/medium.jpg"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole",
+     "img": "https://img.rami-levy.co.il/product/7290000311708/medium.jpg"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 60,
+   "gi_band": "בינוני",
+   "tokens": [
+    "200",
+    "גרם",
+    "חמאה",
+    "ללא",
+    "מן",
+    "סוכר",
+    "עוגיות",
+    "תוספת"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000311463/medium.jpg",
+   "portion_g": 200.0,
+   "portion_label": "אריזה של 200 גרם"
+  },
+  {
+   "id": "cookie_man_granola_noadd",
+   "name_he": "עוגיות מן גרנולה ללא תוספת סוכר 200 גרם",
+   "barcode": "7290000311883",
+   "rating": "y",
+   "why": "ללא תוספת סוכר, אבל עדיין קמח ומתקתקים. מנה קטנה. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye",
+     "img": "https://img.rami-levy.co.il/product/33617322616/medium.jpg"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole",
+     "img": "https://img.rami-levy.co.il/product/7290000311708/medium.jpg"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 60,
+   "gi_band": "בינוני",
+   "tokens": [
+    "200",
+    "גרם",
+    "גרנולה",
+    "ללא",
+    "מן",
+    "סוכר",
+    "עוגיות",
+    "תוספת"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000311883/medium.jpg",
+   "portion_g": 200.0,
+   "portion_label": "אריזה של 200 גרם"
+  },
+  {
+   "id": "cookie_rifaat",
+   "name_he": "עוגיות ריפאת ללא תוספת סוכר",
+   "barcode": "7290000524191",
+   "rating": "y",
+   "why": "ללא תוספת סוכר, אבל עדיין קמח ומתקתקים. מנה קטנה.",
+   "swaps": [
+    {
+     "name": "קרקר שיפון ואזה",
+     "where": "בכל הרשתות",
+     "ref": "cracker_rye",
+     "img": "https://img.rami-levy.co.il/product/33617322616/medium.jpg"
+    },
+    {
+     "name": "עוגיות מן מחיטה מלאה",
+     "where": "בכל הרשתות",
+     "ref": "cookie_man_whole",
+     "img": "https://img.rami-levy.co.il/product/7290000311708/medium.jpg"
+    },
+    {
+     "name": "אגוזי מלך קלופים",
+     "where": "בכל הרשתות",
+     "ref": "nut_walnuts"
+    }
+   ],
+   "gi": 60,
+   "gi_band": "בינוני",
+   "tokens": [
+    "ללא",
+    "סוכר",
+    "עוגיות",
+    "ריפאת",
+    "תוספת"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000524191/medium.jpg",
+   "portion_g": 350.0,
+   "portion_label": "אריזה של 350 גרם"
   }
  ],
  "rules": [
