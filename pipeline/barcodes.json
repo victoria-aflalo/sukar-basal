@@ -2734,5 +2734,121 @@
  {
   "id": "yog_sweet_light",
   "barcode": "7290019790389"
+ },
+ {
+  "id": "bread_achid_750",
+  "barcode": "7290000574035"
+ },
+ {
+  "id": "bread_achid_kal",
+  "barcode": "7290002079996"
+ },
+ {
+  "id": "bread_chita_mala_dganim",
+  "barcode": "7290000574141"
+ },
+ {
+  "id": "bread_kal_chita_mala",
+  "barcode": "7290000574172"
+ },
+ {
+  "id": "bread_chita_kusmin",
+  "barcode": "7290000574455"
+ },
+ {
+  "id": "bread_chita_mala_kids",
+  "barcode": "7290003268252"
+ },
+ {
+  "id": "bread_yarok",
+  "barcode": "7290003268429"
+ },
+ {
+  "id": "bread_excl_shifon_male",
+  "barcode": "7290003719259"
+ },
+ {
+  "id": "bread_chita_mala_plus",
+  "barcode": "7290004685027"
+ },
+ {
+  "id": "bread_shifon100_haaretz",
+  "barcode": "7290004685157"
+ },
+ {
+  "id": "bread_kusmin100_haaretz",
+  "barcode": "7290004685430"
+ },
+ {
+  "id": "bread_100_davidov",
+  "barcode": "7290006322838"
+ },
+ {
+  "id": "bread_dganim_family",
+  "barcode": "7290001598085"
+ },
+ {
+  "id": "bread_shifon_kfarit",
+  "barcode": "7290002065623"
+ },
+ {
+  "id": "bread_shifon_kehe",
+  "barcode": "7290008713917"
+ },
+ {
+  "id": "bread_machmetzet_grainim",
+  "barcode": "7290000481197"
+ },
+ {
+  "id": "bread_dganim_plus",
+  "barcode": "7290000497570"
+ },
+ {
+  "id": "bread_shifon_amiti_kal",
+  "barcode": "7290000574370"
+ },
+ {
+  "id": "bread_kusmin_chita",
+  "barcode": "7290017947891"
+ },
+ {
+  "id": "bread_artizanal_kusmin",
+  "barcode": "7290018540817"
+ },
+ {
+  "id": "bun_pashut_male6",
+  "barcode": "7290015644297"
+ },
+ {
+  "id": "bun_kusmin6",
+  "barcode": "7290017947495"
+ },
+ {
+  "id": "bun_hamburger8",
+  "barcode": "7290002079361"
+ },
+ {
+  "id": "bun_america6",
+  "barcode": "7290018500484"
+ },
+ {
+  "id": "bun_dganit10",
+  "barcode": "7290000481883"
+ },
+ {
+  "id": "bun_briosh8",
+  "barcode": "7290004033514"
+ },
+ {
+  "id": "pita_angel",
+  "barcode": "7290018540329"
+ },
+ {
+  "id": "challah_perusa",
+  "barcode": "7290000379128"
+ },
+ {
+  "id": "baguette_rustik_male",
+  "barcode": "7290001461457"
  }
 ]
