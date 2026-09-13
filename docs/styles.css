@@ -160,3 +160,31 @@ button { cursor:pointer; }
 .chip.total-chip { background:#0D6E63; color:#fff; }
 .chip.total-chip small { color:rgba(255,255,255,.85); }
 .quality-note { background:#FDF3E3; border:1.5px solid #E0A93E; color:#7A5410; border-radius:12px; padding:12px 16px; font-size:16px; line-height:1.5; margin:8px 0 12px; }
+
+/* ===== ערכים תזונתיים + דירוג חלופות (ספט׳ 2026) ===== */
+.nutri { background:#fff; border:1.5px solid var(--line); border-radius:12px; margin-top:10px; padding:10px 12px; }
+.nutri-gi { margin-bottom:8px; }
+.gi-chip { display:inline-block; border-radius:10px; font-size:15px; font-weight:800; padding:4px 12px; color:#fff; }
+.gi-chip.g { background:var(--green); } .gi-chip.y { background:var(--amber); } .gi-chip.r { background:var(--red); }
+.ngrid { display:grid; grid-template-columns:repeat(auto-fill, minmax(82px, 1fr)); gap:6px; }
+.ncell { background:var(--bg, #FAF7F2); border-radius:10px; text-align:center; padding:7px 2px; }
+.ncell b { display:block; font-size:17px; }
+.ncell small { font-size:12.5px; color:var(--ink3); }
+.ncell.r { background:#FDECEA; } .ncell.r b { color:var(--red); }
+.portion { margin-top:8px; font-size:16px; font-weight:700; color:var(--ink); }
+.moh { margin-top:8px; display:flex; flex-wrap:wrap; align-items:center; gap:6px; }
+.moh-chip { border-radius:10px; font-size:14.5px; font-weight:800; padding:4px 10px; }
+.moh-chip.red { background:var(--red); color:#fff; }
+.moh-chip.ok { background:var(--soft-green); color:var(--green); border:1.5px solid var(--green); }
+.moh-src { font-size:12.5px; color:var(--ink3); }
+.nutri-src { margin-top:6px; font-size:12.5px; color:var(--ink3); }
+.swap-why { margin:4px 0 2px; display:flex; flex-direction:column; gap:3px; }
+.sw-pro { font-size:14.5px; font-weight:700; color:var(--green); }
+.sw-con { font-size:14.5px; font-weight:700; color:var(--amber); }
+.sw-note { font-size:14px; color:var(--ink3); }
+.how { margin-top:14px; background:#fff; border:1.5px solid var(--line); border-radius:12px; padding:10px 12px; }
+.how summary { font-size:16px; font-weight:800; cursor:pointer; color:var(--primary); }
+.how-list { margin:10px 0 0; padding-right:18px; font-size:14.5px; line-height:1.6; color:var(--ink2); }
+.how-list li { margin-bottom:6px; }
+.how-links { margin-top:8px; font-size:13.5px; line-height:1.9; }
+.how-links a { color:var(--primary); }
