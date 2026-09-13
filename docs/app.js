@@ -16,6 +16,7 @@ async function boot() {
   ]);
   NUTMODEL = nm; NUTFACTS = nf.facts;
   CATALOG = cat;
+  cat.items.forEach(it => { CAT_BY_ID[it.id] = it; });
   pr.items.forEach(it => { PRICES[it.id] = it.prices; });
   MEALS = ml;
   wireHome(); wireResults(); renderBaskets(); wireDrawer(); renderProfile(); renderMeals();
@@ -460,6 +461,137 @@ function analyzeReceipt(text) {
   return { rated, unmatched, total };
 }
 
+/* ============ ערכים תזונתיים + דירוג חלופות (מחקר ספט׳ 2026) ============ */
+/* ספי התווית האדומה של משרד הבריאות (2021) ל-100 גרם מוצק / 100 מ״ל נוזל:
+   https://efsharibari.health.gov.il/en/governance/legislation/unhealthy-food-labeling-law/ */
+const MOH_SOLID = { sugar: 10, sodium: 400, satfat: 4 };
+const MOH_LIQUID = { sugar: 5, sodium: 300, satfat: 3 };
+/* רמות מדד גליקמי לפי Diabetes UK */
+const GI_BANDS = [[55, 'נמוך', 'g'], [69, 'בינוני', 'y'], [Infinity, 'גבוה', 'r']];
+const TSP_G = 4.2; /* כפית סוכר ≈ 4.2 גרם */
+
+function giBand(gi) { for (const [max, label, cls] of GI_BANDS) if (gi <= max) return { label, cls }; }
+function giChipHtml(it) {
+  if (!it.gi) return '';
+  const b = giBand(it.gi);
+  return `<span class="gi-chip ${b.cls}">מדד גליקמי ${b.label} (${it.gi})</span>`;
+}
+function isLiquidItem(it) { return /ליטר|מ״ל|מ"ל|משקה|מיץ|קולה|בירה|סודה|נקטר/.test(it.name_he || ''); }
+function factsOf(it) {
+  if (!NUTFACTS || !it) return null;
+  return NUTFACTS[it.barcode] || NUTFACTS[it.id] || null;
+}
+function rnd1(v) { return Math.round(v * 10) / 10; }
+function tspTxt(g) { const t = g / TSP_G; return t >= 10 ? String(Math.round(t)) : String(rnd1(t)); }
+
+function mohFlagsHtml(f, liquid) {
+  const th = liquid ? MOH_LIQUID : MOH_SOLID;
+  const flags = [];
+  if (f.sugars != null && f.sugars >= th.sugar) flags.push('גבוה בסוכר');
+  if (f.sodium_mg != null && f.sodium_mg >= th.sodium) flags.push('גבוה בנתרן');
+  if (f.satfat != null && f.satfat >= th.satfat) flags.push('גבוה בשומן רווי');
+  const known = f.sugars != null || f.sodium_mg != null || f.satfat != null;
+  if (!known) return '';
+  if (!flags.length) return `<div class="moh"><span class="moh-chip ok">✔ ללא תווית אדומה בסוכר/נתרן/שומן רווי</span></div>`;
+  return `<div class="moh">${flags.map(t => `<span class="moh-chip red">⚠ תווית אדומה: ${t}</span>`).join('')}<span class="moh-src">ספי משרד הבריאות ל-100 ${liquid ? 'מ״ל' : 'גרם'}</span></div>`;
+}
+
+function nutriStripHtml(it) {
+  const f = factsOf(it);
+  const gi = giChipHtml(it);
+  if (!f) return gi ? `<div class="nutri"><div class="nutri-gi">${gi}</div></div>` : '';
+  const liquid = isLiquidItem(it);
+  const unit = liquid ? '100 מ״ל' : '100 גרם';
+  const cells = [];
+  if (f.sugars != null) cells.push(['סוכר', rnd1(f.sugars), f.sugars >= (liquid ? MOH_LIQUID.sugar : MOH_SOLID.sugar) ? 'r' : '']);
+  if (f.c != null) cells.push(['פחמימות', rnd1(f.c), '']);
+  if (f.p != null) cells.push(['חלבון', rnd1(f.p), '']);
+  if (f.fiber != null) cells.push(['סיבים', rnd1(f.fiber), '']);
+  if (f.f != null) cells.push(['שומן', rnd1(f.f), '']);
+  if (f.satfat != null) cells.push(['שומן רווי', rnd1(f.satfat), f.satfat >= (liquid ? MOH_LIQUID.satfat : MOH_SOLID.satfat) ? 'r' : '']);
+  if (f.sodium_mg != null) cells.push(['נתרן (מ״ג)', Math.round(f.sodium_mg), f.sodium_mg >= (liquid ? MOH_LIQUID.sodium : MOH_SOLID.sodium) ? 'r' : '']);
+  if (!cells.length) return '';
+  const grid = cells.map(([l, v, cls]) => `<div class="ncell ${cls}"><b>${v}</b><small>${l}</small></div>`).join('');
+  let portion = '';
+  if (it.portion_g && it.portion_g <= (liquid ? 1000 : 500) && f.sugars != null && f.sugars >= 5) {
+    const ps = rnd1(f.sugars * it.portion_g / 100);
+    if (ps >= 2) portion = `<div class="portion">ב${it.portion_label || 'אריזה'}: ${ps} גרם סוכר ≈ <b>${tspTxt(ps)} כפיות סוכר</b></div>`;
+  }
+  return `<div class="nutri">${gi ? `<div class="nutri-gi">${gi}</div>` : ''}<div class="ngrid">${grid}</div>${portion}${mohFlagsHtml(f, liquid)}<div class="nutri-src">ערכים ל-${unit} (Open Food Facts) · כפית סוכר ≈ 4.2 גרם</div></div>`;
+}
+
+/* דירוג חלופות: החלופה חייבת להשתפר מול המקור; הסדר לפי גודל השיפור.
+   עקרונות: Fooducate (חלופה בציון גבוה יותר, אותה קטגוריה), Diabetes UK (GI + GL),
+   שקיפות על טרייד-אוף. */
+function swapAnalysis(it, s) {
+  if (!s.ref || !CAT_BY_ID[s.ref] || s.ref === it.id) return null;
+  const ref = CAT_BY_ID[s.ref];
+  const of = factsOf(it), rf = factsOf(ref);
+  const liquid = isLiquidItem(it);
+  const unit = liquid ? '100 מ״ל' : '100 גרם';
+  const pros = [], cons = [];
+  let score = 0;
+  if (of && rf) {
+    if (of.sugars != null && rf.sugars != null) {
+      const d = rnd1(of.sugars - rf.sugars);
+      if (d >= 2) { pros.push(`פחות סוכר: ${rnd1(rf.sugars)} לעומת ${rnd1(of.sugars)} גרם ל-${unit}`); score += 3 * Math.min(d, 30) / 10; }
+      else if (d <= -2) { cons.push(`דווקא יותר סוכר (+${Math.abs(d)} גרם)`); score -= 2; }
+    }
+    if (of.c != null && rf.c != null) {
+      const d = rnd1(of.c - rf.c);
+      if (d >= 5) { pros.push(`פחות פחמימות (−${d} גרם)`); score += Math.min(d, 30) / 15; }
+    }
+    if (of.fiber != null && rf.fiber != null && rf.fiber - of.fiber >= 2) { pros.push(`יותר סיבים (+${rnd1(rf.fiber - of.fiber)} גרם)`); score += 1; }
+    if (of.p != null && rf.p != null) {
+      const d = rnd1(rf.p - of.p);
+      if (d >= 2) { pros.push(`יותר חלבון (+${d} גרם)`); score += 1; }
+      else if (d <= -3) cons.push(`פחות חלבון (${Math.abs(d)}− גרם)`);
+    }
+  }
+  if (it.gi && ref.gi && ref.gi < it.gi) { pros.push(`מדד גליקמי נמוך יותר (${ref.gi} לעומת ${it.gi})`); score += (it.gi - ref.gi) / 10; }
+  const op = itemMinPrice(it.id), rp = itemMinPrice(ref.id);
+  if (op != null && rp != null) {
+    const d = op - rp;
+    if (d >= 0.3) { pros.push(`זול יותר ב-₪${d.toFixed(2)}`); score += Math.min(d, 5) / 2; }
+    else if (d <= -0.3) cons.push(`יקר יותר ב-₪${Math.abs(d).toFixed(2)}`);
+  }
+  const chains = PRICES[ref.id] ? Object.keys(PRICES[ref.id]).length : 0;
+  if (chains >= 3) { pros.push(`זמין ב-${chains} רשתות`); score += 0.5; }
+  return { pros, cons, score, rp };
+}
+
+function swapsBodyHtml(it) {
+  const list = (it.swaps || []).map(s => ({ s, a: swapAnalysis(it, s) }));
+  list.sort((x, y) => (y.a ? y.a.score : -1) - (x.a ? x.a.score : -1));
+  return list.map(({ s, a }) => {
+    const why = a && (a.pros.length || a.cons.length)
+      ? `<div class="swap-why">${a.pros.map(p => `<span class="sw-pro">▲ ${p}</span>`).join('')}${a.cons.map(c => `<span class="sw-con">▼ ${c}</span>`).join('')}</div>`
+      : `<div class="swap-why"><span class="sw-note">אין לנו נתוני תזונה מדויקים לחלופה הזו - כדאי לבדוק בתווית באריזה</span></div>`;
+    const rp = a && a.rp != null ? `<div class="where">מחיר משוער: ${fmt(a.rp)}</div>` : '';
+    return `<div class="swap-body">${s.img ? `<img class="pimg swap-img" src="${s.img}" alt="" loading="lazy" onerror="this.remove()">` : ''}
+    <div class="swap-txt"><b>${s.name}</b>${why}
+    <div class="where">איפה קונים: ${s.where}</div>${rp}</div></div>`;
+  }).join('');
+}
+
+function ratingExplainerHtml() {
+  return `<details class="how"><summary>איך אנחנו מדרגים ומציגים? (כללי המשחק והמקורות)</summary>
+  <ul class="how-list">
+    <li><b>חלופה</b> מוצגת רק כשהיא שיפור על המוצר שקניתם, ומדורגת לפי: פחות סוכר ופחמימות, מדד גליקמי נמוך יותר, יותר סיבים וחלבון, מחיר וזמינות ברשתות. אם משהו בחלופה פחות טוב - כתוב במפורש.</li>
+    <li><b>ערכי תזונה</b> מוצגים ל-100 גרם/מ״ל - אותו בסיס כמו על האריזה, כדי שאפשר יהיה להשוות שני מוצרים - ובנוסף לפי גודל האריזה כשהוא ידוע.</li>
+    <li><b>תווית אדומה</b> מוצגת לפי ספי משרד הבריאות: סוכר ≥10 גרם, נתרן ≥400 מ״ג, שומן רווי ≥4 גרם ל-100 גרם (בשתייה: 5 גרם / 300 מ״ג / 3 גרם ל-100 מ״ל).</li>
+    <li><b>סוכר בכפיות</b> (כפית ≈ 4.2 גרם) - פורמט שהוכח במחקרים כקל להבנה במיוחד.</li>
+    <li><b>מדד גליקמי</b>: נמוך עד 55, בינוני 56-69, גבוה 70+ (Diabetes UK). שימו לב: גודל המנה משפיע יותר מהמדד לבדו, ומדד נמוך לא תמיד אומר בריא.</li>
+  </ul>
+  <div class="how-links">מקורות:
+    <a href="https://www.diabetes.org.uk/living-with-diabetes/eating/carbohydrates-and-diabetes/glycaemic-index-and-diabetes" target="_blank" rel="noopener">Diabetes UK - מדד גליקמי</a> ·
+    <a href="https://efsharibari.health.gov.il/en/governance/legislation/unhealthy-food-labeling-law/" target="_blank" rel="noopener">משרד הבריאות - תוויות אדומות</a> ·
+    <a href="https://www.diabetes.org.uk/living-with-diabetes/eating/healthy-swaps" target="_blank" rel="noopener">Diabetes UK - החלפות מומלצות</a> ·
+    <a href="https://www.fooducate.com/faq" target="_blank" rel="noopener">Fooducate - איך בוחרים חלופות</a> ·
+    <a href="https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-022-13648-1" target="_blank" rel="noopener">מחקר: סוכר בכפיות</a>
+  </div></details>`;
+}
+
 /* ============ תוצאות ============ */
 const RATING_HE = { g:'ירוק', y:'צהוב', r:'אדום', n:'לא מזון' };
 const RATING_ICON = { g:'✔', y:'!', r:'✖', n:'–' };
@@ -488,16 +620,14 @@ function renderResults(result) {
     if (x.kind === 'catalog') {
       const it = x.item;
       const price = PRICES[it.id] ? fmt(Math.min(...Object.values(PRICES[it.id]))) : null;
-      const swaps = (it.swaps || []).map(s => `
-        <div class="swap-body">${s.img ? `<img class="pimg swap-img" src="${s.img}" alt="" loading="lazy" onerror="this.remove()">` : ''}
-        <div class="swap-txt"><b>${s.name}</b>
-        <div class="where">איפה קונים: ${s.where}</div></div></div>`).join('');
+      const swaps = swapsBodyHtml(it);
       return `<div class="item">
         <div class="item-head"><div class="badge ${it.rating}">${RATING_ICON[it.rating]}</div>
           <div class="name">${it.name_he}${price ? ` <span class="est">${price}</span>` : ''}${x.receiptPrice ? ` <span class="est">· בקבלה: ₪${x.receiptPrice.toFixed(2)}</span>` : ''}</div>
           ${it.img ? `<img class="pimg" src="${it.img}" alt="" loading="lazy" onerror="this.remove()">` : ''}</div>
         ${it.why ? `<div class="why">${it.why}</div>` : ''}
-        ${swaps ? `<div class="swap"><div class="swap-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 8h13l-3-3M20 16H7l3 3" stroke="#1E7B34" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>החליפו בקנייה הבאה:</div>${swaps}</div>` : ''}
+        ${nutriStripHtml(it)}
+        ${swaps ? `<div class="swap"><div class="swap-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 8h13l-3-3M20 16H7l3 3" stroke="#1E7B34" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>החליפו בקנייה הבאה - הכי משפר ראשון:</div>${swaps}</div>` : ''}
       </div>`;
     }
     const rule = x.rule;
@@ -518,7 +648,7 @@ function renderResults(result) {
     <div class="quota"><div class="q-title">סוכר מוסף</div><div class="q-val">${q.sugar.value}</div><div class="q-src">מקור: ${q.sugar.source}</div></div>
     <div class="quota"><div class="q-title">נתרן (מלח)</div><div class="q-val">${q.sodium.value}</div><div class="q-src">מקור: ${q.sodium.source}</div></div>
     <div class="quota"><div class="q-title">סיבים תזונתיים</div><div class="q-val">${q.fiber.value}</div><div class="q-src">מקור: ${q.fiber.source}</div></div>
-    <p class="q-note">${q.note}</p>`;
+    <p class="q-note">${q.note}</p>${ratingExplainerHtml()}`;
 }
 
 function swapMessage() {
@@ -526,7 +656,9 @@ function swapMessage() {
   const reds = lastResult.rated.filter(x => x.kind === 'catalog' && x.item.rating === 'r');
   const lines = ['סוכר בסל - ההחלפות שלי לקנייה הבאה:'];
   reds.forEach(x => {
-    x.item.swaps.forEach(s => lines.push(`• במקום ${x.item.name_he}: ${s.name} (${s.where})`));
+    const ranked = x.item.swaps.map(s => ({ s, a: swapAnalysis(x.item, s) }))
+      .sort((p, q) => (q.a ? q.a.score : -1) - (p.a ? p.a.score : -1));
+    ranked.forEach(({ s, a }) => lines.push(`• במקום ${x.item.name_he}: ${s.name} (${s.where})${a && a.pros.length ? ' - ' + a.pros[0] : ''}`));
   });
   lines.push('', 'הכוונה כללית - לא ייעוץ רפואי');
   return lines.join('\n');
