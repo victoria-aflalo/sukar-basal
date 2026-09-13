@@ -22,6 +22,10 @@
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="6" width="19" height="14" rx="3" fill="#0D6E63"/><circle cx="12" cy="13" r="4.2" fill="#fff"/><circle cx="12" cy="13" r="2.4" fill="#0D6E63"/></svg>
     <span>סריקת קבלה<small>המסך הראשי</small></span>
   </a>
+  <a href="#search" class="drawer-link" data-nav="search">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="#0D6E63" stroke-width="2.4"/><path d="M15.5 15.5 21 21" stroke="#0D6E63" stroke-width="2.4" stroke-linecap="round"/></svg>
+    <span>חיפוש מוצר<small>כל 620 המוצרים, בלי קבלה</small></span>
+  </a>
   <a href="#meals" class="drawer-link" data-nav="meals">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 10h16v2a8 8 0 0 1-16 0v-2z" fill="#0D6E63"/><path d="M9 10V7.5M12 10V6.5M15 10V7.5" stroke="#0D6E63" stroke-width="1.8" stroke-linecap="round"/></svg>
     <span>ארוחות מומלצות<small>בוקר, צהריים, ערב ונשנושים</small></span>
@@ -55,6 +59,7 @@
       </div>
       <div class="basket-link"><a href="#baskets">אין קבלה? נסו סל לדוגמה</a></div>
       <div class="basket-link"><a href="#" id="btnSample">או הפעילו את הקבלה לדוגמה שלנו</a></div>
+      <div class="basket-link"><a href="#search">או חפשו מוצר ספציפי מהרשימה המלאה - בלי קבלה</a></div>
     </div>
     <p class="privacy">הסריקה מתבצעת כולה בטלפון שלכם. התמונה לא נשלחת לשום שרת.</p>
     <p class="disclaimer">השירות נותן הכוונה כללית בלבד ואינו תחליף לייעוץ רפואי.<br>בשאלות על התפריט שלכם - התייעצו עם הרופא או הדיאטנית.</p>
@@ -86,6 +91,26 @@
       שלחו את ההחלפות לוואטסאפ
     </button>
     <button class="ghost" id="btnAgain">סרקו קבלה נוספת</button>
+    <div class="mini-disc">הכוונה כללית - לא ייעוץ רפואי</div>
+  </div>
+</section>
+
+<!-- ===== מסך חיפוש מוצר ===== -->
+<section id="view-search" class="view">
+  <div class="topbar">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="#fff" stroke-width="2.4"/><path d="M15.5 15.5 21 21" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
+    חיפוש מוצר
+  </div>
+  <p class="baskets-intro">חפשו כל מוצר מהקטלוג המלא שלנו - 620 מוצרים - בלי צורך בקבלה. לחיצה על מוצר מציגה את הכל: ערכים תזונתיים, תוויות אדומות, מדד גליקמי, כפיות סוכר וחלופות מדורגות.</p>
+  <div class="search-box">
+    <input id="searchInput" class="search-input" type="search" inputmode="search" autocomplete="off" placeholder="כתבו שם מוצר, למשל: קולה, לחם, גבינה..." aria-label="חיפוש מוצר">
+  </div>
+  <div id="searchHint" class="search-hint"></div>
+  <div class="list" id="searchResults"></div>
+  <div id="searchCard" class="list"></div>
+  <div class="list-pad"></div>
+  <div class="sticky">
+    <button class="ghost" id="btnHomeSearch">חזרה למסך הראשי</button>
     <div class="mini-disc">הכוונה כללית - לא ייעוץ רפואי</div>
   </div>
 </section>
@@ -122,6 +147,6 @@
 </section>
 
 <footer class="credit">נבנה על ידי ויקטוריה אפללו</footer>
-<script src="app.js?v=8"></script>
+<script src="app.js?v=9"></script>
 </body>
 </html>
