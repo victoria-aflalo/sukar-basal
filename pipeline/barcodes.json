@@ -2622,5 +2622,117 @@
  {
   "id": "cream_philadelphia",
   "barcode": "7622201139278"
+ },
+ {
+  "id": "yog_tnuva_bio3",
+  "barcode": "7290000057149"
+ },
+ {
+  "id": "yog_tnuva_bio15",
+  "barcode": "7290000057132"
+ },
+ {
+  "id": "yog_tnuva_kad4",
+  "barcode": "7290000043944"
+ },
+ {
+  "id": "yog_lacfree",
+  "barcode": "7290019790372"
+ },
+ {
+  "id": "yog_danone_lacfree",
+  "barcode": "7290110561352"
+ },
+ {
+  "id": "yog_protein2",
+  "barcode": "7290019790396"
+ },
+ {
+  "id": "yog_yoplait_labane",
+  "barcode": "7290004133511"
+ },
+ {
+  "id": "yog_greek_180",
+  "barcode": "7290002133612"
+ },
+ {
+  "id": "yog_greek_400",
+  "barcode": "7290013771384"
+ },
+ {
+  "id": "yog_danone_greek",
+  "barcode": "7290107936309"
+ },
+ {
+  "id": "yog_gad_sheep5",
+  "barcode": "7290004068011"
+ },
+ {
+  "id": "yog_hashomron_goat",
+  "barcode": "7290002133506"
+ },
+ {
+  "id": "yog_muller_activ25",
+  "barcode": "7290102399796"
+ },
+ {
+  "id": "yog_muller_pro20",
+  "barcode": "7290102399802"
+ },
+ {
+  "id": "yog_danone_pro20",
+  "barcode": "7290110565527"
+ },
+ {
+  "id": "yog_danone_pro_vanilla",
+  "barcode": "7290112330352"
+ },
+ {
+  "id": "yog_danone_forest",
+  "barcode": "7290106668713"
+ },
+ {
+  "id": "yog_danone_multi",
+  "barcode": "7290110558284"
+ },
+ {
+  "id": "yog_crunch_pops",
+  "barcode": "7290110578053"
+ },
+ {
+  "id": "yog_yoplait_drink_straw",
+  "barcode": "7290000055329"
+ },
+ {
+  "id": "yog_yoplait_drink_banana",
+  "barcode": "7290000055336"
+ },
+ {
+  "id": "yog_go_straw",
+  "barcode": "7290110328764"
+ },
+ {
+  "id": "yog_go_coconut",
+  "barcode": "7290110329952"
+ },
+ {
+  "id": "yog_actimel_straw",
+  "barcode": "7290102031276"
+ },
+ {
+  "id": "yog_gamdin",
+  "barcode": "7290104062599"
+ },
+ {
+  "id": "yog_danone_drink_straw",
+  "barcode": "7290105965738"
+ },
+ {
+  "id": "yog_lassi_mango",
+  "barcode": "7290019635567"
+ },
+ {
+  "id": "yog_sweet_light",
+  "barcode": "7290019790389"
  }
 ]
