@@ -817,3 +817,23 @@ function renderBaskets() {
     };
   });
 }
+
+
+/* ===== חיפוש מהבית: מעביר את השאילתה למסך החיפוש הקיים ===== */
+document.addEventListener('DOMContentLoaded', () => {
+  const forward = q => {
+    location.hash = 'search';
+    show('view-search');
+    const s = $('searchInput');
+    s.value = q;
+    s.dispatchEvent(new Event('input', { bubbles: true }));
+    s.focus();
+  };
+  document.querySelectorAll('[data-home-search]').forEach(inp => {
+    inp.addEventListener('input', () => { if (inp.value.trim()) forward(inp.value); });
+    inp.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); forward(inp.value); } });
+  });
+  document.querySelectorAll('[data-search-chip]').forEach(ch => {
+    ch.addEventListener('click', () => forward(ch.dataset.searchChip));
+  });
+});
