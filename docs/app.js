@@ -19,7 +19,7 @@ async function boot() {
   cat.items.forEach(it => { CAT_BY_ID[it.id] = it; });
   pr.items.forEach(it => { PRICES[it.id] = it.prices; });
   MEALS = ml;
-  wireHome(); wireResults(); wireSearch(); renderBaskets(); wireDrawer(); renderProfile(); renderMeals();
+  wireHome(); wireResults(); renderHomeSwaps(); wireSearch(); renderBaskets(); wireDrawer(); renderProfile(); renderMeals();
   if (location.hash === '#baskets') show('view-baskets');
   else if (location.hash === '#meals') show('view-meals');
   else if (location.hash === '#search') show('view-search');
@@ -30,6 +30,52 @@ function show(id) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   $(id).classList.add('active');
   window.scrollTo(0, 0);
+}
+
+
+/* ============ החלפה חכמה של השבוע (מסך הבית) ============
+   הכרטיסים נבנים מהקטלוג ומנתוני התזונה בזמן ריצה - לא HTML קבוע.
+   כרטיס מוצג רק אם לשני הצדדים יש ערך סוכר מאומת וההפרש משמעותי. */
+const HOME_SWAPS = [
+  { before: '7290000075143', beforeName: "עוגיות שוקוצ'יפס", after: 'cottage', afterName: "קוטג' 5%" },
+  { before: '5410126116953', beforeName: 'ממרח לוטוס', after: 'cottage', afterName: "קוטג' 5%" },
+  { before: 'cola', beforeName: 'קוקה קולה', after: '7290000136158', afterName: 'קולה זירו', note: 'כמעבר בלבד, לא כהרגל' },
+  { before: 'milk', beforeName: 'חלב 3%', after: 'soy_milk', afterName: 'משקה סויה ללא סוכר' },
+];
+function renderHomeSwaps() {
+  const host = $('homeSwapsList');
+  if (!host) return;
+  const cards = [];
+  for (const cfg of HOME_SWAPS) {
+    const b = CAT_BY_ID[cfg.before], a = CAT_BY_ID[cfg.after];
+    if (!b || !a) continue;
+    const bf = factsOf(b), af = factsOf(a);
+    if (!bf || !af || bf.sugars == null || af.sugars == null) continue;
+    const d = rnd1(bf.sugars - af.sugars);
+    if (d < 2) continue;
+    const unit = isLiquidItem(b) ? '100 מ״ל' : '100 גרם';
+    const bimg = b.img || (b.barcode ? `https://img.rami-levy.co.il/product/${b.barcode}/medium.jpg` : '');
+    const aimg = a.img || (a.barcode ? `https://img.rami-levy.co.il/product/${a.barcode}/medium.jpg` : '');
+    cards.push(`<div class="sw-card">
+      <div class="sw-sides">
+        <div class="sw-side">
+          ${bimg ? `<img src="${bimg}" alt="" loading="lazy" onerror="this.remove()">` : ''}
+          <b>${cfg.beforeName || b.name_he}</b>
+          <span class="sw-g r">${rnd1(bf.sugars)} גרם סוכר</span>
+          <small>ל-${unit} ≈ ${rnd1(bf.sugars / TSP_G)} כפיות</small>
+        </div>
+        <div class="sw-arrow" aria-hidden="true">←</div>
+        <div class="sw-side">
+          ${aimg ? `<img src="${aimg}" alt="" loading="lazy" onerror="this.remove()">` : ''}
+          <b>${cfg.afterName || a.name_he}</b>
+          <span class="sw-g g">${rnd1(af.sugars)} גרם סוכר</span>
+          <small>ל-${unit}</small>
+        </div>
+      </div>
+      <div class="sw-save">חיסכון של <b>${d} גרם</b> סוכר בכל ${unit}${cfg.note ? ' - ' + cfg.note : ''}</div>
+    </div>`);
+  }
+  host.innerHTML = cards.join('');
 }
 
 /* ============ מסך בית ============ */

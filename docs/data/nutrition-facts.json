@@ -444,6 +444,36 @@
    "kcal": 252,
    "src": "curated",
    "src_url": "https://www.foodsdictionary.co.il/Products/11/"
+  },
+  "7290000075143": {
+   "src": "off",
+   "p": 5.3,
+   "c": 66,
+   "f": 25.4,
+   "sugars": 34,
+   "satfat": 14.1,
+   "kcal": 514,
+   "sodium_mg": 200.0
+  },
+  "5410126116953": {
+   "src": "off",
+   "p": 2.9,
+   "c": 57,
+   "f": 38.1,
+   "sugars": 36.8,
+   "satfat": 7.6,
+   "fiber": 0.8,
+   "kcal": 584,
+   "sodium_mg": 212.0
+  },
+  "7290000136158": {
+   "src": "off",
+   "p": 0,
+   "c": 0,
+   "f": 0,
+   "sugars": 0,
+   "satfat": 0,
+   "kcal": 0
   }
  },
  "meta": {
