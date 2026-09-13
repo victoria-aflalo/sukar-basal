@@ -467,21 +467,19 @@
   },
   {
    "id": "tahini",
-   "name_he": "טחינה 500 גרם",
+   "name_he": "טחינה גולמית 500 גרם",
    "barcode": "7290001216231",
    "rating": "g",
-   "why": "טחינה מלאה - שומן טוב וסיבים, לא מעלה סוכר. במידה כי קלורית.",
+   "why": "טחינה גולמית - שומן טוב, חלבון וסידן, מדד גליקמי נמוך. בחירה טובה, כף-שתיים.",
    "swaps": [],
-   "gi": 15,
+   "gi": 35,
    "gi_band": "נמוך",
    "tokens": [
-    "טחינה",
-    "מלאה",
-    "500ג",
-    "אל",
-    "ארז"
+    "500",
+    "גולמית",
+    "גרם",
+    "טחינה"
    ],
-   "img": "https://img.rami-levy.co.il/product/7290001216231/medium.jpg",
    "portion_g": 500.0,
    "portion_label": "אריזה של 500 גרם"
   },
@@ -596,51 +594,74 @@
   },
   {
    "id": "peanut_butter",
-   "name_he": "חמאת בוטנים 510 גרם",
+   "name_he": "חמאת בוטנים עם שברי בוטנים 510 גרם",
    "barcode": "7290019297536",
    "rating": "y",
-   "why": "חמאת בוטנים תעשייתית מכילה לעיתים סוכר מוסף - לבדוק רכיבים.",
+   "why": "חמאת בוטנים - שומן טוב וחלבון שמאטים את הסוכר, אבל צפופה בקלוריות. כף אחת, לא שלוש. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
    "swaps": [
     {
-     "name": "חמאת בוטנים 100% בוטנים בלבד",
-     "where": "ניצת הדובדבן וחנויות טבע - כדאי לבדוק בסניף",
-     "img": "https://img.rami-levy.co.il/product/7290019297536/medium.jpg",
-     "match": "חמאת בוטנים 510 גרם",
-     "ref": "peanut_butter"
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva"
     }
    ],
-   "gi": 22,
+   "gi": 25,
    "gi_band": "נמוך",
    "tokens": [
-    "חמאת",
-    "בוטנים",
     "510",
-    "גרם"
+    "בוטנים",
+    "גרם",
+    "חמאת",
+    "עם",
+    "שברי"
    ],
-   "img": "https://img.rami-levy.co.il/product/7290019297536/medium.jpg",
    "portion_g": 510.0,
    "portion_label": "אריזה של 510 גרם"
   },
   {
    "id": "jam",
-   "name_he": "ריבת תות 250 גרם",
+   "name_he": "טרו ריבת תות 250 גרם",
    "barcode": "7290112197573",
-   "rating": "r",
-   "why": "ריבה = סוכר מרוכז. גם ״בלי סוכר״ מלאה בפירות מרוכזים.",
+   "rating": "y",
+   "why": "ריבה דלת סוכר מוסף - עדיפה על ריבה רגילה, אבל עדיין מתוקה. כפית. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
    "swaps": [
     {
-     "name": "פרי טרי פרוס על הלחם במקום",
-     "where": "בכל הרשתות"
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd",
+     "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread",
+     "img": "https://img.rami-levy.co.il/product/7290111353567/medium.jpg"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva",
+     "img": "https://images.openfoodfacts.org/images/products/729/001/032/8253/front_fr.4.400.jpg"
     }
    ],
-   "gi": 65,
-   "gi_band": "בינוני",
+   "gi": 45,
+   "gi_band": "נמוך",
    "tokens": [
+    "250",
+    "גרם",
     "טרו",
     "ריבת",
-    "תות",
-    "250",
-    "גרם"
+    "תות"
    ],
    "img": "https://img.rami-levy.co.il/product/7290112197573/medium.jpg",
    "portion_g": 250.0,
@@ -1748,43 +1769,81 @@
   },
   {
    "id": "5410126116953",
-   "name_he": "ממרח לוטוס ביסקויט ק",
+   "name_he": "ממרח לוטוס ביסקויט קלאסי 400 גרם",
    "barcode": "5410126116953",
    "rating": "r",
-   "why": "סוכר + קמח לבן - שילוב שמעלה סוכר חד.",
+   "why": "ממרח שוקולד - הרבה סוכר ושמן. נדיר, כפית אחת על לחם מלא.",
    "swaps": [
     {
-     "name": "פרי טרי או קופסת קוטג׳",
+     "name": "חמאת בוטנים ללא תוספת סוכר",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/7290011194246/medium.jpg",
-     "match": "קוטג׳ 5% 250 גרם",
-     "ref": "cottage"
+     "ref": "pb_shaked_noadd",
+     "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread",
+     "img": "https://img.rami-levy.co.il/product/7290111353567/medium.jpg"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva"
     }
    ],
-   "tokens": [],
-   "rule_label": "ממתק / מאפה מתוק",
-   "confidence": "rule",
-   "img": "https://img.rami-levy.co.il/product/5410126116953/medium.jpg"
+   "gi": 60,
+   "gi_band": "בינוני",
+   "tokens": [
+    "400",
+    "ביסקויט",
+    "גרם",
+    "לוטוס",
+    "ממרח",
+    "קלאסי"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/541/012/611/6953/front_en.222.400.jpg",
+   "portion_g": 400.0,
+   "portion_label": "אריזה של 400 גרם"
   },
   {
    "id": "5410126726947",
-   "name_he": "ממרח לוטוס ביסקויט ק",
+   "name_he": "ממרח לוטוס ביסקויט קראנצ'י 380 גרם",
    "barcode": "5410126726947",
    "rating": "r",
-   "why": "סוכר + קמח לבן - שילוב שמעלה סוכר חד.",
+   "why": "ממרח שוקולד - הרבה סוכר ושמן. נדיר, כפית אחת על לחם מלא.",
    "swaps": [
     {
-     "name": "פרי טרי או קופסת קוטג׳",
+     "name": "חמאת בוטנים ללא תוספת סוכר",
      "where": "בכל הרשתות",
-     "img": "https://img.rami-levy.co.il/product/7290011194246/medium.jpg",
-     "match": "קוטג׳ 5% 250 גרם",
-     "ref": "cottage"
+     "ref": "pb_shaked_noadd",
+     "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread",
+     "img": "https://img.rami-levy.co.il/product/7290111353567/medium.jpg"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva"
     }
    ],
-   "tokens": [],
-   "rule_label": "ממתק / מאפה מתוק",
-   "confidence": "rule",
-   "img": "https://img.rami-levy.co.il/product/5410126726947/medium.jpg"
+   "gi": 60,
+   "gi_band": "בינוני",
+   "tokens": [
+    "380",
+    "ביסקויט",
+    "גרם",
+    "לוטוס",
+    "ממרח",
+    "קראנצ'י"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/541/012/672/6947/front_en.247.400.jpg",
+   "portion_g": 380.0,
+   "portion_label": "אריזה של 380 גרם"
   },
   {
    "id": "5410228217732",
@@ -4841,16 +4900,24 @@
   },
   {
    "id": "7290001216057",
-   "name_he": "טחינה אלארז 1 ק\"ג",
+   "name_he": "טחינה גולמית אל ארז 1 ק״ג",
    "barcode": "7290001216057",
    "rating": "g",
-   "why": "קטנית עם סיבים - מאטה עליית סוכר.",
+   "why": "טחינה גולמית - שומן טוב, חלבון וסידן, מדד גליקמי נמוך. בחירה טובה, כף-שתיים.",
    "swaps": [],
-   "tokens": [],
-   "rule_label": "קטניות",
-   "confidence": "rule",
+   "gi": 35,
+   "gi_band": "נמוך",
+   "tokens": [
+    "1",
+    "אל",
+    "ארז",
+    "גולמית",
+    "טחינה",
+    "ק״ג"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/729/000/121/6057/front_he.3.400.jpg",
    "portion_g": 1000.0,
-   "portion_label": "אריזה של 1 ק״ג"
+   "portion_label": "אריזה של 1000 גרם"
   },
   {
    "id": "7290001216118",
@@ -15073,6 +15140,789 @@
    "img": "https://img.rami-levy.co.il/product/7290000524191/medium.jpg",
    "portion_g": 350.0,
    "portion_label": "אריזה של 350 גרם"
+  },
+  {
+   "id": "pb_skippy",
+   "name_he": "חמאת בוטנים סקיפי קלאסי 462 גרם",
+   "barcode": "37600309417",
+   "rating": "y",
+   "why": "חמאת בוטנים - שומן טוב וחלבון שמאטים את הסוכר, אבל צפופה בקלוריות. כף אחת, לא שלוש.",
+   "swaps": [
+    {
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva"
+    }
+   ],
+   "gi": 25,
+   "gi_band": "נמוך",
+   "tokens": [
+    "462",
+    "בוטנים",
+    "גרם",
+    "חמאת",
+    "סקיפי",
+    "קלאסי"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/003/760/030/9417/front_he.3.400.jpg",
+   "portion_g": 462.0,
+   "portion_label": "אריזה של 462 גרם"
+  },
+  {
+   "id": "pb_jif",
+   "name_he": "חמאת בוטנים JIF חלקה 454 גרם",
+   "barcode": "51500255162",
+   "rating": "y",
+   "why": "חמאת בוטנים - שומן טוב וחלבון שמאטים את הסוכר, אבל צפופה בקלוריות. כף אחת, לא שלוש.",
+   "swaps": [
+    {
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva"
+    }
+   ],
+   "gi": 25,
+   "gi_band": "נמוך",
+   "tokens": [
+    "454",
+    "JIF",
+    "בוטנים",
+    "גרם",
+    "חלקה",
+    "חמאת"
+   ],
+   "img": "https://img.rami-levy.co.il/product/51500255162/medium.jpg",
+   "portion_g": 454.0,
+   "portion_label": "אריזה של 454 גרם"
+  },
+  {
+   "id": "pb_shaked_noadd",
+   "name_he": "חמאת בוטנים ללא תוספת סוכר שקד תבור 300 גרם",
+   "barcode": "7290011498955",
+   "rating": "g",
+   "why": "חמאת בוטנים ללא תוספת סוכר - הבחירה הטובה בממרחים. כף אחת.",
+   "swaps": [],
+   "gi": 25,
+   "gi_band": "נמוך",
+   "tokens": [
+    "300",
+    "בוטנים",
+    "גרם",
+    "חמאת",
+    "ללא",
+    "סוכר",
+    "שקד",
+    "תבור",
+    "תוספת"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg",
+   "portion_g": 300.0,
+   "portion_label": "אריזה של 300 גרם"
+  },
+  {
+   "id": "pb_klayat",
+   "name_he": "חמאת בוטנים טבעית קליית גת 300 גרם",
+   "barcode": "7290111353550",
+   "rating": "y",
+   "why": "חמאת בוטנים - שומן טוב וחלבון שמאטים את הסוכר, אבל צפופה בקלוריות. כף אחת, לא שלוש.",
+   "swaps": [
+    {
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd",
+     "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva"
+    }
+   ],
+   "gi": 25,
+   "gi_band": "נמוך",
+   "tokens": [
+    "300",
+    "בוטנים",
+    "גרם",
+    "גת",
+    "חמאת",
+    "טבעית",
+    "קליית"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290111353550/medium.jpg",
+   "portion_g": 300.0,
+   "portion_label": "אריזה של 300 גרם"
+  },
+  {
+   "id": "pb_shakedya_crunch",
+   "name_he": "חמאת בוטנים עם שברים שקדיה 510 גרם",
+   "barcode": "7290019297543",
+   "rating": "y",
+   "why": "חמאת בוטנים - שומן טוב וחלבון שמאטים את הסוכר, אבל צפופה בקלוריות. כף אחת, לא שלוש.",
+   "swaps": [
+    {
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd",
+     "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva"
+    }
+   ],
+   "gi": 25,
+   "gi_band": "נמוך",
+   "tokens": [
+    "510",
+    "בוטנים",
+    "גרם",
+    "חמאת",
+    "עם",
+    "שברים",
+    "שקדיה"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290019297543/medium.jpg",
+   "portion_g": 510.0,
+   "portion_label": "אריזה של 510 גרם"
+  },
+  {
+   "id": "almond_spread",
+   "name_he": "ממרח שקדים קליית גת 300 גרם",
+   "barcode": "7290111353567",
+   "rating": "g",
+   "why": "ממרח שקדים טבעי - שומן טוב וחלבון, כמעט לא מזיז סוכר. כף אחת.",
+   "swaps": [],
+   "gi": 25,
+   "gi_band": "נמוך",
+   "tokens": [
+    "300",
+    "גרם",
+    "גת",
+    "ממרח",
+    "קליית",
+    "שקדים"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290111353567/medium.jpg",
+   "portion_g": 300.0,
+   "portion_label": "אריזה של 300 גרם"
+  },
+  {
+   "id": "almond_cheese_spread",
+   "name_he": "ממרח שקדים סגנון גבינה 240 גרם",
+   "barcode": "7290018593233",
+   "rating": "y",
+   "why": "ממרח שקדים מעובד - טעים אבל פחות מזין מהטבעי. כף אחת. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd",
+     "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread",
+     "img": "https://img.rami-levy.co.il/product/7290111353567/medium.jpg"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva"
+    }
+   ],
+   "gi": 30,
+   "gi_band": "נמוך",
+   "tokens": [
+    "240",
+    "גבינה",
+    "גרם",
+    "ממרח",
+    "סגנון",
+    "שקדים"
+   ],
+   "portion_g": 240.0,
+   "portion_label": "אריזה של 240 גרם"
+  },
+  {
+   "id": "7290000416021",
+   "name_he": "ממרח שוקולד השחר 500 גרם",
+   "barcode": "7290000416021",
+   "rating": "r",
+   "why": "ממרח שוקולד - הרבה סוכר ושמן. נדיר, כפית אחת על לחם מלא.",
+   "swaps": [
+    {
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd",
+     "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread",
+     "img": "https://img.rami-levy.co.il/product/7290111353567/medium.jpg"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva"
+    }
+   ],
+   "gi": 55,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "גרם",
+    "השחר",
+    "ממרח",
+    "שוקולד"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000416021/medium.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "7290000416618",
+   "name_he": "ממרח שוקולד פרווה השחר 500 גרם",
+   "barcode": "7290000416618",
+   "rating": "r",
+   "why": "ממרח שוקולד - הרבה סוכר ושמן. נדיר, כפית אחת על לחם מלא.",
+   "swaps": [
+    {
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd",
+     "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread",
+     "img": "https://img.rami-levy.co.il/product/7290111353567/medium.jpg"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva"
+    }
+   ],
+   "gi": 55,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "גרם",
+    "השחר",
+    "ממרח",
+    "פרווה",
+    "שוקולד"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000416618/medium.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "choc_pra",
+   "name_he": "ממרח שוקולד מגדים פרה 500 גרם",
+   "barcode": "7290008745345",
+   "rating": "r",
+   "why": "ממרח שוקולד - הרבה סוכר ושמן. נדיר, כפית אחת על לחם מלא. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd",
+     "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread",
+     "img": "https://img.rami-levy.co.il/product/7290111353567/medium.jpg"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva"
+    }
+   ],
+   "gi": 55,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "גרם",
+    "מגדים",
+    "ממרח",
+    "פרה",
+    "שוקולד"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290008745345/medium.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "tahini_achva",
+   "name_he": "טחינה גולמית אחוה 500 גרם",
+   "barcode": "7290010328253",
+   "rating": "g",
+   "why": "טחינה גולמית - שומן טוב, חלבון וסידן, מדד גליקמי נמוך. בחירה טובה, כף-שתיים.",
+   "swaps": [],
+   "gi": 35,
+   "gi_band": "נמוך",
+   "tokens": [
+    "500",
+    "אחוה",
+    "גולמית",
+    "גרם",
+    "טחינה"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/729/001/032/8253/front_fr.4.400.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "tahini_barakeh",
+   "name_he": "טחינה גולמית בארכה 500 גרם",
+   "barcode": "7290016246445",
+   "rating": "g",
+   "why": "טחינה גולמית - שומן טוב, חלבון וסידן, מדד גליקמי נמוך. בחירה טובה, כף-שתיים.",
+   "swaps": [],
+   "gi": 35,
+   "gi_band": "נמוך",
+   "tokens": [
+    "500",
+    "בארכה",
+    "גולמית",
+    "גרם",
+    "טחינה"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/729/001/624/6445/front_en.3.400.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "silan_kineret",
+   "name_he": "סילאן טבעי לחיץ כנרת 635 גרם",
+   "barcode": "7290000185590",
+   "rating": "r",
+   "why": "סילאן - סוכר מרוכז מתמרים, בדיוק כמו דבש. כפית אחת לכל היותר. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd",
+     "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread",
+     "img": "https://img.rami-levy.co.il/product/7290111353567/medium.jpg"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva",
+     "img": "https://images.openfoodfacts.org/images/products/729/001/032/8253/front_fr.4.400.jpg"
+    }
+   ],
+   "gi": 55,
+   "gi_band": "בינוני",
+   "tokens": [
+    "635",
+    "גרם",
+    "טבעי",
+    "כנרת",
+    "לחיץ",
+    "סילאן"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290000185590/medium.jpg",
+   "portion_g": 635.0,
+   "portion_label": "אריזה של 635 גרם"
+  },
+  {
+   "id": "silan_organic",
+   "name_he": "סילאן אורגני לחיץ 500 גרם",
+   "barcode": "7290106774612",
+   "rating": "r",
+   "why": "סילאן - סוכר מרוכז מתמרים, בדיוק כמו דבש. כפית אחת לכל היותר.",
+   "swaps": [
+    {
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd",
+     "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread",
+     "img": "https://img.rami-levy.co.il/product/7290111353567/medium.jpg"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva",
+     "img": "https://images.openfoodfacts.org/images/products/729/001/032/8253/front_fr.4.400.jpg"
+    }
+   ],
+   "gi": 55,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "אורגני",
+    "גרם",
+    "לחיץ",
+    "סילאן"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290106774612/medium.jpg",
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "honey_500",
+   "name_he": "דבש טבעי מפרחי שדה 500 גרם",
+   "barcode": "7296073078586",
+   "rating": "r",
+   "why": "דבש - טבעי אבל עדיין סוכר מרוכז שמזניק את הגלוקוז. כפית, לא כף. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd",
+     "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread",
+     "img": "https://img.rami-levy.co.il/product/7290111353567/medium.jpg"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva",
+     "img": "https://images.openfoodfacts.org/images/products/729/001/032/8253/front_fr.4.400.jpg"
+    }
+   ],
+   "gi": 58,
+   "gi_band": "בינוני",
+   "tokens": [
+    "500",
+    "גרם",
+    "דבש",
+    "טבעי",
+    "מפרחי",
+    "שדה"
+   ],
+   "portion_g": 500.0,
+   "portion_label": "אריזה של 500 גרם"
+  },
+  {
+   "id": "honey_squeeze",
+   "name_he": "דבש טבעי בבקבוק לחיץ 350 גרם",
+   "barcode": "7296073095910",
+   "rating": "r",
+   "why": "דבש - טבעי אבל עדיין סוכר מרוכז שמזניק את הגלוקוז. כפית, לא כף.",
+   "swaps": [
+    {
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd",
+     "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread",
+     "img": "https://img.rami-levy.co.il/product/7290111353567/medium.jpg"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva",
+     "img": "https://images.openfoodfacts.org/images/products/729/001/032/8253/front_fr.4.400.jpg"
+    }
+   ],
+   "gi": 58,
+   "gi_band": "בינוני",
+   "tokens": [
+    "350",
+    "בבקבוק",
+    "גרם",
+    "דבש",
+    "טבעי",
+    "לחיץ"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/729/607/309/5910/front_he.3.400.jpg",
+   "portion_g": 350.0,
+   "portion_label": "אריזה של 350 גרם"
+  },
+  {
+   "id": "jam_strawberry",
+   "name_he": "ריבת תות 850 גרם",
+   "barcode": "7290016104417",
+   "rating": "r",
+   "why": "ריבה - פירות עם הרבה סוכר מוסף. כפית דקה, או לעבור לריבה דלת סוכר. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd",
+     "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread",
+     "img": "https://img.rami-levy.co.il/product/7290111353567/medium.jpg"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva",
+     "img": "https://images.openfoodfacts.org/images/products/729/001/032/8253/front_fr.4.400.jpg"
+    }
+   ],
+   "gi": 55,
+   "gi_band": "בינוני",
+   "tokens": [
+    "850",
+    "גרם",
+    "ריבת",
+    "תות"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290016104417/medium.jpg",
+   "portion_g": 850.0,
+   "portion_label": "אריזה של 850 גרם"
+  },
+  {
+   "id": "jam_pineapple",
+   "name_he": "ריבת אננס קרפור 370 גרם",
+   "barcode": "3560071501785",
+   "rating": "r",
+   "why": "ריבה - פירות עם הרבה סוכר מוסף. כפית דקה, או לעבור לריבה דלת סוכר.",
+   "swaps": [
+    {
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd",
+     "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread",
+     "img": "https://img.rami-levy.co.il/product/7290111353567/medium.jpg"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva",
+     "img": "https://images.openfoodfacts.org/images/products/729/001/032/8253/front_fr.4.400.jpg"
+    }
+   ],
+   "gi": 55,
+   "gi_band": "בינוני",
+   "tokens": [
+    "370",
+    "אננס",
+    "גרם",
+    "קרפור",
+    "ריבת"
+   ],
+   "img": "https://images.openfoodfacts.org/images/products/356/007/150/1785/front_fr.48.400.jpg",
+   "portion_g": 370.0,
+   "portion_label": "אריזה של 370 גרם"
+  },
+  {
+   "id": "jam_true_berry",
+   "name_he": "טרו ריבת פירות יער 250 גרם",
+   "barcode": "7290112197597",
+   "rating": "y",
+   "why": "ריבה דלת סוכר מוסף - עדיפה על ריבה רגילה, אבל עדיין מתוקה. כפית. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd",
+     "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread",
+     "img": "https://img.rami-levy.co.il/product/7290111353567/medium.jpg"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva",
+     "img": "https://images.openfoodfacts.org/images/products/729/001/032/8253/front_fr.4.400.jpg"
+    }
+   ],
+   "gi": 45,
+   "gi_band": "נמוך",
+   "tokens": [
+    "250",
+    "גרם",
+    "טרו",
+    "יער",
+    "פירות",
+    "ריבת"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290112197597/medium.jpg",
+   "portion_g": 250.0,
+   "portion_label": "אריזה של 250 גרם"
+  },
+  {
+   "id": "dulce_miya",
+   "name_he": "ריבת חלב מיה 400 גרם",
+   "barcode": "7290019603658",
+   "rating": "r",
+   "why": "ריבת חלב - סוכר מרוכז ושומן. קינוח, כפית אחת. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd",
+     "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread",
+     "img": "https://img.rami-levy.co.il/product/7290111353567/medium.jpg"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva",
+     "img": "https://images.openfoodfacts.org/images/products/729/001/032/8253/front_fr.4.400.jpg"
+    }
+   ],
+   "gi": 60,
+   "gi_band": "בינוני",
+   "tokens": [
+    "400",
+    "גרם",
+    "חלב",
+    "מיה",
+    "ריבת"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290019603658/medium.jpg",
+   "portion_g": 400.0,
+   "portion_label": "אריזה של 400 גרם"
+  },
+  {
+   "id": "dulce_komida",
+   "name_he": "ריבת חלב קומידה 450 גרם",
+   "barcode": "7290002190516",
+   "rating": "r",
+   "why": "ריבת חלב - סוכר מרוכז ושומן. קינוח, כפית אחת.",
+   "swaps": [
+    {
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd",
+     "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread",
+     "img": "https://img.rami-levy.co.il/product/7290111353567/medium.jpg"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva",
+     "img": "https://images.openfoodfacts.org/images/products/729/001/032/8253/front_fr.4.400.jpg"
+    }
+   ],
+   "gi": 60,
+   "gi_band": "בינוני",
+   "tokens": [
+    "450",
+    "גרם",
+    "חלב",
+    "קומידה",
+    "ריבת"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290002190516/medium.jpg",
+   "portion_g": 450.0,
+   "portion_label": "אריזה של 450 גרם"
+  },
+  {
+   "id": "dulce_light",
+   "name_he": "ריבת חלב לייט 400 גרם",
+   "barcode": "7290011570088",
+   "rating": "y",
+   "why": "ריבת חלב לייט - פחות קלוריות אבל עדיין מתוקה. כפית. אין לנו ערכים מדויקים - כדאי לבדוק בתווית.",
+   "swaps": [
+    {
+     "name": "חמאת בוטנים ללא תוספת סוכר",
+     "where": "בכל הרשתות",
+     "ref": "pb_shaked_noadd",
+     "img": "https://img.rami-levy.co.il/product/7290011498955/medium.jpg"
+    },
+    {
+     "name": "ממרח שקדים קליית גת",
+     "where": "בכל הרשתות",
+     "ref": "almond_spread",
+     "img": "https://img.rami-levy.co.il/product/7290111353567/medium.jpg"
+    },
+    {
+     "name": "טחינה גולמית אחוה",
+     "where": "בכל הרשתות",
+     "ref": "tahini_achva",
+     "img": "https://images.openfoodfacts.org/images/products/729/001/032/8253/front_fr.4.400.jpg"
+    }
+   ],
+   "gi": 50,
+   "gi_band": "נמוך",
+   "tokens": [
+    "400",
+    "גרם",
+    "חלב",
+    "לייט",
+    "ריבת"
+   ],
+   "img": "https://img.rami-levy.co.il/product/7290011570088/medium.jpg",
+   "portion_g": 400.0,
+   "portion_label": "אריזה של 400 גרם"
   }
  ],
  "rules": [

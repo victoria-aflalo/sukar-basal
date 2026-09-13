@@ -3250,5 +3250,93 @@
  {
   "id": "cookie_rifaat",
   "barcode": "7290000524191"
+ },
+ {
+  "id": "pb_skippy",
+  "barcode": "37600309417"
+ },
+ {
+  "id": "pb_jif",
+  "barcode": "51500255162"
+ },
+ {
+  "id": "pb_shaked_noadd",
+  "barcode": "7290011498955"
+ },
+ {
+  "id": "pb_klayat",
+  "barcode": "7290111353550"
+ },
+ {
+  "id": "pb_shakedya_crunch",
+  "barcode": "7290019297543"
+ },
+ {
+  "id": "almond_spread",
+  "barcode": "7290111353567"
+ },
+ {
+  "id": "almond_cheese_spread",
+  "barcode": "7290018593233"
+ },
+ {
+  "id": "7290000416021",
+  "barcode": "7290000416021"
+ },
+ {
+  "id": "7290000416618",
+  "barcode": "7290000416618"
+ },
+ {
+  "id": "choc_pra",
+  "barcode": "7290008745345"
+ },
+ {
+  "id": "tahini_achva",
+  "barcode": "7290010328253"
+ },
+ {
+  "id": "tahini_barakeh",
+  "barcode": "7290016246445"
+ },
+ {
+  "id": "silan_kineret",
+  "barcode": "7290000185590"
+ },
+ {
+  "id": "silan_organic",
+  "barcode": "7290106774612"
+ },
+ {
+  "id": "honey_500",
+  "barcode": "7296073078586"
+ },
+ {
+  "id": "honey_squeeze",
+  "barcode": "7296073095910"
+ },
+ {
+  "id": "jam_strawberry",
+  "barcode": "7290016104417"
+ },
+ {
+  "id": "jam_pineapple",
+  "barcode": "3560071501785"
+ },
+ {
+  "id": "jam_true_berry",
+  "barcode": "7290112197597"
+ },
+ {
+  "id": "dulce_miya",
+  "barcode": "7290019603658"
+ },
+ {
+  "id": "dulce_komida",
+  "barcode": "7290002190516"
+ },
+ {
+  "id": "dulce_light",
+  "barcode": "7290011570088"
  }
 ]
