@@ -46,7 +46,13 @@
    "p": 6,
    "c": 3,
    "f": 5,
-   "src": "off"
+   "sugars": 3,
+   "satfat": 3.3,
+   "sodium_mg": 320,
+   "fiber": 3,
+   "kcal": 87,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290017065137"
   },
   "coffee": {
    "p": 0.12,
@@ -474,6 +480,539 @@
    "sugars": 0,
    "satfat": 0,
    "kcal": 0
+  },
+  "7290000057088": {
+   "p": 23,
+   "f": 28,
+   "satfat": 18.2,
+   "kcal": 344,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290000057088"
+  },
+  "7290000057118": {
+   "p": 23,
+   "c": 0,
+   "f": 28,
+   "satfat": 17,
+   "sodium_mg": 640,
+   "kcal": 344,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290000057118"
+  },
+  "7290004125776": {
+   "p": 23,
+   "c": 0,
+   "f": 28,
+   "satfat": 4.6,
+   "sodium_mg": 173,
+   "kcal": 344,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290004125776"
+  },
+  "7290000052311": {
+   "p": 30,
+   "c": 0,
+   "f": 15,
+   "sodium_mg": 499,
+   "kcal": 255,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290000052311"
+  },
+  "7290004122348": {
+   "p": 30,
+   "c": 0,
+   "f": 9,
+   "sugars": 0,
+   "satfat": 5.9,
+   "sodium_mg": 491,
+   "kcal": 201,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290004122348"
+  },
+  "7290004137311": {
+   "p": 30,
+   "c": 0,
+   "f": 9,
+   "sugars": 0,
+   "satfat": 5.9,
+   "sodium_mg": 491,
+   "kcal": 201,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290004137311"
+  },
+  "7290000046327": {
+   "p": 25,
+   "c": 0,
+   "f": 22,
+   "satfat": 14.3,
+   "sodium_mg": 495,
+   "kcal": 298,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290000046327"
+  },
+  "7290110324872": {
+   "p": 33,
+   "c": 0,
+   "f": 5,
+   "sugars": 0,
+   "satfat": 3,
+   "sodium_mg": 491,
+   "kcal": 177,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290110324872"
+  },
+  "7290102395378": {
+   "p": 23.5,
+   "c": 0,
+   "f": 28,
+   "sodium_mg": 660,
+   "kcal": 346,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290102395378"
+  },
+  "7290102394821": {
+   "p": 23.5,
+   "c": 0,
+   "f": 28,
+   "satfat": 16.8,
+   "sodium_mg": 660,
+   "kcal": 346,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290102394821"
+  },
+  "7290102397204": {
+   "p": 25,
+   "c": 0,
+   "f": 22,
+   "sugars": 0,
+   "satfat": 13.2,
+   "kcal": 298,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290102397204"
+  },
+  "7290102396665": {
+   "p": 29,
+   "c": 0,
+   "f": 15,
+   "kcal": 251,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290102396665"
+  },
+  "7290102394845": {
+   "p": 30,
+   "c": 0,
+   "f": 9,
+   "sugars": 0,
+   "satfat": 5.4,
+   "sodium_mg": 620,
+   "kcal": 201,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290102394845"
+  },
+  "7290114313582": {
+   "p": 23.5,
+   "c": 0,
+   "f": 28,
+   "sugars": 0,
+   "sodium_mg": 660,
+   "kcal": 346,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290114313582"
+  },
+  "7290000474830": {
+   "p": 23.5,
+   "c": 0,
+   "f": 28,
+   "sugars": 0,
+   "satfat": 16.8,
+   "sodium_mg": 660,
+   "fiber": 0,
+   "kcal": 346,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290000474830"
+  },
+  "7290123640167": {
+   "p": 26,
+   "c": 0,
+   "f": 27,
+   "sodium_mg": 840,
+   "kcal": 347,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290123640167"
+  },
+  "7290014760912": {
+   "p": 23,
+   "c": 0,
+   "f": 28,
+   "sugars": 0,
+   "satfat": 18.2,
+   "sodium_mg": 487,
+   "kcal": 344,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290014760912"
+  },
+  "7290110323301": {
+   "p": 27,
+   "c": 0,
+   "f": 32,
+   "satfat": 20.8,
+   "sodium_mg": 450,
+   "kcal": 396,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290110323301"
+  },
+  "7290004126674": {
+   "p": 30,
+   "c": 0,
+   "f": 9,
+   "kcal": 201,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290004126674"
+  },
+  "7290004127800": {
+   "p": 9,
+   "c": 4.3,
+   "f": 5,
+   "sugars": 4.3,
+   "satfat": 3,
+   "sodium_mg": 200,
+   "kcal": 98,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290004127800"
+  },
+  "7290000048185": {
+   "p": 9,
+   "c": 4.3,
+   "f": 5,
+   "sugars": 4.3,
+   "satfat": 3,
+   "sodium_mg": 200,
+   "kcal": 98,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290000048185"
+  },
+  "7290002824640": {
+   "p": 7.9,
+   "c": 3.9,
+   "f": 5,
+   "sugars": 3.9,
+   "satfat": 3,
+   "sodium_mg": 240,
+   "kcal": 96,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290002824640"
+  },
+  "7290002824183": {
+   "p": 7.9,
+   "c": 3.9,
+   "f": 5,
+   "sugars": 3.9,
+   "satfat": 3,
+   "sodium_mg": 200,
+   "kcal": 96,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290002824183"
+  },
+  "7290010945481": {
+   "p": 8.1,
+   "c": 4.9,
+   "f": 5,
+   "sugars": 4.9,
+   "satfat": 3,
+   "sodium_mg": 190,
+   "kcal": 97,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290010945481"
+  },
+  "7290006492852": {
+   "p": 5.1,
+   "c": 7.5,
+   "f": 5,
+   "sugars": 0.5,
+   "satfat": 3.3,
+   "kcal": 95,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290006492852"
+  },
+  "7290004127077": {
+   "p": 11,
+   "c": 1.5,
+   "f": 3,
+   "sugars": 1.5,
+   "satfat": 1.9,
+   "sodium_mg": 350,
+   "kcal": 77,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290004127077"
+  },
+  "7290004127329": {
+   "p": 11,
+   "c": 1.5,
+   "f": 5,
+   "sugars": 1.5,
+   "satfat": 3.2,
+   "sodium_mg": 350,
+   "kcal": 95,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290004127329"
+  },
+  "7290004127336": {
+   "p": 10.5,
+   "c": 1.2,
+   "f": 9,
+   "sugars": 1.2,
+   "satfat": 5.8,
+   "sodium_mg": 350,
+   "kcal": 128,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290004127336"
+  },
+  "7290002868996": {
+   "p": 10.1,
+   "c": 3,
+   "f": 5,
+   "sugars": 3,
+   "satfat": 3,
+   "sodium_mg": 350,
+   "kcal": 97,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290002868996"
+  },
+  "7290011499112": {
+   "p": 12.5,
+   "c": 2,
+   "f": 16,
+   "kcal": 202,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290011499112"
+  },
+  "7290011499105": {
+   "p": 10,
+   "c": 2,
+   "f": 5,
+   "sugars": 0.0,
+   "satfat": 3,
+   "sodium_mg": 1010,
+   "kcal": 93,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290011499105"
+  },
+  "7290005992575": {
+   "p": 8,
+   "c": 7.2,
+   "f": 5,
+   "sugars": 3.8,
+   "satfat": 3.3,
+   "kcal": 106,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290005992575"
+  },
+  "7290004121853": {
+   "p": 18,
+   "c": 1,
+   "f": 5,
+   "sugars": 1,
+   "satfat": 3.2,
+   "kcal": 121,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290004121853"
+  },
+  "7290000554457": {
+   "p": 12,
+   "c": 6,
+   "f": 5,
+   "sugars": 6,
+   "satfat": 3.3,
+   "fiber": 2,
+   "kcal": 117,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290000554457"
+  },
+  "7290000048437": {
+   "p": 18.5,
+   "c": 4,
+   "f": 5,
+   "sugars": 4,
+   "satfat": 3.2,
+   "sodium_mg": 930,
+   "kcal": 135,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290000048437"
+  },
+  "7290004131814": {
+   "p": 16.5,
+   "c": 4.9,
+   "f": 5,
+   "sugars": 1.2,
+   "sodium_mg": 860,
+   "kcal": 131,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290004131814"
+  },
+  "7290000554471": {
+   "p": 21,
+   "c": 0,
+   "f": 22,
+   "sodium_mg": 400,
+   "kcal": 282,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290000554471"
+  },
+  "7290000554600": {
+   "p": 21,
+   "c": 0,
+   "f": 22,
+   "kcal": 285,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290000554600"
+  },
+  "7290017065007": {
+   "p": 21.5,
+   "c": 0,
+   "f": 22,
+   "kcal": 284,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290017065007"
+  },
+  "7290006492432": {
+   "p": 17,
+   "c": 0,
+   "f": 18,
+   "satfat": 12,
+   "sodium_mg": 250,
+   "kcal": 230,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290006492432"
+  },
+  "7290014455320": {
+   "p": 17,
+   "c": 0,
+   "f": 18,
+   "sugars": 0,
+   "satfat": 12,
+   "sodium_mg": 250,
+   "fiber": 0,
+   "kcal": 230,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290014455320"
+  },
+  "7290011499051": {
+   "p": 14,
+   "f": 20,
+   "satfat": 13.3,
+   "kcal": 236,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290011499051"
+  },
+  "7290011499303": {
+   "p": 15,
+   "c": 3,
+   "f": 5,
+   "sugars": 3,
+   "kcal": 117,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290011499303"
+  },
+  "7290011499365": {
+   "p": 21,
+   "c": 1,
+   "f": 24,
+   "kcal": 304,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290011499365"
+  },
+  "7290102393718": {
+   "p": 24,
+   "c": 2,
+   "f": 28,
+   "sugars": 2,
+   "satfat": 17,
+   "sodium_mg": 980,
+   "kcal": 356,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290102393718"
+  },
+  "7290000554822": {
+   "p": 7,
+   "c": 3,
+   "f": 5,
+   "sugars": 3,
+   "satfat": 3,
+   "sodium_mg": 70,
+   "kcal": 85,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290000554822"
+  },
+  "7290116931524": {
+   "p": 23.5,
+   "c": 0,
+   "f": 30,
+   "satfat": 19.5,
+   "sodium_mg": 540,
+   "kcal": 364,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290116931524"
+  },
+  "7290114311601": {
+   "p": 24.5,
+   "c": 0,
+   "f": 30,
+   "satfat": 18,
+   "sodium_mg": 580,
+   "kcal": 368,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290114311601"
+  },
+  "7290014759985": {
+   "p": 32,
+   "c": 0,
+   "f": 23,
+   "satfat": 15,
+   "sodium_mg": 1020,
+   "kcal": 335,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290014759985"
+  },
+  "7290004122119": {
+   "p": 32,
+   "c": 0,
+   "f": 23,
+   "kcal": 335,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290004122119"
+  },
+  "7290011499419": {
+   "p": 4.4,
+   "c": 7.5,
+   "f": 5,
+   "sugars": 3,
+   "satfat": 3.3,
+   "sodium_mg": 300,
+   "kcal": 93,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290011499419"
+  },
+  "7290019790297": {
+   "p": 7.5,
+   "c": 2.5,
+   "f": 25,
+   "sugars": 2.5,
+   "satfat": 16.5,
+   "sodium_mg": 380,
+   "kcal": 265,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290019790297"
+  },
+  "7290004584351": {
+   "p": 9.8,
+   "c": 4.6,
+   "f": 5,
+   "sugars": 4.5,
+   "satfat": 3,
+   "sodium_mg": 376,
+   "kcal": 108,
+   "src": "off",
+   "src_url": "https://world.openfoodfacts.org/product/7290004584351"
   }
  },
  "meta": {
