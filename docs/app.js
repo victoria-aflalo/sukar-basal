@@ -19,9 +19,10 @@ async function boot() {
   cat.items.forEach(it => { CAT_BY_ID[it.id] = it; });
   pr.items.forEach(it => { PRICES[it.id] = it.prices; });
   MEALS = ml;
-  wireHome(); wireResults(); renderBaskets(); wireDrawer(); renderProfile(); renderMeals();
+  wireHome(); wireResults(); wireSearch(); renderBaskets(); wireDrawer(); renderProfile(); renderMeals();
   if (location.hash === '#baskets') show('view-baskets');
   else if (location.hash === '#meals') show('view-meals');
+  else if (location.hash === '#search') show('view-search');
 }
 document.addEventListener('DOMContentLoaded', boot);
 
@@ -48,6 +49,7 @@ function wireHome() {
   window.addEventListener('hashchange', () => {
     if (location.hash === '#baskets') show('view-baskets');
     else if (location.hash === '#meals') show('view-meals');
+    else if (location.hash === '#search') show('view-search');
     else if (!location.hash) show('view-home');
   });
 }
@@ -63,7 +65,7 @@ function wireDrawer() {
       e.preventDefault(); close();
       const nav = a.dataset.nav;
       if (nav === 'home') { history.replaceState(null, '', location.pathname); show('view-home'); }
-      else { location.hash = nav === 'meals' ? 'meals' : 'baskets'; show(nav === 'meals' ? 'view-meals' : 'view-baskets'); }
+      else { location.hash = nav; show('view-' + nav); }
     };
   });
   $('btnHomeMeals').onclick = () => { history.replaceState(null, '', location.pathname); show('view-home'); };
@@ -597,6 +599,19 @@ const RATING_HE = { g:'ירוק', y:'צהוב', r:'אדום', n:'לא מזון' 
 const RATING_ICON = { g:'✔', y:'!', r:'✖', n:'–' };
 let lastResult = null;
 
+function catalogCardHtml(it, receiptPrice) {
+  const minP = itemMinPrice(it.id);
+  const swaps = swapsBodyHtml(it);
+  return `<div class="item">
+    <div class="item-head"><div class="badge ${it.rating}">${RATING_ICON[it.rating]}</div>
+      <div class="name">${it.name_he}${minP != null ? ` <span class="est">${fmt(minP)}</span>` : ''}${receiptPrice ? ` <span class="est">· בקבלה: ₪${receiptPrice.toFixed(2)}</span>` : ''}</div>
+      ${it.img ? `<img class="pimg" src="${it.img}" alt="" loading="lazy" onerror="this.remove()">` : ''}</div>
+    ${it.why ? `<div class="why">${it.why}</div>` : ''}
+    ${nutriStripHtml(it)}
+    ${swaps ? `<div class="swap"><div class="swap-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 8h13l-3-3M20 16H7l3 3" stroke="#1E7B34" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>החליפו בקנייה הבאה - הכי משפר ראשון:</div>${swaps}</div>` : ''}
+  </div>`;
+}
+
 function renderResults(result) {
   lastResult = result;
   const counts = { g:0, y:0, r:0 };
@@ -617,19 +632,7 @@ function renderResults(result) {
   });
 
   $('resultsList').innerHTML = sorted.map(x => {
-    if (x.kind === 'catalog') {
-      const it = x.item;
-      const price = PRICES[it.id] ? fmt(Math.min(...Object.values(PRICES[it.id]))) : null;
-      const swaps = swapsBodyHtml(it);
-      return `<div class="item">
-        <div class="item-head"><div class="badge ${it.rating}">${RATING_ICON[it.rating]}</div>
-          <div class="name">${it.name_he}${price ? ` <span class="est">${price}</span>` : ''}${x.receiptPrice ? ` <span class="est">· בקבלה: ₪${x.receiptPrice.toFixed(2)}</span>` : ''}</div>
-          ${it.img ? `<img class="pimg" src="${it.img}" alt="" loading="lazy" onerror="this.remove()">` : ''}</div>
-        ${it.why ? `<div class="why">${it.why}</div>` : ''}
-        ${nutriStripHtml(it)}
-        ${swaps ? `<div class="swap"><div class="swap-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 8h13l-3-3M20 16H7l3 3" stroke="#1E7B34" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>החליפו בקנייה הבאה - הכי משפר ראשון:</div>${swaps}</div>` : ''}
-      </div>`;
-    }
+    if (x.kind === 'catalog') return catalogCardHtml(x.item, x.receiptPrice);
     const rule = x.rule;
     return `<div class="item">
       <div class="item-head"><div class="badge ${rule.rating}">${RATING_ICON[rule.rating]}</div>
@@ -672,6 +675,79 @@ function wireResults() {
   };
   $('btnAgain').onclick = () => show('view-home');
   $('btnHome').onclick = () => { location.hash = ''; show('view-home'); };
+}
+
+/* ============ חיפוש מוצר מהקטלוג המלא (בלי קבלה) ============ */
+let lastSearchFound = [];
+
+function searchCatalog(q) {
+  buildTokens();
+  const nq = rnorm(q);
+  if (nq.replace(/[0-9 ]/g, '').length < 2) return [];
+  const qtoks = nq.split(' ').filter(w => w.length >= 2 && !RSTOP.has(w) && !/^\d+$/.test(w));
+  const scored = [];
+  for (const it of CATALOG.items) {
+    const name = rnorm(it.name_he);
+    let score = 0;
+    if (name.includes(nq)) score = 100 + (name.startsWith(nq) ? 20 : 0) - name.length / 100;
+    else if (qtoks.length) {
+      let cov = 0, exact = 0;
+      for (const qt of qtoks) {
+        const toks = ITOKENS[it.id] || [];
+        if (toks.some(t => t === qt) || name.includes(qt)) { cov++; exact++; }
+        else if (toks.some(t => tokMatch(t, qt))) cov++;
+      }
+      if (cov === qtoks.length) score = 50 + exact * 5 - name.length / 100;
+    }
+    if (score > 0) scored.push({ it, score });
+  }
+  scored.sort((a, b) => b.score - a.score);
+  return scored.slice(0, 12).map(x => x.it);
+}
+
+function searchRowsHtml(found) {
+  return found.map(it => {
+    const minP = itemMinPrice(it.id);
+    return `<button class="search-row" data-id="${it.id}">
+      <span class="badge ${it.rating}">${RATING_ICON[it.rating]}</span>
+      <span class="sr-name">${it.name_he}</span>
+      ${minP != null ? `<span class="est">${fmt(minP)}</span>` : ''}
+    </button>`;
+  }).join('');
+}
+
+function wireSearch() {
+  const inp = $('searchInput');
+  const showCard = it => {
+    $('searchResults').innerHTML = '';
+    $('searchHint').innerHTML = '<button class="search-back" id="btnBackToResults">‹ חזרה לתוצאות החיפוש</button>';
+    $('searchCard').innerHTML = catalogCardHtml(it) + ratingExplainerHtml();
+    $('btnBackToResults').onclick = () => { $('searchCard').innerHTML = ''; runSearch(); window.scrollTo(0, 0); };
+    window.scrollTo(0, 0);
+  };
+  const bindRows = () => {
+    $('searchResults').querySelectorAll('.search-row').forEach(b => {
+      b.onclick = () => { const it = CAT_BY_ID[b.dataset.id]; if (it) showCard(it); };
+    });
+  };
+  const runSearch = () => {
+    const q = inp.value.trim();
+    $('searchCard').innerHTML = '';
+    if (rnorm(q).replace(/[0-9 ]/g, '').length < 2) {
+      $('searchResults').innerHTML = '';
+      $('searchHint').textContent = q ? 'כתבו לפחות שתי אותיות כדי לחפש' : '';
+      return;
+    }
+    lastSearchFound = searchCatalog(q);
+    $('searchHint').textContent = lastSearchFound.length
+      ? (lastSearchFound.length === 12 ? '12 התוצאות הראשונות - לחצו על מוצר לצפייה מלאה' : `${lastSearchFound.length} תוצאות - לחצו על מוצר לצפייה מלאה`)
+      : 'לא מצאנו את המוצר בקטלוג. נסו שם כללי יותר (למשל "לחם" או "גבינה").';
+    $('searchResults').innerHTML = searchRowsHtml(lastSearchFound);
+    bindRows();
+  };
+  inp.addEventListener('input', runSearch);
+  inp.addEventListener('search', runSearch);
+  $('btnHomeSearch').onclick = () => { history.replaceState(null, '', location.pathname); show('view-home'); };
 }
 
 /* ============ סלים לדוגמה ============ */
