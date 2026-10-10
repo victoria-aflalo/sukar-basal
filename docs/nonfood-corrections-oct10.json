@@ -1,0 +1,80 @@
+[
+  {
+    "id": "22200956949",
+    "name": "ספיד סטיק 24/7 גל כת",
+    "previous_rating": "y",
+    "previous_rule": null
+  },
+  {
+    "id": "4800888219510",
+    "name": "דאב סטיק מלפפון ותה",
+    "previous_rating": "g",
+    "previous_rule": "ירק / פרי טרי"
+  },
+  {
+    "id": "4800888219534",
+    "name": "דאב סטיק נשים אורגינ",
+    "previous_rating": "y",
+    "previous_rule": null
+  },
+  {
+    "id": "5029053510811",
+    "name": "תחבושות קוטקס נורמל",
+    "previous_rating": "y",
+    "previous_rule": null
+  },
+  {
+    "id": "5029053510828",
+    "name": "תחבושות סופר פלוס עם",
+    "previous_rating": "y",
+    "previous_rule": null
+  },
+  {
+    "id": "5029053523446",
+    "name": "תחבושות ללילה עם כנפ",
+    "previous_rating": "y",
+    "previous_rule": null
+  },
+  {
+    "id": "7290000193083",
+    "name": "נובה-לי תחבושות היגי",
+    "previous_rating": "y",
+    "previous_rule": null
+  },
+  {
+    "id": "7290000193656",
+    "name": "תחבושות עם כנפיים סו",
+    "previous_rating": "y",
+    "previous_rule": null
+  },
+  {
+    "id": "7290000195537",
+    "name": "מגבונים האגיס רביעיי",
+    "previous_rating": "y",
+    "previous_rule": null
+  },
+  {
+    "id": "7290000195773",
+    "name": "מגבוני האגיס סנסטיב",
+    "previous_rating": "g",
+    "previous_rule": "קפה / תה"
+  },
+  {
+    "id": "7290000199313",
+    "name": "תחבושות קוטקס יאנג 2",
+    "previous_rating": "y",
+    "previous_rule": null
+  },
+  {
+    "id": "7290016509342",
+    "name": "סוד מארז טריו כדוריו",
+    "previous_rating": "r",
+    "previous_rule": "דגני בוקר"
+  },
+  {
+    "id": "7290017457574",
+    "name": "סוד כדוריות לאסלה פר",
+    "previous_rating": "r",
+    "previous_rule": "דגני בוקר"
+  }
+]

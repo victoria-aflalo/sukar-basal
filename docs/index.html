@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
 </head><body>
 
 <!-- ===== תפריט צד ===== -->
@@ -24,7 +24,7 @@
   </a>
   <a href="#search" class="drawer-link" data-nav="search">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="#0D6E63" stroke-width="2.4"/><path d="M15.5 15.5 21 21" stroke="#0D6E63" stroke-width="2.4" stroke-linecap="round"/></svg>
-    <span>חיפוש מוצר<small>כל 656 המוצרים, בלי קבלה</small></span>
+    <span>חיפוש מוצר<small>כל 1,226 המוצרים, בלי קבלה</small></span>
   </a>
   <a href="#meals" class="drawer-link" data-nav="meals">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 10h16v2a8 8 0 0 1-16 0v-2z" fill="#0D6E63"/><path d="M9 10V7.5M12 10V6.5M15 10V7.5" stroke="#0D6E63" stroke-width="1.8" stroke-linecap="round"/></svg>
@@ -74,17 +74,7 @@
     </div>
 
 
-    <section class="sw-home" aria-label="החלפות חכמות">
-      <div class="sw-home-head">
-        <div class="sw-home-title">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 8h13l-3-3M20 16H7l3 3" stroke="#1E7B34" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          החלפה חכמה של השבוע
-        </div>
-        <p class="sw-home-sub">גרמי סוכר אמיתיים מהקטלוג שלנו - לפני מול אחרי. אותו טעם, פחות סוכר.</p>
-      </div>
-      <div id="homeSwapsList"></div>
-      <p class="sw-home-src">הערכים ל-100 גרם / 100 מ״ל, מהתוויות של המוצרים עצמם (Open Food Facts) ומהקטלוג שלנו. כפית סוכר ≈ 4.2 גרם.</p>
-    </section>
+    <section class="sw-home" aria-label="מתוק במידה"><div id="homeSwapsList"></div></section>
 
     <details class="how-c">
       <summary>איך זה עובד? <span class="how-chev">‹</span></summary>
@@ -138,7 +128,7 @@
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="#fff" stroke-width="2.4"/><path d="M15.5 15.5 21 21" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
     חיפוש מוצר
   </div>
-  <p class="baskets-intro">חפשו כל מוצר מהקטלוג המלא שלנו - 835 מוצרים - בלי צורך בקבלה. לחיצה על מוצר מציגה את הכל: ערכים תזונתיים, תוויות אדומות, מדד גליקמי, כפיות סוכר וחלופות מדורגות.</p>
+  <p class="baskets-intro">חפשו כל מוצר מהקטלוג המלא שלנו - 1,226 מוצרים - בלי צורך בקבלה. לחיצה על מוצר מציגה את הכל: ערכים תזונתיים, תוויות אדומות, מידע על המדד הגליקמי כשיש מקור, כפיות סוכר וחלופות מדורגות.</p>
   <div class="search-box">
     <input id="searchInput" class="search-input" type="search" inputmode="search" autocomplete="off" placeholder="כתבו שם מוצר, למשל: קולה, לחם, גבינה..." aria-label="חיפוש מוצר">
   </div>
@@ -173,7 +163,7 @@
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 10h16v2a8 8 0 0 1-16 0v-2z" fill="#fff"/><path d="M9 10V7.5M12 10V6.5M15 10V7.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
     ארוחות מומלצות
   </div>
-  <p class="baskets-intro">ארוחות מאוזנות לסוכרתיים, מורכבות רק ממוצרים בדירוג ירוק בקטלוג שלנו - חלבון, סיבים ומדד גליקמי נמוך. המחיר לכל רכיב מחושב יחסית לכמות במנה (למשל 2 ביצים מתוך 18) מתוך מחיר האריזה היומי.</p>
+  <p class="baskets-intro">רעיונות לארוחות ולסל הקניות, כולל ארוחות צהריים חמות. לא תפריט אישי ולא הבטחה לסוכר יציב. המחירים מהעדכון האחרון בקטלוג, לא מחירי היום. ערכי מנה מוצגים רק כשיש נתונים לכל רכיב.</p>
   <div id="profileBox"></div>
   <div id="mealsList"></div>
   <div class="list-pad"></div>
@@ -183,7 +173,8 @@
   </div>
 </section>
 
+<p class="mini-disc">363 תמונות אריזה מ-<a href="https://world.openfoodfacts.org/" target="_blank" rel="noopener">Open Food Facts</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>. תמונות הקמעונאי הוסרו. האריזה עשויה להשתנות.</p>
 <footer class="credit">נבנה על ידי ויקטוריה אפללו</footer>
-<script src="app.js?v=10"></script>
+<script src="app.js?v=11"></script>
 </body>
 </html>

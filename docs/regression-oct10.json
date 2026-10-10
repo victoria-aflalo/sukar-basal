@@ -1,0 +1,36 @@
+{
+  "catalogRegressions": {
+    "nonFood": true,
+    "ruleRatings": true,
+    "categoryFallback": true,
+    "quarantinedNutrition": true
+  },
+  "unknownReceipt": {
+    "matches": [
+      {
+        "kind": "catalog",
+        "id": "7290010259991",
+        "rating": "u"
+      }
+    ],
+    "summary": "0\nירוק\n0\nצהוב\n0\nאדום\n1\nאין נתונים",
+    "share": "סוכר בסל - הניתוח וההחלפות שלי לקנייה הבאה:\n\n[אין נתונים] צנימים 250 גרם - אין נתונים לדירוג\nאין לנו נתונים תזונתיים מאומתים למוצר הזה, ולכן לא מוצג דירוג. בדקו את תווית האריזה וגודל המנה.\nמחיר בקבלה: ₪12.90\n\nהכוונה כללית - לא ייעוץ רפואי"
+  },
+  "receiptEscaped": true,
+  "mealQuarantine": true,
+  "invalidWeightRejected": true,
+  "missingSelectionsRejected": true,
+  "profileSaved": {
+    "weight": 70,
+    "age": "under65",
+    "training": "no"
+  },
+  "editPreservesWeight": true,
+  "keyboardMenuOpen": true,
+  "escapeClosesMenu": true,
+  "emptySearch": "לא מצאנו את המוצר בקטלוג. נסו שם כללי יותר (למשל \"לחם\" או \"גבינה\").",
+  "unmatched": [
+    "unrecognizable nonsense"
+  ],
+  "invalidImageError": "Error: Error attempting to read image."
+}

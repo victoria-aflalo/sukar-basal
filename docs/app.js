@@ -4,6 +4,7 @@
 let CATALOG = null, PRICES = {};
 const fmt = n => '₪' + n.toLocaleString('he-IL', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const $ = id => document.getElementById(id);
+const escapeHtml = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 
 let MEALS = null, NUTMODEL = null, NUTFACTS = null;
 async function boot() {
@@ -36,46 +37,9 @@ function show(id) {
 /* ============ החלפה חכמה של השבוע (מסך הבית) ============
    הכרטיסים נבנים מהקטלוג ומנתוני התזונה בזמן ריצה - לא HTML קבוע.
    כרטיס מוצג רק אם לשני הצדדים יש ערך סוכר מאומת וההפרש משמעותי. */
-const HOME_SWAPS = [
-  { before: '7290000075143', beforeName: "עוגיות שוקוצ'יפס", after: 'cottage', afterName: "קוטג' 5%" },
-  { before: '5410126116953', beforeName: 'ממרח לוטוס', after: 'cottage', afterName: "קוטג' 5%" },
-  { before: 'cola', beforeName: 'קוקה קולה', after: '7290000136158', afterName: 'קולה זירו', note: 'כמעבר בלבד, לא כהרגל' },
-  { before: 'milk', beforeName: 'חלב 3%', after: 'soy_milk', afterName: 'משקה סויה ללא סוכר' },
-];
 function renderHomeSwaps() {
-  const host = $('homeSwapsList');
-  if (!host) return;
-  const cards = [];
-  for (const cfg of HOME_SWAPS) {
-    const b = CAT_BY_ID[cfg.before], a = CAT_BY_ID[cfg.after];
-    if (!b || !a) continue;
-    const bf = factsOf(b), af = factsOf(a);
-    if (!bf || !af || bf.sugars == null || af.sugars == null) continue;
-    const d = rnd1(bf.sugars - af.sugars);
-    if (d < 2) continue;
-    const unit = isLiquidItem(b) ? '100 מ״ל' : '100 גרם';
-    const bimg = b.img || (b.barcode ? `https://img.rami-levy.co.il/product/${b.barcode}/medium.jpg` : '');
-    const aimg = a.img || (a.barcode ? `https://img.rami-levy.co.il/product/${a.barcode}/medium.jpg` : '');
-    cards.push(`<div class="sw-card">
-      <div class="sw-sides">
-        <div class="sw-side">
-          ${bimg ? `<img src="${bimg}" alt="" loading="lazy" onerror="this.remove()">` : ''}
-          <b>${cfg.beforeName || b.name_he}</b>
-          <span class="sw-g r">${rnd1(bf.sugars)} גרם סוכר</span>
-          <small>ל-${unit} ≈ ${rnd1(bf.sugars / TSP_G)} כפיות</small>
-        </div>
-        <div class="sw-arrow" aria-hidden="true">←</div>
-        <div class="sw-side">
-          ${aimg ? `<img src="${aimg}" alt="" loading="lazy" onerror="this.remove()">` : ''}
-          <b>${cfg.afterName || a.name_he}</b>
-          <span class="sw-g g">${rnd1(af.sugars)} גרם סוכר</span>
-          <small>ל-${unit}</small>
-        </div>
-      </div>
-      <div class="sw-save">חיסכון של <b>${d} גרם</b> סוכר בכל ${unit}${cfg.note ? ' - ' + cfg.note : ''}</div>
-    </div>`);
-  }
-  host.innerHTML = cards.join('');
+ const host=$('homeSwapsList'); if(!host)return;
+ host.innerHTML=`<div class="sw-card"><b>רוצים משהו מתוק?</b><p>אפשר לשלב מתוק במידה, בלי להחליף עוגייה בקוטג׳ ובלי להציג ביסקוויט אחר כפתרון לסוכרת. החליטו מראש על מנה קטנה ואל תאכלו ישר מהחבילה.</p><p>אפשר לנסות שוקולד מריר בטעם חזק במנה קטנה, או יוגורט לא ממותק עם פירות יער כקינוח. אלה רעיונות כלליים, לא השוואות מוצר מאומתות ולא הבטחה לפחות פחמימות או לעומס גליקמי נמוך.</p><p>גם ״ללא סוכר״ או ״ללא תוספת סוכר״ לא אומר חופשי: בדקו פחמימות, שומן רווי והכמות שנאכלת.</p><a href="https://www.diabetes.org.uk/living-with-diabetes/eating/healthy-swaps/healthy-swaps-snacks" target="_blank" rel="noopener">מקור: Diabetes UK - נשנושים במידה</a></div>`;
 }
 
 /* ============ מסך בית ============ */
@@ -102,8 +66,9 @@ function wireHome() {
 
 /* ============ תפריט צד ============ */
 function wireDrawer() {
-  const open = () => { $('drawer').hidden = false; $('drawerOverlay').hidden = false; };
-  const close = () => { $('drawer').hidden = true; $('drawerOverlay').hidden = true; };
+  const open = () => { $('drawer').hidden = false; $('drawerOverlay').hidden = false; $('btnMenu').setAttribute('aria-expanded','true'); $('drawer').querySelector('a').focus(); };
+  const close = () => { $('drawer').hidden = true; $('drawerOverlay').hidden = true; $('btnMenu').setAttribute('aria-expanded','false'); $('btnMenu').focus(); };
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('drawer').hidden){e.preventDefault();close();}});
   $('btnMenu').onclick = open;
   $('drawerOverlay').onclick = close;
   document.querySelectorAll('#drawer .drawer-link').forEach(a => {
@@ -217,6 +182,7 @@ function mealMacros(items) {
 }
 function macrosHtml(items, slot) {
   if (!NUTFACTS) return '';
+  if (items.some(ent=>!NUTFACTS[ent.id] || !ent.serving_g || !CAT_BY_ID[ent.id] || ['n','u'].includes(displayRating(CAT_BY_ID[ent.id])))) return '<div class="meal-note">חסרים נתוני רכיב אחד או יותר - לא מוצג סיכום תזונתי חלקי כאילו הוא מלא.</div>';
   const m = mealMacros(items);
   let target = '';
   try {
@@ -264,15 +230,15 @@ function renderMeals() {
       const hasEst = o.items.some(ent => ent.est);
       return `<div class="meal-card">
         <div class="meal-head"><span class="meal-name">${o.name}</span>${total != null ? `<span class="meal-total">${fmt(total)}</span>` : ''}</div>
-        <div class="meal-note">${o.note}</div>
+        <div class="meal-note">דוגמה להרכב ארוחה מהקטלוג, לא המלצה אישית. בדקו כמויות וערכים למנה.</div>
         <div class="meal-items">${rows}</div>
         ${macrosHtml(o.items, o.slot)}
-        <span class="meal-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#1E7B34"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>כל הרכיבים ירוקים</span>
+        <span class="meal-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#1E7B34"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>דוגמה מהקטלוג - בדקו גם גודל מנה</span>
         ${hasEst ? '<div class="meal-note" style="margin:6px 0 0">≈ כמות מוערכת - גודל האריזה לא פורסם</div>' : ''}
       </div>`;
     }).join('');
   }).join('');
-  $('mealsList').innerHTML = html;
+  $('mealsList').innerHTML = hotLunchHtml() + html;
 }
 
 /* ============ OCR (Tesseract.js v5 + pdf.js, מהצנרת של כמה-התייקרה) ============ */
@@ -386,8 +352,21 @@ async function runScan(file) {
     await loadTesseract();
     setScan('קוראים את הקבלה... כמה שניות והתוצאה אצלכם');
     const { data } = await window.Tesseract.recognize(source, 'heb+eng');
-    window.__lastOcrText = data.text || '';
-    const result = analyzeReceipt(data.text || '');
+    let ocrText = data.text || '';
+    let result = analyzeReceipt(ocrText);
+
+    // קבלות דהויות מגיבות אחרת לתמונה המקורית ולגרסה המחודדת. אם הכיסוי
+    // חלש, מריצים מעבר נוסף על המקור ומאחדים את השורות משני המעברים.
+    if (result.rated.length === 0 || result.unmatched.length > result.rated.length) {
+      setScan('הקריאה חלקית - מנסים מעבר נוסף לשיפור הכיסוי...');
+      const { data: fallbackData } = await window.Tesseract.recognize(file, 'heb+eng');
+      const fallbackText = fallbackData.text || '';
+      if (fallbackText.trim()) {
+        ocrText += '\n' + fallbackText;
+        result = analyzeReceipt(ocrText);
+      }
+    }
+    window.__lastOcrText = ocrText;
     if (!result.rated.length) {
       setScan('לא זיהינו מוצרי מזון בקבלה. נסו תמונה חדה וישרה יותר.', false);
       setTimeout(() => show('view-home'), 3500);
@@ -396,6 +375,7 @@ async function runScan(file) {
     renderResults(result);
     show('view-results');
   } catch (e) {
+    window.__lastScanError = String(e && (e.stack || e.message) || e);
     console.error(e);
     setScan('הסריקה נכשלה. נסו שוב עם תמונה ברורה יותר.', false);
     setTimeout(() => show('view-home'), 3500);
@@ -422,12 +402,24 @@ function tokMatch(a, b) {
 }
 const rnorm = str => str.replace(/[״"׳']/g, '').replace(/[^֐-׿a-zA-Z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
 
-let ITOKENS = null;
+let ITOKENS = null, BARCODE_ALIASES = null;
 function buildTokens() {
-  ITOKENS = {};
+  ITOKENS = {}; BARCODE_ALIASES = {};
+  const addBarcodeAlias = (alias, it) => {
+    if (!alias || alias.length < 5) return;
+    if (!(alias in BARCODE_ALIASES)) BARCODE_ALIASES[alias] = it;
+    else if (BARCODE_ALIASES[alias] !== it) BARCODE_ALIASES[alias] = null; // ambiguous suffix - never guess
+  };
   for (const it of CATALOG.items) {
     const src = rnorm((it.tokens || []).join(' ') + ' ' + it.name_he);
     ITOKENS[it.id] = [...new Set(src.split(' ').filter(w => w.length >= 2 && !RSTOP.has(w) && !/^\d+$/.test(w)))];
+    const bc = String(it.barcode || '').replace(/\D/g, '');
+    if (bc) {
+      addBarcodeAlias(bc, it);
+      // Israeli receipts often print only the internal 5-7 digit item code instead of
+      // the full 729000... barcode. Index only unique suffixes to avoid false matches.
+      for (let n = 5; n <= Math.min(8, bc.length); n++) addBarcodeAlias(bc.slice(-n), it);
+    }
   }
 }
 
@@ -445,22 +437,16 @@ function matchCatalogLine(ltoks) {
   return best;
 }
 function matchRuleLine(line, ltoks) {
-  for (const rule of CATALOG.rules) {
-    if (rule.tokens.some(t => t.length > 3 ? line.includes(t) : ltoks.includes(t))) return rule;
-    // התאמה מטושטשת לשגיאות OCR: טוקן באורך 4+ עם התאמת רישית או מרחק עריכה 1
-    for (const t of rule.tokens) {
-      if (t.length < 4) continue;
-      if (ltoks.some(l => l.length >= 4 && (l.startsWith(t) || (t.length >= 4 && l.startsWith(t.slice(0, 4))) || lev(l, t) <= 1))) return rule;
-    }
-  }
+  // Do not turn an unidentified receipt line into a nutrition rating.
   return null;
 }
 
 function matchBarcode(line) {
-  const runs = line.match(/\d{7,14}/g) || [];
+  const runs = line.match(/\d{5,14}/g) || [];
   for (const run of runs) {
+    if (BARCODE_ALIASES && BARCODE_ALIASES[run]) return BARCODE_ALIASES[run];
     for (const it of CATALOG.items) {
-      const bc = it.barcode || '';
+      const bc = String(it.barcode || '');
       if (!bc) continue;
       if (bc === run || (run.length >= 8 && bc.endsWith(run))) return it;
       if (run.length >= 11 && bc.startsWith(run)) return it;
@@ -470,6 +456,7 @@ function matchBarcode(line) {
   }
   return null;
 }
+
 function linePrice(line) {
   const nums = (line.match(/\d{1,4}\.\d{2}/g) || []).map(parseFloat).filter(v => v > 0.05 && v < 2000);
   return nums.length ? Math.max(...nums) : null;
@@ -482,28 +469,39 @@ function receiptTotal(text) {
 function analyzeReceipt(text) {
   buildTokens();
   const total = receiptTotal(text);
-  const lines = text.split('\n').map(rnorm).filter(l => l.replace(/[0-9 ]/g, '').length >= 3);
+  // OCR נוטה לפצל שם מוצר, משקל וברקוד לשורות נפרדות. שומרים שורות
+  // ייחודיות משני מעברי הקריאה ומנסים גם חלון של שתי שורות סמוכות.
+  const rawLines = text.split('\n').map(l=>l.trim()).filter(l => rnorm(l).replace(/[0-9 ]/g, '').length >= 3 || /\b\d{8,14}\b/.test(l));
+  const lines = rawLines.filter((line, i) => rawLines.indexOf(line) === i);
   const seen = {}; const unmatched = [];
-  for (const line of lines) {
-    if (RECEIPT_NOISE.some(w => line.includes(w))) continue;
-    const ltoks = line.split(' ').filter(w => w.length >= 2);
-    const item = matchCatalogLine(ltoks) || matchBarcode(line);
-    if (item) {
-      if (!seen[item.id]) seen[item.id] = { kind:'catalog', item, count:0 };
-      seen[item.id].count++;
-      const rp = linePrice(line);
-      if (rp && !seen[item.id].receiptPrice) seen[item.id].receiptPrice = rp;
-      continue;
+  for (let i = 0; i < lines.length; i++) {
+    const raw = lines[i], line = rnorm(raw);
+    if (RECEIPT_NOISE.some(w => line.includes(w)) || /שיווק|ע[ .]*מ|מס[ .]*עסקה/.test(line)) continue;
+    const candidates = [raw];
+    // Join only unpriced fragments, never two complete product lines.
+    if (linePrice(raw)==null && i + 1 < lines.length && !RECEIPT_NOISE.some(w => rnorm(lines[i + 1]).includes(w))) candidates.push(raw + ' ' + lines[i + 1]);
+    let matched = false;
+    for (const candidate of candidates) {
+      const normalized=rnorm(candidate);
+      const ltoks = normalized.split(' ').filter(w => w.length >= 2);
+      const item = matchBarcode(candidate) || matchCatalogLine(ltoks);
+      if (item) {
+        if (!seen[item.id]) seen[item.id] = { kind:'catalog', item, count:0 };
+        seen[item.id].count++;
+        const rp = linePrice(candidate);
+        if (rp && !seen[item.id].receiptPrice) seen[item.id].receiptPrice = rp;
+        matched = true; break;
+      }
+      const rule = matchRuleLine(normalized, ltoks);
+      if (rule) {
+        const key = 'rule:' + rule.label;
+        if (!seen[key]) seen[key] = { kind:'rule', rule, examples:[], count:0 };
+        seen[key].count++;
+        if (seen[key].examples.length < 2) seen[key].examples.push(raw);
+        matched = true; break;
+      }
     }
-    const rule = matchRuleLine(line, ltoks);
-    if (rule) {
-      const key = 'rule:' + rule.label;
-      if (!seen[key]) seen[key] = { kind:'rule', rule, examples:[], count:0 };
-      seen[key].count++;
-      if (seen[key].examples.length < 2) seen[key].examples.push(line);
-      continue;
-    }
-    unmatched.push(line);
+    if (!matched) unmatched.push(raw);
   }
   const rated = Object.values(seen);
   return { rated, unmatched, total };
@@ -521,12 +519,13 @@ const TSP_G = 4.2; /* כפית סוכר ≈ 4.2 גרם */
 function giBand(gi) { for (const [max, label, cls] of GI_BANDS) if (gi <= max) return { label, cls }; }
 function giChipHtml(it) {
   if (!it.gi) return '';
+  if (!it.gi_source) return '<span class="meal-note">אין מקור למדד גליקמי מדויק למוצר הזה; לא מציגים אומדן כנתון מאומת</span>';
   const b = giBand(it.gi);
   return `<span class="gi-chip ${b.cls}">מדד גליקמי ${b.label} (${it.gi})</span>`;
 }
 function isLiquidItem(it) { return /ליטר|מ״ל|מ"ל|משקה|מיץ|קולה|בירה|סודה|נקטר/.test(it.name_he || ''); }
 function factsOf(it) {
-  if (!NUTFACTS || !it) return null;
+  if (!NUTFACTS || !it || it.rating === 'n' || it.confidence === 'rule' || it.confidence === 'fallback') return null;
   return NUTFACTS[it.barcode] || NUTFACTS[it.id] || null;
 }
 function rnd1(v) { return Math.round(v * 10) / 10; }
@@ -539,15 +538,15 @@ function mohFlagsHtml(f, liquid) {
   if (f.sodium_mg != null && f.sodium_mg >= th.sodium) flags.push('גבוה בנתרן');
   if (f.satfat != null && f.satfat >= th.satfat) flags.push('גבוה בשומן רווי');
   const known = f.sugars != null || f.sodium_mg != null || f.satfat != null;
-  if (!known) return '';
-  if (!flags.length) return `<div class="moh"><span class="moh-chip ok">✔ ללא תווית אדומה בסוכר/נתרן/שומן רווי</span></div>`;
+  if (!known) return '<div class="meal-note">חסרים נתונים לבדיקת התוויות האדומות.</div>';
+  if (!flags.length) return `<div class="moh"><span class="moh-chip ok">לא נמצאה חריגה בערכים הידועים${[f.sugars,f.sodium_mg,f.satfat].some(v=>v==null) ? ' - הבדיקה חלקית' : ''}</span></div>`;
   return `<div class="moh">${flags.map(t => `<span class="moh-chip red">⚠ תווית אדומה: ${t}</span>`).join('')}<span class="moh-src">ספי משרד הבריאות ל-100 ${liquid ? 'מ״ל' : 'גרם'}</span></div>`;
 }
 
 function nutriStripHtml(it) {
   const f = factsOf(it);
   const gi = giChipHtml(it);
-  if (!f) return gi ? `<div class="nutri"><div class="nutri-gi">${gi}</div></div>` : '';
+  if (!f) return `<div class="nutri"><div class="meal-note">אין לנו ערכים תזונתיים מאומתים למוצר הזה. בדקו על האריזה פחמימות, סוכר, סיבים, שומן רווי ונתרן; לא נציג אפס במקום נתון חסר.</div></div>`;
   const liquid = isLiquidItem(it);
   const unit = liquid ? '100 מ״ל' : '100 גרם';
   const cells = [];
@@ -565,29 +564,54 @@ function nutriStripHtml(it) {
     const ps = rnd1(f.sugars * it.portion_g / 100);
     if (ps >= 2) portion = `<div class="portion">ב${it.portion_label || 'אריזה'}: ${ps} גרם סוכר ≈ <b>${tspTxt(ps)} כפיות סוכר</b></div>`;
   }
-  return `<div class="nutri">${gi ? `<div class="nutri-gi">${gi}</div>` : ''}<div class="ngrid">${grid}</div>${portion}${mohFlagsHtml(f, liquid)}<div class="nutri-src">ערכים ל-${unit} (Open Food Facts) · כפית סוכר ≈ 4.2 גרם</div></div>`;
+  return `<div class="nutri">${gi ? `<div class="nutri-gi">${gi}</div>` : ''}<div class="ngrid">${grid}</div>${portion}${mohFlagsHtml(f, liquid)}<div class="nutri-src">ערכים ל-${unit} · Open Food Facts: מאגר שיתופי, בדקו מול האריזה · כפית סוכר ≈ 4.2 גרם${f.src_url ? ` · <a href="${f.src_url}" target="_blank" rel="noopener">מקור הנתונים</a>` : ""}</div></div>`;
 }
 
 /* דירוג חלופות: החלופה חייבת להשתפר מול המקור; הסדר לפי גודל השיפור.
    עקרונות: Fooducate (חלופה בציון גבוה יותר, אותה קטגוריה), Diabetes UK (GI + GL),
    שקיפות על טרייד-אוף. */
+function foodRole(it) {
+ const n = it.name_he || '';
+ if (/גלידה|קרמיסימו|מגנום|קרטיב/.test(n)) return 'frozen-dessert';
+ if (/ממרח.*(לוטוס|שוקולד|קקאו|נוגט)|נוטלה/.test(n)) return 'sweet-spread';
+ if (/עוגי|ביסקוויט|פתי בר|שוקוקרקר|ופל|וופל/.test(n)) return 'sweet-biscuit';
+ if (/שוקולד|ממתק|סוכריה|סוכרייה/.test(n)) return 'chocolate-sweet';
+ if (/קולה|סודה|מיץ|נקטר|מים מינרל/.test(n)) return 'soft-drink';
+ if (/חלב.*ליטר|משקה.*(סויה|שקדים|שיבולת)/.test(n)) return 'milk-drink';
+ if (/יוגורט|מעדן/.test(n)) return 'yogurt';
+ if (/גבינה|קוטג|לבנה|בולגרית|צפתית|מוצרלה|פטה|חלומי/.test(n)) return 'cheese';
+ if (/לחם|פיתה|פיתות|לחמני/.test(n)) return 'bread';
+ if (/קרקר|פריכי|פתית /.test(n)) return 'savoury-crunch';
+ if (/חמאת בוטנים|ממרח שקדים|טחינה/.test(n)) return 'nut-spread';
+ if (/אורז|קינואה|בורגול|כוסמת/.test(n)) return 'grain';
+ if (/פסטה|ספגטי|מקרוני/.test(n)) return 'pasta';
+ if (/עדשים|שעועית|חומוס.*יבש/.test(n)) return 'pulses';
+ if (/אגוז|שקדים|בוטנים|פיסטוק/.test(n)) return 'nuts';
+ return null;
+}
+function sameRole(a,b) { const r=foodRole(a); return r && r === foodRole(b); }
+function approvedSwaps(it) {
+ return (it.swaps || []).map(s => ({s,a:swapAnalysis(it,s)})).filter(x => x.a && x.a.eligible).sort((x,y)=>y.a.score-x.a.score);
+}
 function swapAnalysis(it, s) {
   if (!s.ref || !CAT_BY_ID[s.ref] || s.ref === it.id) return null;
   const ref = CAT_BY_ID[s.ref];
+  if (['n','u'].includes(displayRating(it)) || ['n','u'].includes(displayRating(ref)) || !sameRole(it, ref)) return null;
   const of = factsOf(it), rf = factsOf(ref);
+  if (!of || !rf || of.c == null || rf.c == null || rf.c > of.c) return null;
   const liquid = isLiquidItem(it);
   const unit = liquid ? '100 מ״ל' : '100 גרם';
   const pros = [], cons = [];
-  let score = 0;
+  let score = 0, nutritionImproved = false;
   if (of && rf) {
     if (of.sugars != null && rf.sugars != null) {
       const d = rnd1(of.sugars - rf.sugars);
-      if (d >= 2) { pros.push(`פחות סוכר: ${rnd1(rf.sugars)} לעומת ${rnd1(of.sugars)} גרם ל-${unit}`); score += 3 * Math.min(d, 30) / 10; }
+      if (d >= 2) { pros.push(`פחות סוכר: ${rnd1(rf.sugars)} לעומת ${rnd1(of.sugars)} גרם ל-${unit}`); score += 3 * Math.min(d, 30) / 10; nutritionImproved = true; }
       else if (d <= -2) { cons.push(`דווקא יותר סוכר (+${Math.abs(d)} גרם)`); score -= 2; }
     }
     if (of.c != null && rf.c != null) {
       const d = rnd1(of.c - rf.c);
-      if (d >= 5) { pros.push(`פחות פחמימות (−${d} גרם)`); score += Math.min(d, 30) / 15; }
+      if (d >= 5) { pros.push(`פחות פחמימות (−${d} גרם)`); score += Math.min(d, 30) / 15; nutritionImproved = true; }
     }
     if (of.fiber != null && rf.fiber != null && rf.fiber - of.fiber >= 2) { pros.push(`יותר סיבים (+${rnd1(rf.fiber - of.fiber)} גרם)`); score += 1; }
     if (of.p != null && rf.p != null) {
@@ -596,26 +620,23 @@ function swapAnalysis(it, s) {
       else if (d <= -3) cons.push(`פחות חלבון (${Math.abs(d)}− גרם)`);
     }
   }
-  if (it.gi && ref.gi && ref.gi < it.gi) { pros.push(`מדד גליקמי נמוך יותר (${ref.gi} לעומת ${it.gi})`); score += (it.gi - ref.gi) / 10; }
-  const op = itemMinPrice(it.id), rp = itemMinPrice(ref.id);
-  if (op != null && rp != null) {
-    const d = op - rp;
-    if (d >= 0.3) { pros.push(`זול יותר ב-₪${d.toFixed(2)}`); score += Math.min(d, 5) / 2; }
-    else if (d <= -0.3) cons.push(`יקר יותר ב-₪${Math.abs(d).toFixed(2)}`);
-  }
+  if (false && it.gi && ref.gi && ref.gi < it.gi) { pros.push(`מדד גליקמי נמוך יותר (${ref.gi} לעומת ${it.gi})`); score += (it.gi - ref.gi) / 10; }
+  const rp = itemMinPrice(ref.id);
   const chains = PRICES[ref.id] ? Object.keys(PRICES[ref.id]).length : 0;
-  if (chains >= 3) { pros.push(`זמין ב-${chains} רשתות`); score += 0.5; }
-  return { pros, cons, score, rp };
+  if (chains >= 3) { pros.push(`מחיר תועד ב-${chains} רשתות בעדכון הקטלוג, לא אישור מלאי`); score += 0.5; }
+  if (of && rf && of.c != null && rf.c != null && rf.c > of.c + 2) cons.push(`יותר פחמימות (+${rnd1(rf.c-of.c)} גרם ל-100)`);
+  if (of && rf && of.satfat != null && rf.satfat != null && rf.satfat > of.satfat + 1) cons.push(`יותר שומן רווי (+${rnd1(rf.satfat-of.satfat)} גרם ל-100)`);
+  return { pros, cons, score, rp, eligible: nutritionImproved };
 }
 
 function swapsBodyHtml(it) {
-  const list = (it.swaps || []).map(s => ({ s, a: swapAnalysis(it, s) }));
+  const list = approvedSwaps(it);
   list.sort((x, y) => (y.a ? y.a.score : -1) - (x.a ? x.a.score : -1));
   return list.map(({ s, a }) => {
     const why = a && (a.pros.length || a.cons.length)
       ? `<div class="swap-why">${a.pros.map(p => `<span class="sw-pro">▲ ${p}</span>`).join('')}${a.cons.map(c => `<span class="sw-con">▼ ${c}</span>`).join('')}</div>`
       : `<div class="swap-why"><span class="sw-note">אין לנו נתוני תזונה מדויקים לחלופה הזו - כדאי לבדוק בתווית באריזה</span></div>`;
-    const rp = a && a.rp != null ? `<div class="where">מחיר משוער: ${fmt(a.rp)}</div>` : '';
+    const rp = a && a.rp != null ? `<div class="where">מחיר בעדכון ${CATALOG.updated}: ${fmt(a.rp)}</div>` : '';
     return `<div class="swap-body">${s.img ? `<img class="pimg swap-img" src="${s.img}" alt="" loading="lazy" onerror="this.remove()">` : ''}
     <div class="swap-txt"><b>${s.name}</b>${why}
     <div class="where">איפה קונים: ${s.where}</div>${rp}</div></div>`;
@@ -625,7 +646,7 @@ function swapsBodyHtml(it) {
 function ratingExplainerHtml() {
   return `<details class="how"><summary>איך אנחנו מדרגים ומציגים? (כללי המשחק והמקורות)</summary>
   <ul class="how-list">
-    <li><b>חלופה</b> מוצגת רק כשהיא שיפור על המוצר שקניתם, ומדורגת לפי: פחות סוכר ופחמימות, מדד גליקמי נמוך יותר, יותר סיבים וחלבון, מחיר וזמינות ברשתות. אם משהו בחלופה פחות טוב - כתוב במפורש.</li>
+    <li><b>חלופה</b> חייבת להיות באותו תפקיד קולינרי ולהציג פחות סוכר או פחמימות לפי נתוני התזונה הקיימים, בלי יותר פחמימות במוצר החלופי. מחיר זול לבדו לא מכשיר חלופה. סדר החלופות מביא בחשבון את השינוי בסוכר ובפחמימות, חלבון וסיבים, ותיעוד ברשתות. GI ללא מקור אינו משמש לדירוג; אין כאן הוכחה לעומס גליקמי נמוך יותר. כשיש חיסרון, למשל יותר פחמימות או שומן רווי, הוא מוצג לצד היתרון. אותו סינון חל גם על טקסט השיתוף.</li>
     <li><b>ערכי תזונה</b> מוצגים ל-100 גרם/מ״ל - אותו בסיס כמו על האריזה, כדי שאפשר יהיה להשוות שני מוצרים - ובנוסף לפי גודל האריזה כשהוא ידוע.</li>
     <li><b>משפחות גבינות</b> (צהובה, לבנה, קוטג\', שמנת, בולגרית, צפתית, מוצרלה, פטה, חלומי) מדורגות לפי אחוז השומן: עד 15% ירוק, 16-24% צהוב, 25% ומעלה אדום.</li>
     <li><b>תווית אדומה</b> מוצגת לפי ספי משרד הבריאות: סוכר ≥10 גרם, נתרן ≥400 מ״ג, שומן רווי ≥4 גרם ל-100 גרם (בשתייה: 5 גרם / 300 מ״ג / 3 גרם ל-100 מ״ל).</li>
@@ -642,39 +663,49 @@ function ratingExplainerHtml() {
 }
 
 /* ============ תוצאות ============ */
-const RATING_HE = { g:'ירוק', y:'צהוב', r:'אדום', n:'לא מזון' };
-const RATING_ICON = { g:'✔', y:'!', r:'✖', n:'–' };
+const RATING_HE = { g:'ירוק', y:'צהוב', r:'אדום', n:'לא מזון', u:'אין נתונים לדירוג' };
+function displayRating(it) { return it.rating === 'n' ? 'n' : it.confidence === 'rule' || it.confidence === 'fallback' ? 'u' : factsOf(it) ? it.rating : 'u'; }
+const RATING_ICON = { g:'✔', y:'!', r:'✖', n:'–', u:'?' };
 let lastResult = null;
 
+function portionGuideHtml(it) {
+ const f=factsOf(it), sweet=/sweet|chocolate|dessert/.test(foodRole(it)||'');
+ const grams = sweet ? 20 : isLiquidItem(it) ? 200 : 30;
+ if (!f) return '';
+ const vals = [['פחמימות',f.c],['סוכר',f.sugars],['חלבון',f.p],['סיבים',f.fiber]].filter(x=>x[1]!=null).map(x=>`${x[0]}: ${rnd1(x[1]*grams/100)} גרם`).join(' · ');
+ return `<details class="how"><summary>מה יש במנה של ${grams} ${isLiquidItem(it)?'מ״ל':'גרם'}?</summary><p>${vals}</p><p>דוגמת חישוב, לא המלצה אישית. הכמות הנאכלת קובעת, לא גודל החבילה. פחות סוכר אינו בהכרח פחות פחמימות; גם ״ללא תוספת סוכר״ לא אומר חופשי. אין לנו עומס גליקמי מאומת למנה.</p><p>מחירי הקטלוג מעודכנים ל-${CATALOG.updated}; אינם מחירי היום. כשחסר נתון, בדקו בתווית.</p><a href="https://www.diabetes.org.uk/living-with-diabetes/eating/portion-sizes" target="_blank" rel="noopener">מקור: Diabetes UK - גודל מנה</a></details>`;
+}
 function catalogCardHtml(it, receiptPrice) {
   const minP = itemMinPrice(it.id);
   const swaps = swapsBodyHtml(it);
   return `<div class="item">
-    <div class="item-head"><div class="badge ${it.rating}">${RATING_ICON[it.rating]}</div>
+    <div class="item-head"><div class="badge ${displayRating(it)}">${RATING_ICON[displayRating(it)]}</div>
       <div class="name">${it.name_he}${minP != null ? ` <span class="est">${fmt(minP)}</span>` : ''}${receiptPrice ? ` <span class="est">· בקבלה: ₪${receiptPrice.toFixed(2)}</span>` : ''}</div>
-      ${it.img ? `<img class="pimg" src="${it.img}" alt="" loading="lazy" onerror="this.remove()">` : ''}</div>
-    ${it.why ? `<div class="why">${it.why}</div>` : ''}
-    ${nutriStripHtml(it)}
-    ${swaps ? `<div class="swap"><div class="swap-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 8h13l-3-3M20 16H7l3 3" stroke="#1E7B34" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>החליפו בקנייה הבאה - הכי משפר ראשון:</div>${swaps}</div>` : ''}
+      ${it.img ? `<img class="pimg" src="${it.img}" alt="אריזת ${it.name_he}" loading="lazy" onerror="this.remove()">` : ''}</div>
+    ${it.why ? `<div class="why">${productWhy(it)}</div>` : ''}
+    ${it.rating === 'n' ? '' : nutriStripHtml(it)}
+    ${it.rating === 'n' ? '' : portionGuideHtml(it)}
+    ${!swaps && (it.swaps || []).length ? '<div class="meal-note">לא נמצאה בקטלוג חלופה באותו תפקיד עם שיפור תזונתי מבוסס.</div>' : ''}
+    ${swaps ? `<div class="swap"><div class="swap-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 8h13l-3-3M20 16H7l3 3" stroke="#1E7B34" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>החליפו בקנייה הבאה - הכי משפר ראשון:</div><div class="swap-disc">הכוונה כללית - לא ייעוץ רפואי</div>${swaps}</div>` : ''}
   </div>`;
 }
 
 function renderResults(result) {
   lastResult = result;
-  const counts = { g:0, y:0, r:0 };
-  result.rated.forEach(x => { const rr = x.kind === 'catalog' ? x.item.rating : x.rule.rating; if (counts[rr] !== undefined) counts[rr]++; });
+  const counts = { g:0, y:0, r:0, u:0 };
+  result.rated.forEach(x => { const rr = x.kind === 'catalog' ? displayRating(x.item) : x.rule.rating; if (counts[rr] !== undefined) counts[rr]++; });
   const warn = $('scanQuality');
   if (warn) warn.innerHTML = result.unmatched.length > result.rated.length
     ? '<div class="quality-note">זיהינו רק חלק מהשורות בקבלה הזו (התמונה דהויה או מקומטת). לתוצאה מלאה: צלמו שוב באור טוב, בלי קפלים, ישר מעל הקבלה.</div>'
     : '';
   $('summaryChips').innerHTML =
-    `<div class="chip g">${counts.g}<small>ירוק</small></div><div class="chip y">${counts.y}<small>צהוב</small></div><div class="chip r">${counts.r}<small>אדום</small></div>` +
+    `<div class="chip g">${counts.g}<small>ירוק</small></div><div class="chip y">${counts.y}<small>צהוב</small></div><div class="chip r">${counts.r}<small>אדום</small></div>${counts.u ? `<div class="chip u">${counts.u}<small>אין נתונים</small></div>` : ""}` +
     (result.total ? `<div class="chip total-chip"><small>סה״כ שזוהה בקבלה</small>₪${result.total.toFixed(2)}</div>` : '');
 
-  const order = { r:0, y:1, g:2, n:3 };
+  const order = { r:0, y:1, g:2, u:3, n:4 };
   const sorted = [...result.rated].sort((a, b) => {
-    const ra = a.kind === 'catalog' ? a.item.rating : a.rule.rating;
-    const rb = b.kind === 'catalog' ? b.item.rating : b.rule.rating;
+    const ra = a.kind === 'catalog' ? displayRating(a.item) : a.rule.rating;
+    const rb = b.kind === 'catalog' ? displayRating(b.item) : b.rule.rating;
     return order[ra] - order[rb];
   });
 
@@ -684,12 +715,12 @@ function renderResults(result) {
     return `<div class="item">
       <div class="item-head"><div class="badge ${rule.rating}">${RATING_ICON[rule.rating]}</div>
         <div class="name">${rule.label}<span class="est">זיהוי כללי</span></div></div>
-      <div class="why">${rule.why}${rule.note ? ` ${rule.note}` : ''}</div>
-      <div class="why" style="font-size:14px;color:var(--ink3)">זוהה בשורה: ${x.examples.join(' · ')}</div>
+      <div class="why">${ruleWhy(rule)}${rule.note ? ` ${rule.note}` : ''}</div>
+      <div class="why" style="font-size:14px;color:var(--ink3)">זוהה בשורה: ${x.examples.map(escapeHtml).join(' · ')}</div>
     </div>`;
   }).join('') + (result.unmatched.length ? `
     <details class="unmatched"><summary>${result.unmatched.length} שורות לא זוהו (לחצו לצפייה)</summary>
-      ${result.unmatched.slice(0, 20).map(l => `<div>${l}</div>`).join('')}
+      ${result.unmatched.slice(0, 20).map(l => `<div>${escapeHtml(l)}</div>`).join('')}
     </details>` : '');
 
   const q = CATALOG.quotas;
@@ -701,23 +732,60 @@ function renderResults(result) {
     <p class="q-note">${q.note}</p>${ratingExplainerHtml()}`;
 }
 
+function ruleWhy(rule) {
+  return /כמעט בלי פחמימות|הכי טובה לסוכרת|מאטה|יציב|לא מעלה/.test(rule.why||'') ? 'זיהוי כללי לפי שם המוצר, לא ערכים מאומתים למוצר מסוים. בדקו את הרכב המנה וכמות הפחמימות.' : (rule.why||'');
+}
+function productWhy(it) {
+  if (it.rating !== 'n' && (it.confidence === 'rule' || it.confidence === 'fallback')) return 'סוג המוצר והדירוג הקודמים נקבעו לפי שם בלבד ולא אומתו. אין דירוג למוצר הזה; בדקו את האריזה.';
+  if (it.rating !== 'n' && !factsOf(it)) return 'אין לנו נתונים תזונתיים מאומתים למוצר הזה, ולכן לא מוצג דירוג. בדקו את תווית האריזה וגודל המנה.';
+  const why=it.why||'';
+  if (!it.gi_source && /גליקמי|מזניק|חודר מיד|עולה מהר|לא מעלה סוכר|מאטה עליית|הכי טובה לסוכרת|מצוינת לסוכרת|מהטובים שיש|מן המזון הכי טוב|לסוכרתיים|סוכר של|כף אחת =/.test(why))
+    return 'הדירוג הוא הכוונה כללית. בדקו פחמימות, סוכר, סיבים, שומן רווי ונתרן למנה על האריזה. אין לנו מקור לתגובה גליקמית מדויקת למוצר הזה.';
+  return why;
+}
+
 function swapMessage() {
   if (!lastResult) return '';
-  const reds = lastResult.rated.filter(x => x.kind === 'catalog' && x.item.rating === 'r');
-  const lines = ['סוכר בסל - ההחלפות שלי לקנייה הבאה:'];
-  reds.forEach(x => {
-    const ranked = x.item.swaps.map(s => ({ s, a: swapAnalysis(x.item, s) }))
-      .sort((p, q) => (q.a ? q.a.score : -1) - (p.a ? p.a.score : -1));
-    ranked.forEach(({ s, a }) => lines.push(`• במקום ${x.item.name_he}: ${s.name} (${s.where})${a && a.pros.length ? ' - ' + a.pros[0] : ''}`));
+  const lines = ['סוכר בסל - הניתוח וההחלפות שלי לקנייה הבאה:', ''];
+  const icon = { g:'[ירוק]', y:'[צהוב]', r:'[אדום]', n:'[לא מזון]' };
+
+  lastResult.rated.forEach(x => {
+    if (x.kind === 'catalog') {
+      const it = x.item;
+      lines.push(`${icon[displayRating(it)] || '[אין נתונים]'} ${it.name_he} - ${RATING_HE[displayRating(it)]}`);
+      if (it.why) lines.push(productWhy(it));
+      if (x.receiptPrice) lines.push(`מחיר בקבלה: ₪${x.receiptPrice.toFixed(2)}`);
+      const ranked = approvedSwaps(it);
+      ranked.forEach(({ s, a }) => {
+        lines.push(`↳ במקום: ${s.name}`);
+        if (a && a.pros.length) lines.push(`  ${a.pros.join(' · ')}`);
+        if (a && a.cons.length) lines.push(`  לשים לב: ${a.cons.join(' · ')}`);
+        lines.push(`  איפה קונים: ${s.where}${a && a.rp != null ? ` · מחיר בעדכון ${CATALOG.updated}: ${fmt(a.rp)}` : ''}`);
+      });
+      lines.push('');
+    } else {
+      lines.push(`${icon[x.rule.rating] || '•'} ${x.rule.label} - ${RATING_HE[x.rule.rating] || ''}`);
+      if (x.rule.why) lines.push(ruleWhy(x.rule));
+      lines.push('');
+    }
   });
-  lines.push('', 'הכוונה כללית - לא ייעוץ רפואי');
+
+  if (lastResult.unmatched.length) {
+    lines.push(`${lastResult.unmatched.length} שורות לא זוהו בוודאות - כדאי לבדוק אותן מול הקבלה.`);
+    lines.push('');
+  }
+  lines.push('הכוונה כללית - לא ייעוץ רפואי');
   return lines.join('\n');
 }
 
 function wireResults() {
-  $('btnShare').onclick = () => {
+  $('btnShare').onclick = async () => {
     const msg = swapMessage();
     if (!msg) return;
+    // שיתוף מערכת שומר גם הודעות ארוכות; קישור wa.me נשאר כגיבוי בדפדפנים ישנים.
+    if (navigator.share) {
+      try { await navigator.share({ text: msg }); return; } catch (e) { if (e && e.name === 'AbortError') return; }
+    }
     window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
   };
   $('btnAgain').onclick = () => show('view-home');
@@ -756,7 +824,8 @@ function searchRowsHtml(found) {
   return found.map(it => {
     const minP = itemMinPrice(it.id);
     return `<button class="search-row" data-id="${it.id}">
-      <span class="badge ${it.rating}">${RATING_ICON[it.rating]}</span>
+      <span class="badge ${displayRating(it)}">${RATING_ICON[displayRating(it)]}</span>
+      ${it.img ? `<img class="search-product-img" src="${it.img}" alt="אריזת ${it.name_he}" loading="lazy" onerror="this.remove()">` : ""}
       <span class="sr-name">${it.name_he}</span>
       ${minP != null ? `<span class="est">${fmt(minP)}</span>` : ''}
     </button>`;
@@ -884,3 +953,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ch.addEventListener('click', () => forward(ch.dataset.searchChip));
   });
 });
+
+const HOT_LUNCHES = [["חזה עוף עם ירקות ובורגול", "כ-100 גרם חזה עוף מבושל, חצי צלחת קישואים וברוקולי, ורבע צלחת בורגול מבושל.", "צרבו במחבת או אפו עם לימון, שום ופפריקה. הוסיפו מעט שמן; בלי ציפוי ובלי רוטב מתוק.", "חזה עוף, קישואים, ברוקולי, בורגול, לימון"], ["סלמון בתנור עם שעועית ירוקה וקינואה", "כ-100 גרם סלמון מבושל, חצי צלחת שעועית ירוקה, ורבע צלחת קינואה מבושלת.", "אפו עם לימון ועשבי תיבול. זו מנה מסלמון טרי או קפוא, לא סלמון מעושן.", "פילה סלמון, שעועית ירוקה, קינואה, לימון"], ["פרגיות בלי עור עם ירקות ואורז", "כ-100 גרם פרגיות מבושלות בלי עור, חצי צלחת ירקות ורבע צלחת אורז מלא מבושל.", "צרבו או אפו עם תבלינים. פרגיות עשויות להכיל יותר שומן מחזה עוף; הימנעו מזיגוג דבש או טריאקי מתוק.", "פרגיות בלי עור, כרובית, פלפל, אורז מלא"], ["תבשיל עדשים וירקות", "קערה עם כחצי כוס עדשים מבושלות וירקות כגון קישוא, עגבנייה וגזר; הוסיפו סלט בצד.", "בשלו עדשים עם ירקות, כמון ופפריקה. קטניות מספקות חלבון וגם פחמימות, ולכן אין להוסיף אוטומטית גם אורז ולחם.", "עדשים, קישוא, עגבנייה, גזר, כמון"], ["קדירת שעועית לבנה ועגבניות", "כחצי כוס שעועית מבושלת עם הרבה ירקות, וסלט או ירקות אפויים בצד.", "השתמשו בשעועית מבושלת או מסוננת משימורים ושטפו. בשימורים בדקו נתרן. גם שעועית נספרת כמקור פחמימה.", "שעועית לבנה, עגבניות, סלרי, בצל"], ["טופו חם עם ירקות מוקפצים", "כרבע צלחת טופו, חצי צלחת ירקות ורבע צלחת אורז מלא מבושל.", "הקפיצו עם שום וג׳ינג׳ר. מדדו רוטב סויה בגלל הנתרן ואל תוסיפו רוטב צ׳ילי מתוק.", "טופו טבעי, ברוקולי, פטריות, גזר, אורז מלא"]];
+function hotLunchHtml() {
+ return `<div class="meal-slot">ארוחות צהריים חמות - מבשלים בבית</div><p class="baskets-intro">שיטת הצלחת: חצי ירקות לא עמילניים, רבע חלבון ורבע מזונות פחמימה. הכמויות הן דוגמאות כלליות; קטניות מכילות גם חלבון וגם פחמימות. התאמה אישית עם דיאטנית חשובה, במיוחד עם אינסולין או מחלת כליות. <a href="https://www.cdc.gov/diabetes/healthy-eating/diabetes-meal-planning.html" target="_blank" rel="noopener">מקור: CDC</a></p>` + HOT_LUNCHES.map(([name,portion,method,shopping])=>`<div class="meal-card"><div class="meal-head"><span class="meal-name">${name}</span></div><p>${portion}</p><p>${method}</p><details class="how"><summary>מה להכניס לסל?</summary><p>${shopping}</p></details><div class="meal-note">רעיונות לבישול, לא מוצרים שכבר דורגו. אין כרגע מחיר או ערכים מחושבים למנה; לא נציג סכום או גרמים בלי מקור.</div></div>`).join('');
+}
