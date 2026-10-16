@@ -1,0 +1,57 @@
+[
+  {
+    "barcode": "7290000041445",
+    "name": "קוטג' תנובה 5% שומן",
+    "source_page": "https://world.openfoodfacts.org/product/7290000041445/קוטג-5-cottage-cheese-5-תנובה",
+    "source_image": "https://images.openfoodfacts.org/images/products/729/000/004/1445/front_he.12.400.jpg",
+    "author": "macrofactor",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "changes": "JPEG re-encoded; no crop or content changes",
+    "verified_on": "2026-10-16"
+  },
+  {
+    "barcode": "5000157143365",
+    "name": "מתבל בטעם מיונז וקטש",
+    "source_page": "https://world.openfoodfacts.org/product/5000157143365/saucy-sauce-mayo-ketchup-sauce-imp-heinz",
+    "source_image": "https://images.openfoodfacts.org/images/products/500/015/714/3365/front_en.30.400.jpg",
+    "author": "boringolddevil",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "changes": "JPEG re-encoded; no crop or content changes",
+    "verified_on": "2026-10-16"
+  },
+  {
+    "barcode": "5711953106583",
+    "name": "ארלה גבינת שמנת טבעי",
+    "source_page": "https://world.openfoodfacts.org/product/5711953106583/natural-cream-cheese-arla",
+    "source_image": "https://images.openfoodfacts.org/images/products/571/195/310/6583/front_en.3.400.jpg",
+    "author": "foodvisor",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "changes": "JPEG re-encoded; rotated 90 degrees counterclockwise",
+    "verified_on": "2026-10-16"
+  },
+  {
+    "barcode": "5411188513483",
+    "name": "אלפרו סויה לבישול 14",
+    "source_page": "https://world.openfoodfacts.org/product/5411188513483/alpro",
+    "source_image": "https://images.openfoodfacts.org/images/products/541/118/851/3483/front_en.44.400.jpg",
+    "author": "arc2",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "changes": "JPEG re-encoded; no crop or content changes",
+    "verified_on": "2026-10-16"
+  },
+  {
+    "barcode": "5411188115472",
+    "name": "אלפרו חלב סויה 1 לי",
+    "source_page": "https://world.openfoodfacts.org/product/5411188115472/soya-alpro",
+    "source_image": "https://images.openfoodfacts.org/images/products/541/118/811/5472/front_en.253.400.jpg",
+    "author": "macrofactor",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "changes": "JPEG re-encoded; no crop or content changes",
+    "verified_on": "2026-10-16"
+  }
+]
